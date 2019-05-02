@@ -10,20 +10,13 @@ using System.Windows.Forms;
 
 namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
-    public partial class Login : Form
+    public partial class MostWantedDetalhe : Form
     {
-        public Login()
+        public MostWantedDetalhe()
         {
             InitializeComponent();
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            Logo lgt = new Logo();
-            lgt.ShowDialog();
-            this.Close();
-        }
     }
 }

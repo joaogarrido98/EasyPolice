@@ -39,7 +39,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(488, 295);
+            this.button8.Location = new System.Drawing.Point(488, 181);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(119, 86);
             this.button8.TabIndex = 13;
@@ -48,11 +48,11 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(488, 181);
+            this.button5.Location = new System.Drawing.Point(339, 181);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(119, 86);
             this.button5.TabIndex = 12;
-            this.button5.Text = "Procedimentos";
+            this.button5.Text = "Ajudas";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button4
@@ -95,7 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(732, 403);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -104,6 +104,7 @@
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EasyPolice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EasyPolice";
             this.ResumeLayout(false);
 

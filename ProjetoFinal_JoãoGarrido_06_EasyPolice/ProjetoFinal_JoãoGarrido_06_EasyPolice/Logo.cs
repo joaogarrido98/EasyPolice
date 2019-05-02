@@ -17,9 +17,18 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             InitializeComponent();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Login log = new Login();
+            log.ShowDialog();
+            
         }
+
     }
 }
