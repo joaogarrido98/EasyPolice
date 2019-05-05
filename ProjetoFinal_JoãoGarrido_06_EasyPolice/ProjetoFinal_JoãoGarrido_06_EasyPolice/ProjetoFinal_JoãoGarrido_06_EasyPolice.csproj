@@ -52,6 +52,24 @@
     <Compile Include="AdicionarContas.Designer.cs">
       <DependentUpon>AdicionarContas.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadastroDetalhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroDetalhe.Designer.cs">
+      <DependentUpon>CadastroDetalhe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroPesquisa.Designer.cs">
+      <DependentUpon>CadastroPesquisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaOcorrências.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaOcorrências.Designer.cs">
+      <DependentUpon>ConsultaOcorrências.cs</DependentUpon>
+    </Compile>
     <Compile Include="EasyPolice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +106,12 @@
     <Compile Include="MostWantedDetalhe.Designer.cs">
       <DependentUpon>MostWantedDetalhe.cs</DependentUpon>
     </Compile>
+    <Compile Include="OcorrênciaDetalhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OcorrênciaDetalhe.Designer.cs">
+      <DependentUpon>OcorrênciaDetalhe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistoOcorrencias.cs">
@@ -104,6 +128,15 @@
     </Compile>
     <EmbeddedResource Include="AdicionarContas.resx">
       <DependentUpon>AdicionarContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroDetalhe.resx">
+      <DependentUpon>CadastroDetalhe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroPesquisa.resx">
+      <DependentUpon>CadastroPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaOcorrências.resx">
+      <DependentUpon>ConsultaOcorrências.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EasyPolice.resx">
       <DependentUpon>EasyPolice.cs</DependentUpon>
@@ -122,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MostWantedDetalhe.resx">
       <DependentUpon>MostWantedDetalhe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OcorrênciaDetalhe.resx">
+      <DependentUpon>OcorrênciaDetalhe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
