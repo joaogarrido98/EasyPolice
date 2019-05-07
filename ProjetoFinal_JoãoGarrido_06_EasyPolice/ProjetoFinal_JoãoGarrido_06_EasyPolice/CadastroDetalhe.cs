@@ -19,7 +19,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void button1_Click(object sender, EventArgs e)
         {
-     
+            this.Close();
         }
     }
 }

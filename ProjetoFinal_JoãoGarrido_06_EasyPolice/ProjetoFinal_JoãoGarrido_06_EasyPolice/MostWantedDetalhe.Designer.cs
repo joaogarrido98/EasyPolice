@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MostWantedDetalhe));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Ocorrência1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ocorrência2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.Ocorrência1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ocorrência2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +51,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(475, 266);
             this.dataGridView1.TabIndex = 0;
             // 
+            // Ocorrência1
+            // 
+            this.Ocorrência1.HeaderText = "Ocorrência1";
+            this.Ocorrência1.Name = "Ocorrência1";
+            // 
+            // Ocorrência2
+            // 
+            this.Ocorrência2.HeaderText = "Ocorrência2";
+            this.Ocorrência2.Name = "Ocorrência2";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(574, 22);
@@ -63,7 +73,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(49, 73);
+            this.label1.Location = new System.Drawing.Point(49, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 24);
             this.label1.TabIndex = 2;
@@ -78,16 +88,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Voltar";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // Ocorrência1
-            // 
-            this.Ocorrência1.HeaderText = "Ocorrência1";
-            this.Ocorrência1.Name = "Ocorrência1";
-            // 
-            // Ocorrência2
-            // 
-            this.Ocorrência2.HeaderText = "Ocorrência2";
-            this.Ocorrência2.Name = "Ocorrência2";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MostWantedDetalhe
             // 

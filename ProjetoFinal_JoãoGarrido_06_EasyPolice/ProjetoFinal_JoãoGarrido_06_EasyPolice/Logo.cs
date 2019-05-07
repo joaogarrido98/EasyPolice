@@ -19,7 +19,15 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer sair?", "Sair", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+               
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -27,8 +35,17 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             this.Hide();
             Login log = new Login();
             log.ShowDialog();
-            
+            this.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdicionarContas registo = new AdicionarContas();
+            registo.ShowDialog();
+            this.Show();
+        }
+
 
     }
 }
