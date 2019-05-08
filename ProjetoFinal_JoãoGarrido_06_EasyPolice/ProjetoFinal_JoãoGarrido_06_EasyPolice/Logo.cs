@@ -45,7 +45,5 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             registo.ShowDialog();
             this.Show();
         }
-
-
     }
 }

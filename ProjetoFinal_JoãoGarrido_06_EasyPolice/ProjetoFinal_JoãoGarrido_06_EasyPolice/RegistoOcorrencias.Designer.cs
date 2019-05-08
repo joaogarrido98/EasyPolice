@@ -265,7 +265,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistoOcorrencias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegistoOcorrencias";
+            this.Text = "EasyPolice";
             this.ResumeLayout(false);
             this.PerformLayout();
 
