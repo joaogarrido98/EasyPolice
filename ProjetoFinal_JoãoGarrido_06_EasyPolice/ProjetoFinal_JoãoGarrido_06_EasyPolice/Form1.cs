@@ -70,11 +70,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer fazer logout?", "Logout", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-              
+                this.Hide();
                 Logo lgt = new Logo();
                 lgt.ShowDialog();
-                
-
             }
             else if (dialogResult == DialogResult.No)
             {

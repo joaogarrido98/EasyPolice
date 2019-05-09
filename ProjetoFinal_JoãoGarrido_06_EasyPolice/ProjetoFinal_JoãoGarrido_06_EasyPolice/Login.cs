@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+
 
 namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
@@ -24,26 +25,27 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e) //sistema de login do programa 
-        { 
-            
-            //nao liga ao using mysql.data....
+        //Sistema de login
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             string user = textuser.Text;
             string password = textpassword.Text;
-            //completar a base de dados...
-           // MysqlConnection connect = new MysqlConnection();
+            
+            SqlConnection connect = new SqlConnection();
 
 
 
-            if(/*consicao*/) //falta ainda distinguir de admin e de normal.
-            {
-                EasyPolice_Admin admin = new EasyPolice_Admin();
-                admin.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Login incorreto, tente novamente");
-            }
+           // if () //falta ainda distinguir de admin e de normal.
+            //{
+                //EasyPolice_Admin admin = new EasyPolice_Admin();
+                //admin.ShowDialog();
+            //}
+            //else
+            //{
+                //MessageBox.Show("Login incorreto, tente novamente");
+            //}
         }
     }
 }
+

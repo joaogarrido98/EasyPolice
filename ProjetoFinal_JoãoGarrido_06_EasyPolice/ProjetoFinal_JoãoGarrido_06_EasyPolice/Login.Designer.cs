@@ -39,6 +39,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(625, 360);
             this.button1.Name = "button1";
@@ -50,6 +51,7 @@
             // 
             // Username
             // 
+            this.Username.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Username.AutoSize = true;
             this.Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Username.Location = new System.Drawing.Point(250, 109);
@@ -60,6 +62,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(250, 161);
@@ -70,6 +73,7 @@
             // 
             // textuser
             // 
+            this.textuser.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textuser.Location = new System.Drawing.Point(254, 136);
             this.textuser.Name = "textuser";
             this.textuser.Size = new System.Drawing.Size(247, 22);
@@ -77,6 +81,7 @@
             // 
             // textpassword
             // 
+            this.textpassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textpassword.Location = new System.Drawing.Point(254, 188);
             this.textpassword.Name = "textpassword";
             this.textpassword.Size = new System.Drawing.Size(247, 22);
@@ -84,6 +89,7 @@
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(319, 216);
             this.button2.Name = "button2";
@@ -104,7 +110,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Username);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EasyPolice";
