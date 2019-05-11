@@ -166,7 +166,8 @@
             "Posse de droga",
             "Assalto",
             "Tráfico",
-            "Sequestro"});
+            "Sequestro",
+            "Bullying"});
             this.comboBox1.Location = new System.Drawing.Point(467, 76);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 24);

@@ -37,13 +37,5 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             log.ShowDialog();
             this.Show();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AdicionarContas registo = new AdicionarContas();
-            registo.ShowDialog();
-            this.Show();
-        }
     }
 }

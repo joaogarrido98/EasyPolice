@@ -27,24 +27,30 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         //Sistema de login
 
+        public string conString = "Data Source=LAPTOP-DJ6AD10V;Initial Catalog = EasyPolice_Bd; Integrated Security = True";
+        
         private void button2_Click(object sender, EventArgs e)
         {
-            string user = textuser.Text;
-            string password = textpassword.Text;
             
-            SqlConnection connect = new SqlConnection();
+            SqlConnection connect = new SqlConnection(conString);
+            connect.Open();
 
+            string query = "Select * from Utilizador Where Nome= '" + textuser.Text.Trim() + "'and password = '" + textpassword.Text.Trim() + "'";
 
-
-           // if () //falta ainda distinguir de admin e de normal.
-            //{
-                //EasyPolice_Admin admin = new EasyPolice_Admin();
-                //admin.ShowDialog();
-            //}
-            //else
-            //{
-                //MessageBox.Show("Login incorreto, tente novamente");
-            //}
+            string sqlcon = null;
+            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+            DataTable dtb = new DataTable();
+            sda.Fill(dtb);
+                
+                if (dtb.Rows.Count == 1) //falta ainda distinguir de admin e de normal.
+            {
+                EasyPolice_Admin admin = new EasyPolice_Admin();
+                admin.ShowDialog();
+            }
+           else
+            {
+               MessageBox.Show("Login incorreto, tente novamente");
+            }
         }
     }
 }
