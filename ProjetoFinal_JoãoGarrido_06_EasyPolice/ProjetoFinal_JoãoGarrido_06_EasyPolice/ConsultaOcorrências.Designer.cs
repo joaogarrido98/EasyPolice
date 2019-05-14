@@ -69,7 +69,9 @@
             "Santarém",
             "Porto Alegre",
             "Setubal",
-            "Aveiro"});
+            "Aveiro",
+            "Açores",
+            "Madeira"});
             this.comboBox2.Location = new System.Drawing.Point(443, 44);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(100, 24);
@@ -85,7 +87,8 @@
             "Posse de droga",
             "Assalto",
             "Tráfico",
-            "Sequestro"});
+            "Sequestro",
+            "Bullying"});
             this.comboBox1.Location = new System.Drawing.Point(443, 78);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 24);

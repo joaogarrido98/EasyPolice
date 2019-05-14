@@ -27,23 +27,27 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         //Sistema de login
 
-        public string conString = "Data Source=LAPTOP-DJ6AD10V;Initial Catalog = EasyPolice_Bd; Integrated Security = True";
+        
+
+        public string conString = "Data Source=. ;Initial Catalog = EasyPolice_Bd; Integrated Security = True";
         
         private void button2_Click(object sender, EventArgs e)
         {
+             SqlConnection connect = new SqlConnection(conString);
+
+             connect.Open();
+
+             string query = "Select * from Utilizador Where Nome= '" + textuser.Text.Trim() + "'and password = '" + textpassword.Text.Trim() + "'";
             
-            SqlConnection connect = new SqlConnection(conString);
-            connect.Open();
+             
+             SqlDataAdapter sda = new SqlDataAdapter(query, connect);
 
-            string query = "Select * from Utilizador Where Nome= '" + textuser.Text.Trim() + "'and password = '" + textpassword.Text.Trim() + "'";
-
-            string sqlcon = null;
-            SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
-            DataTable dtb = new DataTable();
-            sda.Fill(dtb);
+             DataTable dtb = new DataTable();
+             sda.Fill(dtb);
                 
-                if (dtb.Rows.Count == 1) //falta ainda distinguir de admin e de normal.
+            if (dtb.Rows.Count == 1)  //falta ainda distinguir de admin e de normal.
             {
+                this.Hide();
                 EasyPolice_Admin admin = new EasyPolice_Admin();
                 admin.ShowDialog();
             }
@@ -51,6 +55,11 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             {
                MessageBox.Show("Login incorreto, tente novamente");
             }
+        }
+
+        private void textpassword_TextChanged(object sender, EventArgs e)
+        {
+            textpassword.UseSystemPasswordChar = true;
         }
     }
 }

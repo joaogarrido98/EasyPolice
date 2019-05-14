@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdicionarContas));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textusername = new System.Windows.Forms.TextBox();
+            this.textpass = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Criar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textusername
             // 
-            this.textBox1.Location = new System.Drawing.Point(286, 142);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 22);
-            this.textBox1.TabIndex = 0;
+            this.textusername.Location = new System.Drawing.Point(286, 142);
+            this.textusername.Name = "textusername";
+            this.textusername.Size = new System.Drawing.Size(193, 22);
+            this.textusername.TabIndex = 0;
             // 
-            // textBox2
+            // textpass
             // 
-            this.textBox2.Location = new System.Drawing.Point(286, 193);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(193, 22);
-            this.textBox2.TabIndex = 1;
+            this.textpass.Location = new System.Drawing.Point(286, 193);
+            this.textpass.Name = "textpass";
+            this.textpass.Size = new System.Drawing.Size(193, 22);
+            this.textpass.TabIndex = 1;
             // 
             // textBox3
             // 
@@ -101,30 +101,29 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // Criar
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(330, 274);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 31);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Criar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Criar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Criar.Location = new System.Drawing.Point(330, 274);
+            this.Criar.Name = "Criar";
+            this.Criar.Size = new System.Drawing.Size(95, 31);
+            this.Criar.TabIndex = 15;
+            this.Criar.Text = "Criar";
+            this.Criar.UseVisualStyleBackColor = true;
             // 
             // AdicionarContas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 403);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Criar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textpass);
+            this.Controls.Add(this.textusername);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -138,13 +137,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textusername;
+        private System.Windows.Forms.TextBox textpass;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Criar;
     }
 }

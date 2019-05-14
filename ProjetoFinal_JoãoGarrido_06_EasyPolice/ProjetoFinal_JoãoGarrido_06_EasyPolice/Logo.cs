@@ -35,7 +35,10 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             this.Hide();
             Login log = new Login();
             log.ShowDialog();
-            this.Show();
+
+            Logo icon = new Logo();
+            icon.ShowDialog();
         }
     }
-}
+    }
+

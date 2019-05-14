@@ -192,9 +192,11 @@
             "Viseu",
             "Leiria",
             "Santarém",
-            "Porto Alegre",
+            "Portalegre",
             "Setubal",
-            "Aveiro"});
+            "Aveiro",
+            "Açores",
+            "Madeira"});
             this.comboBox2.Location = new System.Drawing.Point(317, 139);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(100, 24);
