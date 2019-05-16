@@ -36,7 +36,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             SqlCommand cmdInsert = new SqlCommand();
             cmdInsert.Connection = connect;
 
-           connect.CommandText = "Insert into Utilizador (Nome, Password) values (@Nome, @Password)";
+          connect.CommandText = "Insert into Utilizador (Nome, Password) values (@Nome, @Password)";
 
 
            
