@@ -26,7 +26,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             }
             else if (dialogResult == DialogResult.No)
             {
-               
+
             }
         }
 

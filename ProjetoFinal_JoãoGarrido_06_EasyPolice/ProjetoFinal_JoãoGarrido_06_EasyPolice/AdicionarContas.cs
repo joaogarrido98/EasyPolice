@@ -13,6 +13,10 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
     public partial class AdicionarContas : Form
     {
+        private static string connectionString = "Data Source=.;Initial Catalog=EasyPolice_Bd; Integrated Security=True";
+        private static SqlConnection db = new SqlConnection(connectionString);
+       
+
         public AdicionarContas()
         {
             InitializeComponent();
@@ -23,24 +27,50 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             this.Close();
         }
 
-        public string conString = "Data Source=. ;Initial Catalog = EasyPolice_Bd; Integrated Security = True";
+        
 
         private void Criar_Click(object sender, EventArgs e)
         {
+            db.Open();
             string usernameregisto = textusername.Text;
             string passregisto = textpass.Text;
-
-            SqlConnection connect = new SqlConnection(conString);
-            connect.Open();
+            string distintivo = textdistintivo.Text;
 
             SqlCommand cmdInsert = new SqlCommand();
-            cmdInsert.Connection = connect;
+            cmdInsert.Connection = db;
 
-          connect.CommandText = "Insert into Utilizador (Nome, Password) values (@Nome, @Password)";
+            cmdInsert.CommandText = "Insert into Utilizador (Nome, Password, Distintivo) values (@Nome, @Password, @Distintivo)";
 
+            cmdInsert.Parameters.Add("@Nome", SqlDbType.VarChar).Value = usernameregisto;
+            cmdInsert.Parameters.Add("@Password", SqlDbType.VarChar).Value = passregisto;
+            cmdInsert.Parameters.Add("@Distintivo", SqlDbType.Int).Value = distintivo;
 
-           
+            int afetados = cmdInsert.ExecuteNonQuery();
+            
+        }
 
+        private void textbox1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textpass.Focus();
+            }
+        }
+
+        private void textbox2(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textdistintivo.Focus();
+            }
+        }
+
+        private void textbox3(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Criar.Focus();
+            }
         }
     }
 }

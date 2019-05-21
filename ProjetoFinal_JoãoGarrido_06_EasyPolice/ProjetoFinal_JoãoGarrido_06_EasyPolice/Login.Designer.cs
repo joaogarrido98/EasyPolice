@@ -34,7 +34,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textuser = new System.Windows.Forms.TextBox();
             this.textpassword = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.entrarbutton = new System.Windows.Forms.Button();
+            this.Ver = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
@@ -78,6 +79,7 @@
             this.textuser.Name = "textuser";
             this.textuser.Size = new System.Drawing.Size(247, 22);
             this.textuser.TabIndex = 3;
+            this.textuser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox1);
             // 
             // textpassword
             // 
@@ -86,26 +88,38 @@
             this.textpassword.Name = "textpassword";
             this.textpassword.Size = new System.Drawing.Size(247, 22);
             this.textpassword.TabIndex = 4;
-            this.textpassword.TextChanged += new System.EventHandler(this.textpassword_TextChanged);
+            this.textpassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox2);
             // 
-            // button2
+            // entrarbutton
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(319, 216);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 35);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Entrar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.entrarbutton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.entrarbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entrarbutton.Location = new System.Drawing.Point(319, 216);
+            this.entrarbutton.Name = "entrarbutton";
+            this.entrarbutton.Size = new System.Drawing.Size(100, 35);
+            this.entrarbutton.TabIndex = 5;
+            this.entrarbutton.Text = "Entrar";
+            this.entrarbutton.UseVisualStyleBackColor = true;
+            this.entrarbutton.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // Ver
+            // 
+            this.Ver.AutoSize = true;
+            this.Ver.Location = new System.Drawing.Point(526, 188);
+            this.Ver.Name = "Ver";
+            this.Ver.Size = new System.Drawing.Size(117, 21);
+            this.Ver.TabIndex = 6;
+            this.Ver.Text = "Ver Password";
+            this.Ver.UseVisualStyleBackColor = true;
+            this.Ver.CheckedChanged += new System.EventHandler(this.Ver_CheckedChanged);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 403);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Ver);
+            this.Controls.Add(this.entrarbutton);
             this.Controls.Add(this.textpassword);
             this.Controls.Add(this.textuser);
             this.Controls.Add(this.label2);
@@ -117,6 +131,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EasyPolice";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,6 +144,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textuser;
         private System.Windows.Forms.TextBox textpassword;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button entrarbutton;
+        private System.Windows.Forms.CheckBox Ver;
     }
 }

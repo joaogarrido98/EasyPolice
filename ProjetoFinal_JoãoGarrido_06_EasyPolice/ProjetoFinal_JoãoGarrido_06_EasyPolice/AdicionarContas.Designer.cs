@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdicionarContas));
             this.textusername = new System.Windows.Forms.TextBox();
             this.textpass = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textdistintivo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +45,7 @@
             this.textusername.Name = "textusername";
             this.textusername.Size = new System.Drawing.Size(193, 22);
             this.textusername.TabIndex = 0;
+            this.textusername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox1);
             // 
             // textpass
             // 
@@ -52,13 +53,15 @@
             this.textpass.Name = "textpass";
             this.textpass.Size = new System.Drawing.Size(193, 22);
             this.textpass.TabIndex = 1;
+            this.textpass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox2);
             // 
-            // textBox3
+            // textdistintivo
             // 
-            this.textBox3.Location = new System.Drawing.Point(286, 246);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(193, 22);
-            this.textBox3.TabIndex = 2;
+            this.textdistintivo.Location = new System.Drawing.Point(286, 246);
+            this.textdistintivo.Name = "textdistintivo";
+            this.textdistintivo.Size = new System.Drawing.Size(193, 22);
+            this.textdistintivo.TabIndex = 2;
+            this.textdistintivo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox3);
             // 
             // label1
             // 
@@ -110,6 +113,7 @@
             this.Criar.TabIndex = 15;
             this.Criar.Text = "Criar";
             this.Criar.UseVisualStyleBackColor = true;
+            this.Criar.Click += new System.EventHandler(this.Criar_Click);
             // 
             // AdicionarContas
             // 
@@ -121,7 +125,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textdistintivo);
             this.Controls.Add(this.textpass);
             this.Controls.Add(this.textusername);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -139,7 +143,7 @@
 
         private System.Windows.Forms.TextBox textusername;
         private System.Windows.Forms.TextBox textpass;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textdistintivo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

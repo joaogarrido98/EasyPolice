@@ -18,20 +18,36 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void textbox1(object sender, KeyEventArgs e)
         {
-            this.Close();
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.Focus();
+            }
         }
-        public string conString = "Data Source=. ;Initial Catalog = EasyPolice_Bd; Integrated Security = True";
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer remover a conta?", "Remover", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                /*  SqlConnection connectiondelete = new SqlConnection(conString);
+          connectiondelete.Open();
+          string textbox1 = textBox1.Text;
+          string querydelete = ($"DELETE from utilizadores WHERE Nome= 'textbox1'");
+          */
+
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+
+            }
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            SqlConnection connectiondelete = new SqlConnection(conString);
-            connectiondelete.Open();
-            string textbox1 = textBox1.Text;
-            string querydelete = ($"DELETE from utilizadores WHERE Nome= 'textbox1'");
-
+            this.Close();
         }
     }
 }

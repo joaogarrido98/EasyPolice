@@ -21,5 +21,26 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
         {
             this.Close();
         }
+
+        private void textbox1(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode== Keys.Enter)
+            {
+                textBox3.Focus();
+            }
+        }
+
+        private void CadastroPesquisa_Load(object sender, EventArgs e)
+        {
+            textBox2.Focus();
+        }
+
+        private void procurar(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button2.Focus();
+            }
+        }
     }
 }
