@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RemoverContas));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.apagar = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -56,13 +56,13 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Username:";
             // 
-            // textBox1
+            // apagar
             // 
-            this.textBox1.Location = new System.Drawing.Point(155, 197);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(277, 22);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox1);
+            this.apagar.Location = new System.Drawing.Point(155, 197);
+            this.apagar.Name = "apagar";
+            this.apagar.Size = new System.Drawing.Size(277, 22);
+            this.apagar.TabIndex = 12;
+            this.apagar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox1);
             // 
             // button2
             // 
@@ -93,7 +93,7 @@
             this.ClientSize = new System.Drawing.Size(732, 403);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.apagar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -108,7 +108,7 @@
         #endregion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox apagar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
     }

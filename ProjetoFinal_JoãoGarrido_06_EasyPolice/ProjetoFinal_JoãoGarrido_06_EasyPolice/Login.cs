@@ -32,8 +32,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
         //Sistema de login
 
 
-       
-
         private void button2_Click(object sender, EventArgs e)
         {
              db.Open();

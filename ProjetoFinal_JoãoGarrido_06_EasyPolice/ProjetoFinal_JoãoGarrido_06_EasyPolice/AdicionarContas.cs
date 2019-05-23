@@ -15,7 +15,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
     {
         private static string connectionString = "Data Source=.;Initial Catalog=EasyPolice_Bd; Integrated Security=True";
         private static SqlConnection db = new SqlConnection(connectionString);
-       
+
 
         public AdicionarContas()
         {
@@ -28,6 +28,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
         }
 
         
+        //sistema de registo
 
         private void Criar_Click(object sender, EventArgs e)
         {

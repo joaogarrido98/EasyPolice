@@ -19,6 +19,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //maneira de sair do programa ao carregar sim ou nao numa mensagem
             DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer sair?", "Sair", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -28,9 +29,11 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Login log = new Login();
-            log.ShowDialog();
+
+            this.Hide(); //para esconder o form que está ativo
+
+            Login log = new Login(); 
+            log.ShowDialog(); //chamar o form login
 
             Logo icon = new Logo();
             icon.ShowDialog();

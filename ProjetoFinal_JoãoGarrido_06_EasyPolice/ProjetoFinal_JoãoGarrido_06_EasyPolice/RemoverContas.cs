@@ -13,6 +13,10 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
     public partial class RemoverContas : Form
     {
+        private static string connectionString = "Data Source=.;Initial Catalog=EasyPolice_Bd; Integrated Security=True";
+        private static SqlConnection db = new SqlConnection(connectionString);
+        
+
         public RemoverContas()
         {
             InitializeComponent();
@@ -32,14 +36,26 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer remover a conta?", "Remover", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                /*  SqlConnection connectiondelete = new SqlConnection(conString);
-          connectiondelete.Open();
-          string textbox1 = textBox1.Text;
-          string querydelete = ($"DELETE from utilizadores WHERE Nome= 'textbox1'");
-          */
+                db.Open();
+                string deletename = apagar.Text;
+
+                SqlCommand cmdDelete = new SqlCommand();
+                cmdDelete.Connection = db;
+
+                cmdDelete.CommandText = "DELETE FROM utilizador where Nome=@Nome";
+                cmdDelete.Parameters.Add("@Nome", SqlDbType.VarChar).Value = deletename;
+
+                int afectados = cmdDelete.ExecuteNonQuery();
+
+                MessageBox.Show("Conta apagada");
+
+                if (apagar.Text != "" || apagar.Text != null)
+                {
+                    apagar.Text = "";
+                }
 
             }
-            else if (dialogResult == DialogResult.No)
+            if (dialogResult == DialogResult.No)
             {
 
             }
