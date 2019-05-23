@@ -24,10 +24,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             {
                 Application.Exit();
             }
-            else if (dialogResult == DialogResult.No)
-            {
-
-            }
         }
 
         private void button2_Click(object sender, EventArgs e)

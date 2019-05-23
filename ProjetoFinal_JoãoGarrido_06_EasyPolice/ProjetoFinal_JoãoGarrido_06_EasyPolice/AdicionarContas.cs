@@ -46,6 +46,18 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             cmdInsert.Parameters.Add("@Distintivo", SqlDbType.Int).Value = distintivo;
 
             int afetados = cmdInsert.ExecuteNonQuery();
+
+            MessageBox.Show("Conta criada");
+
+            if (textusername.Text != "" || textusername.Text != null || textpass.Text != "" || textpass.Text != null || textdistintivo.Text != "" || textdistintivo.Text != null)
+            {
+                textusername.Text = "";
+                textpass.Text = "";
+                textdistintivo.Text = "";
+            }
+
+            
+
             
         }
 
