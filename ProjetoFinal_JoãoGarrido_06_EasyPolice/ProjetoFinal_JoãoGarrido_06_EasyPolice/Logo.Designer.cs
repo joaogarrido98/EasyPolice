@@ -63,9 +63,9 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = global::ProjetoFinal_JoãoGarrido_06_EasyPolice.Properties.Resources.logotipo;
-            this.pictureBox1.Location = new System.Drawing.Point(269, 70);
+            this.pictureBox1.Location = new System.Drawing.Point(269, 64);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 169);
+            this.pictureBox1.Size = new System.Drawing.Size(194, 175);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;

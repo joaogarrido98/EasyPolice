@@ -14,6 +14,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
     public partial class Login : Form
     {
+        //fazer a ligação à base de dados
         private static string connectionString = "Data Source=.;Initial Catalog=EasyPolice_Bd; Integrated Security=True";
         private static SqlConnection db = new SqlConnection(connectionString);
 
@@ -59,6 +60,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void textbox1(object sender, KeyEventArgs e)
         {
+            //para ficar focado na textbox que eu quero e ao pressionar enter passar à proxima.
             if (e.KeyCode == Keys.Enter)
             {
                 textpassword.Focus();
@@ -67,7 +69,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void Login_Load(object sender, EventArgs e)
         {
-            this.ActiveControl = textuser;
+            this.ActiveControl = textuser; //para meter a password encriptada
             textpassword.UseSystemPasswordChar = true;
         }
 
@@ -82,7 +84,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void Ver_CheckedChanged(object sender, EventArgs e)
         {
-            if(Ver.Checked)
+            if(Ver.Checked) //se tiver check então dá para ver a password, caso nao esteja, nao dá para ver a password.
             {
                 textpassword.UseSystemPasswordChar = false;
             }

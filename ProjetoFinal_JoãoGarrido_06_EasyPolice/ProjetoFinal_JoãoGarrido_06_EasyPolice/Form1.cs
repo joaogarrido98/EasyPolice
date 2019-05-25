@@ -74,10 +74,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 Logo lgt = new Logo();
                 lgt.ShowDialog();
             }
-            else if (dialogResult == DialogResult.No)
-            {
-
-            }
         }
 
     }
