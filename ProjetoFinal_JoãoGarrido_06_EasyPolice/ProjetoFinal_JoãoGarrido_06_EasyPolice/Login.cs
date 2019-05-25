@@ -35,27 +35,53 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void button2_Click(object sender, EventArgs e)
         {
-             db.Open();
- 
-             string query = "Select * from Utilizador Where Nome= '" + textuser.Text.Trim() + "'and password = '" + textpassword.Text.Trim() + "'";
-            
-             
-             SqlDataAdapter sda = new SqlDataAdapter(query, db);
+            string Username = "";
+            string password = "";
+           
 
-             DataTable dtb = new DataTable();
-             sda.Fill(dtb);
+            try
+            {
+                //sistema de login! quando tiver também a funcionar o ativo inativo de conta é que posso completar a 100% o sistema de login 
+                SqlDataReader dr;
+
+                string Query = "SELECT Nome, Password, IsAdmin FROM Utilizador";
+                SqlCommand cmd = new SqlCommand(Query, db);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Username = dr["Nome"].ToString();
+                    password = dr["Password"].ToString();
+                    //bool IsAdmin = dr.GetBoolean(dr.GetOrdinal("IsAdmin"));
+                }
+                dr.Close();
+                if (textuser.Text == Username && textpassword.Text == password)
+                {
+                    if (IsAdmin == )
+                    {
+                        EasyPolice_Admin epa = new EasyPolice_Admin();
+                        epa.ShowDialog();
+                    }
+                    else
+                    {
+                        EasyPolice ep = new EasyPolice();
+                        ep.ShowDialog();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Utilizador e/ou Password errados");
+                    textuser.Text = "";
+                    textpassword.Text = "";
+                }
                 
-            if (dtb.Rows.Count == 1)  //falta ainda distinguir de admin e de normal.
-            {
-                this.Hide();
-                EasyPolice_Admin admin = new EasyPolice_Admin();
-                admin.ShowDialog();
+
             }
-           else
+            catch (Exception erro)
             {
-               MessageBox.Show("Username e/ou Password incorreto, tente novamente");
-                textuser.Focus();
+                MessageBox.Show(erro.ToString());
             }
+            db.Close();
+             
         }
 
         private void textbox1(object sender, KeyEventArgs e)

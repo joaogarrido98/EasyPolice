@@ -79,8 +79,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
                 MessageBox.Show("Conta criada");
             }
-            
-            
+
+            db.Close();
             //serve para apagar as caixas de texto depois de criar a conta 
             if (textusername.Text != "" || textusername.Text != null || textpass.Text != "" || textpass.Text != null || textdistintivo.Text != "" || textdistintivo.Text != null)
             {

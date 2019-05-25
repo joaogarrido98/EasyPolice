@@ -43,20 +43,6 @@
 				<column name="IdCriminoso" />
 			</index>
 		</table>
-		<table name="Criminoso_Ocorrencia" >
-			<column name="ID_Criminoso_Ocorrencia" type="int" jt="4" mandatory="y" autoincrement="y" />
-			<column name="FK_IDOcorrencias" type="int" jt="4" mandatory="y" />
-			<column name="FK_IDCrime" type="int" jt="4" mandatory="y" />
-			<index name="Pk_Criminoso_Ocorrencia_ID_Criminoso_Ocorrencia" unique="PRIMARY_KEY" >
-				<column name="ID_Criminoso_Ocorrencia" />
-			</index>
-			<fk name="fk_criminoso_ocorrencia" to_schema="dbo" to_table="Ocorrencias" >
-				<fk_column name="FK_IDOcorrencias" pk="IdOcorrencia" />
-			</fk>
-			<fk name="fk_criminoso_ocorrencia_crimes" to_schema="dbo" to_table="Crimes" >
-				<fk_column name="FK_IDCrime" pk="IdCrime" />
-			</fk>
-		</table>
 		<table name="Distrito" row_count="20" >
 			<column name="IdDistrito" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
 			<column name="Nome" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
@@ -106,15 +92,14 @@
 	</schema>
 	<connector name="SqlServer" database="SqlServer" driver_class="com.microsoft.sqlserver.jdbc.SQLServerDriver" driver_jar="mssql-jdbc-7.0.0.jre10.jar" driver_desc="Native Driver - Windows Authentication, Use Encryption" url="jdbc:sqlserver://localhost:1433;databaseName=EasyPolice_Bd;integratedSecurity=true;" host="localhost" port="1433" user="sa" />
 	<layout name="Default Layout" id="Layout_585cc6f" show_relation="columns" >
-		<entity schema="dbo" name="Utilizador" color="FFFF4D" x="128" y="48" />
-		<entity schema="dbo" name="Ocorrencias" color="E699B3" x="320" y="208" />
-		<entity schema="dbo" name="Crime_Ocorrencia" color="CC8033" x="48" y="240" />
-		<entity schema="dbo" name="Criminoso_Ocorrencia" color="C1D8EE" x="304" y="352" />
-		<entity schema="dbo" name="Crimes" color="800000" x="144" y="432" />
-		<entity schema="dbo" name="Distrito" color="BED3F4" x="784" y="48" />
-		<entity schema="dbo" name="Concelho" color="BED3F4" x="864" y="288" />
-		<entity schema="dbo" name="Freguesia" color="BED3F4" x="848" y="464" />
-		<entity schema="dbo" name="Criminoso" color="B3E6B3" x="592" y="336" />
+		<entity schema="dbo" name="Utilizador" color="FFFF4D" x="112" y="48" />
+		<entity schema="dbo" name="Distrito" color="BED3F4" x="768" y="48" />
+		<entity schema="dbo" name="Concelho" color="BED3F4" x="848" y="288" />
+		<entity schema="dbo" name="Freguesia" color="BED3F4" x="832" y="464" />
+		<entity schema="dbo" name="Ocorrencias" color="E699B3" x="320" y="176" />
+		<entity schema="dbo" name="Crime_Ocorrencia" color="CC8033" x="48" y="288" />
+		<entity schema="dbo" name="Crimes" color="800000" x="224" y="416" />
+		<entity schema="dbo" name="Criminoso" color="B3E6B3" x="544" y="112" />
 	</layout>
 	<layout name="Sample Layout with Tools" id="Layout_162c486" show_column_type="y" show_relation="columns" >
 		<entity schema="dbo" name="Concelho" color="BED3F4" x="256" y="272" />
