@@ -37,7 +37,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
         {
             string Username = "";
             string password = "";
-           
+            bool IsAdmin;
 
             try
             {
@@ -51,16 +51,16 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 {
                     Username = dr["Nome"].ToString();
                     password = dr["Password"].ToString();
-                    //bool IsAdmin = dr.GetBoolean(dr.GetOrdinal("IsAdmin"));
+                    IsAdmin = dr["IsAdmin"].;
                 }
                 dr.Close();
                 if (textuser.Text == Username && textpassword.Text == password)
                 {
-                    if (IsAdmin == )
+                   if (IsAdmin == )
                     {
                         EasyPolice_Admin epa = new EasyPolice_Admin();
                         epa.ShowDialog();
-                    }
+                  }
                     else
                     {
                         EasyPolice ep = new EasyPolice();
@@ -81,7 +81,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 MessageBox.Show(erro.ToString());
             }
             db.Close();
-             
+          
         }
 
         private void textbox1(object sender, KeyEventArgs e)
