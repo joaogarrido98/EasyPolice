@@ -37,30 +37,34 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
         {
             string Username = "";
             string password = "";
-            bool IsAdmin;
-
+            bool IsAdmin = false;
+   
             try
             {
+                db.Open();
+               
                 //sistema de login! quando tiver também a funcionar o ativo inativo de conta é que posso completar a 100% o sistema de login 
                 SqlDataReader dr;
 
                 string Query = "SELECT Nome, Password, IsAdmin FROM Utilizador";
                 SqlCommand cmd = new SqlCommand(Query, db);
                 dr = cmd.ExecuteReader();
+
                 while (dr.Read())
                 {
                     Username = dr["Nome"].ToString();
                     password = dr["Password"].ToString();
-                    IsAdmin = dr["IsAdmin"].;
+                    IsAdmin = Convert.ToBoolean( dr["IsAdmin"].ToString());
+                    
                 }
                 dr.Close();
-                if (textuser.Text == Username && textpassword.Text == password)
+             if (textuser.Text == Username && textpassword.Text == password)
                 {
-                   if (IsAdmin == )
+                   if (IsAdmin == true )
                     {
                         EasyPolice_Admin epa = new EasyPolice_Admin();
                         epa.ShowDialog();
-                  }
+                    }
                     else
                     {
                         EasyPolice ep = new EasyPolice();
@@ -73,8 +77,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     textuser.Text = "";
                     textpassword.Text = "";
                 }
-                
 
+                
             }
             catch (Exception erro)
             {

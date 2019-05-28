@@ -93,8 +93,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
         }
 
         private void textbox1(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
+        { 
+            if (e.KeyCode == Keys.Enter) //foco na caixa de texto
             {
                 textpass.Focus();
             }
@@ -106,6 +106,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             {
                 textdistintivo.Focus();
             }
+
         }
 
         private void textbox3(object sender, KeyEventArgs e)
@@ -113,6 +114,38 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             if (e.KeyCode == Keys.Enter)
             {
                 Criar.Focus();
+            }
+        }
+
+        private void textdistintivo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.') //so deixar escrever numeros
+            {
+                e.Handled = true;
+            }
+            if ((sender as TextBox).Text.Count(Char.IsDigit) >= 4) //so deixar esscrever ate quatro caracteres.
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textusername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            if ((sender as TextBox).Text.Count(Char.IsLetter) >= 12)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textpass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).Text.Count(Char.IsLetter) >= 12)
+            {
+                e.Handled = true;
             }
         }
     }

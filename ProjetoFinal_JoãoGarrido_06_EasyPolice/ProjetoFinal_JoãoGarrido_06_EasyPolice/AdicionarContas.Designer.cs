@@ -47,6 +47,7 @@
             this.textusername.Size = new System.Drawing.Size(193, 22);
             this.textusername.TabIndex = 1;
             this.textusername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox1);
+            this.textusername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textusername_KeyPress);
             // 
             // textpass
             // 
@@ -55,6 +56,7 @@
             this.textpass.Size = new System.Drawing.Size(193, 22);
             this.textpass.TabIndex = 2;
             this.textpass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox2);
+            this.textpass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textpass_KeyPress);
             // 
             // textdistintivo
             // 
@@ -63,6 +65,7 @@
             this.textdistintivo.Size = new System.Drawing.Size(193, 22);
             this.textdistintivo.TabIndex = 3;
             this.textdistintivo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox3);
+            this.textdistintivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textdistintivo_KeyPress);
             // 
             // label1
             // 
