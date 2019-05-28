@@ -42,9 +42,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(151, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(306, 24);
+            this.label2.Size = new System.Drawing.Size(310, 48);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Escolha a conta que quer remover:\r\n";
+            this.label2.Text = "Escolha a conta que quer desativar:\r\n\r\n";
             // 
             // label3
             // 
@@ -82,7 +82,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 31);
             this.button1.TabIndex = 14;
-            this.button1.Text = "Apagar";
+            this.button1.Text = "Desativar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 

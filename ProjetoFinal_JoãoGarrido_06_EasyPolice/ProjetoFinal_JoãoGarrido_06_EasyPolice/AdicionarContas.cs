@@ -44,12 +44,13 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 cmdInsert.Connection = db;
 
                 //query para inserir nome, password, distintivo e se é admin ou nao.
-                cmdInsert.CommandText = "Insert into Utilizador (Nome, Password, Distintivo, IsAdmin) values (@Nome, @Password, @Distintivo, @IsAdmin)";
+                cmdInsert.CommandText = "Insert into Utilizador (Nome, Password, Distintivo, IsAdmin, Ativo_Inativo) values (@Nome, @Password, @Distintivo, @IsAdmin, @Ativo_Inativo)";
 
                 cmdInsert.Parameters.Add("@Nome", SqlDbType.VarChar).Value = usernameregisto;
                 cmdInsert.Parameters.Add("@Password", SqlDbType.VarChar).Value = passregisto;
                 cmdInsert.Parameters.Add("@Distintivo", SqlDbType.Int).Value = distintivo;
                 cmdInsert.Parameters.Add("@IsAdmin", SqlDbType.Bit).Value = 1;
+                cmdInsert.Parameters.Add("@Ativo_Inativo", SqlDbType.Bit).Value = 1;
 
 
                 int afetados = cmdInsert.ExecuteNonQuery();
@@ -67,12 +68,13 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 SqlCommand cmdInsert = new SqlCommand();
                 cmdInsert.Connection = db;
 
-                cmdInsert.CommandText = "Insert into Utilizador (Nome, Password, Distintivo, IsAdmin) values (@Nome, @Password, @Distintivo, @IsAdmin)";
+                cmdInsert.CommandText = "Insert into Utilizador (Nome, Password, Distintivo, IsAdmin, Ativo_Inativo) values (@Nome, @Password, @Distintivo, @IsAdmin, @Ativo_Inativo)";
 
                 cmdInsert.Parameters.Add("@Nome", SqlDbType.VarChar).Value = usernameregisto;
                 cmdInsert.Parameters.Add("@Password", SqlDbType.VarChar).Value = passregisto;
                 cmdInsert.Parameters.Add("@Distintivo", SqlDbType.Int).Value = distintivo;
                 cmdInsert.Parameters.Add("@IsAdmin", SqlDbType.Bit).Value = 0;
+                cmdInsert.Parameters.Add("@Ativo_Inativo", SqlDbType.Bit).Value = 1;
 
 
                 int afetados = cmdInsert.ExecuteNonQuery();

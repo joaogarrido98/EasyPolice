@@ -33,31 +33,39 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer remover a conta?", "Remover", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                db.Open();
-                string deletename = apagar.Text;
-
-                SqlCommand cmdDelete = new SqlCommand();
-                cmdDelete.Connection = db;
-
-                cmdDelete.CommandText = "DELETE FROM utilizador where Nome=@Nome";
-                cmdDelete.Parameters.Add("@Nome", SqlDbType.VarChar).Value = deletename;
-
-                int afectados = cmdDelete.ExecuteNonQuery();
-
-                MessageBox.Show("Conta apagada");
-
-                if (apagar.Text != "" || apagar.Text != null)
+                DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer desativar a conta?", "Desativar", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    apagar.Text = "";
+                    db.Open();
+                    string deletename = apagar.Text;
+                    bool AtivoInativo = false;
+
+                    SqlCommand cmdDelete = new SqlCommand();
+                    cmdDelete.Connection = db;
+
+                    cmdDelete.CommandText = "UPDATE Utilizador set Ativo_Inativo = @Ativo_Inativo WHERE nome=@nome";
+                    cmdDelete.Parameters.Add("@Ativo_Inativo", SqlDbType.Bit).Value = AtivoInativo;
+
+                    int afectados = cmdDelete.ExecuteNonQuery();
+
+                    MessageBox.Show("Conta Desativada");
+
+                    if (apagar.Text != "" || apagar.Text != null)
+                    {
+                        apagar.Text = "";
+                    }
+
                 }
+                if (dialogResult == DialogResult.No)
+                {
 
+                }
             }
-            if (dialogResult == DialogResult.No)
+            catch (Exception errado)
             {
-
+                MessageBox.Show(errado.ToString());
             }
         }
 

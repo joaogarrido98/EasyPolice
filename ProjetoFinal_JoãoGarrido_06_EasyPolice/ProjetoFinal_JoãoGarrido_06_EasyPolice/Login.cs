@@ -38,7 +38,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             string Username = "";
             string password = "";
             bool IsAdmin = false;
-   
+            bool AtivoInativo = false;
+
             try
             {
                 db.Open();
@@ -46,45 +47,64 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 //sistema de login! quando tiver também a funcionar o ativo inativo de conta é que posso completar a 100% o sistema de login 
                 SqlDataReader dr;
 
-                string Query = "SELECT Nome, Password, IsAdmin FROM Utilizador";
+                string Query = "SELECT Nome, Password, IsAdmin FROM Utilizador WHERE Nome = @Nome AND Password = @Password";
                 SqlCommand cmd = new SqlCommand(Query, db);
+
+                cmd.Parameters.AddWithValue("@Nome", textuser.Text);
+                cmd.Parameters.AddWithValue("@Password", textpassword.Text);
+
                 dr = cmd.ExecuteReader();
 
-                while (dr.Read())
+                if (dr.HasRows)
                 {
-                    Username = dr["Nome"].ToString();
-                    password = dr["Password"].ToString();
-                    IsAdmin = Convert.ToBoolean( dr["IsAdmin"].ToString());
-                    
-                }
-                dr.Close();
-             if (textuser.Text == Username && textpassword.Text == password)
-                {
-                   if (IsAdmin == true )
+                    while (dr.Read())
                     {
-                        EasyPolice_Admin epa = new EasyPolice_Admin();
-                        epa.ShowDialog();
+                        Username = dr["Nome"].ToString();
+                        password = dr["Password"].ToString();
+                        IsAdmin = Convert.ToBoolean(dr["IsAdmin"].ToString());
+                        AtivoInativo = Convert.ToBoolean(dr["Ativo_Inativo"].ToString());
+                    }
+                    dr.Close();
+                    db.Close();
+                    if (AtivoInativo == true)
+                    {
+                        if (IsAdmin == true)
+                        {
+                            this.Dispose();
+                            EasyPolice_Admin epa = new EasyPolice_Admin();
+                            epa.ShowDialog();
+                            this.Dispose();
+                        }
+                        else
+                        {
+                            this.Dispose();
+                            EasyPolice ep = new EasyPolice();
+                            ep.ShowDialog();
+                            this.Dispose();
+
+                        }
                     }
                     else
                     {
-                        EasyPolice ep = new EasyPolice();
-                        ep.ShowDialog();
+                        MessageBox.Show("Conta Inativa");
                     }
-                }
+                }   
                 else
                 {
                     MessageBox.Show("Utilizador e/ou Password errados");
                     textuser.Text = "";
                     textpassword.Text = "";
                 }
-
-                
+                if (!dr.IsClosed)
+                {
+                    dr.Close();
+                }
             }
             catch (Exception erro)
             {
                 MessageBox.Show(erro.ToString());
             }
-            db.Close();
+            
           
         }
 
