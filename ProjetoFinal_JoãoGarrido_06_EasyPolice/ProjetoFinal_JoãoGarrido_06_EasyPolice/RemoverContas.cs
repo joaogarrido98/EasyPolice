@@ -27,8 +27,15 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
         {
             if (e.KeyCode == Keys.Enter)
             {
-                button1.Focus();
+               textDistintivo.Focus();
             }
+        }
+        private void textdistintivo (object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1.Focus();
+            }           
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -40,38 +47,50 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 {
                     db.Open();
                     string deletename = apagar.Text;
-                    bool AtivoInativo = false;
+                    string distintivodelete = textDistintivo.Text;
 
                     SqlCommand cmdDelete = new SqlCommand();
                     cmdDelete.Connection = db;
 
-                    cmdDelete.CommandText = "UPDATE Utilizador set Ativo_Inativo = @Ativo_Inativo WHERE nome=@nome";
-                    cmdDelete.Parameters.Add("@Ativo_Inativo", SqlDbType.Bit).Value = AtivoInativo;
-
+                    cmdDelete.CommandText = ("UPDATE Utilizador SET Ativo_Inativo = 0 WHERE Distintivo = @Distintivo AND Nome = @Nome");
+                    cmdDelete.Parameters.Add("@Distintivo", SqlDbType.Int).Value = distintivodelete;
+                    cmdDelete.Parameters.Add("@Nome", SqlDbType.VarChar).Value = deletename;
+                    
                     int afectados = cmdDelete.ExecuteNonQuery();
+                    db.Close();
 
                     MessageBox.Show("Conta Desativada");
 
-                    if (apagar.Text != "" || apagar.Text != null)
+                    if (apagar.Text != "" || apagar.Text != null && textDistintivo.Text != "" || textDistintivo.Text !=null)
                     {
+                        textDistintivo.Text = "";
                         apagar.Text = "";
                     }
-
+                    
                 }
-                if (dialogResult == DialogResult.No)
-                {
-
-                }
-            }
+            } 
             catch (Exception errado)
             {
                 MessageBox.Show(errado.ToString());
             }
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void distintivopress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.') //so deixar escrever numeros
+            {
+                e.Handled = true;
+            }
+            if ((sender as TextBox).Text.Count(Char.IsDigit) >= 4) //so deixar esscrever ate quatro caracteres.
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -47,7 +47,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 //sistema de login! quando tiver também a funcionar o ativo inativo de conta é que posso completar a 100% o sistema de login 
                 SqlDataReader dr;
 
-                string Query = "SELECT Nome, Password, IsAdmin FROM Utilizador WHERE Nome = @Nome AND Password = @Password";
+                string Query = "SELECT Nome, Password, IsAdmin, Ativo_Inativo FROM Utilizador WHERE Nome = @Nome AND Password = @Password";
                 SqlCommand cmd = new SqlCommand(Query, db);
 
                 cmd.Parameters.AddWithValue("@Nome", textuser.Text);
@@ -65,11 +65,12 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                         AtivoInativo = Convert.ToBoolean(dr["Ativo_Inativo"].ToString());
                     }
                     dr.Close();
-                    db.Close();
-                    if (AtivoInativo == true)
+                    
+                    if (AtivoInativo == true) //para ver se está ativo ou nao
                     {
-                        if (IsAdmin == true)
+                        if (IsAdmin == true) //para ver se é admin ou não
                         {
+                            db.Close();
                             this.Dispose();
                             EasyPolice_Admin epa = new EasyPolice_Admin();
                             epa.ShowDialog();
@@ -77,16 +78,21 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                         }
                         else
                         {
+                            db.Close();
                             this.Dispose();
                             EasyPolice ep = new EasyPolice();
                             ep.ShowDialog();
                             this.Dispose();
 
                         }
+                        
                     }
                     else
                     {
                         MessageBox.Show("Conta Inativa");
+                        textuser.Text = "";
+                        textpassword.Text = "";
+                        db.Close();
                     }
                 }   
                 else
@@ -94,6 +100,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     MessageBox.Show("Utilizador e/ou Password errados");
                     textuser.Text = "";
                     textpassword.Text = "";
+                    db.Close();
                 }
                 if (!dr.IsClosed)
                 {

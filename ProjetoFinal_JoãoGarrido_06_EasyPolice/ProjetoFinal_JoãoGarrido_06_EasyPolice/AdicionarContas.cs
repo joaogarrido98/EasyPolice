@@ -150,5 +150,10 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 e.Handled = true;
             }
         }
+
+        private void button2_Click(object sender, EventArgs e) //para reativar a conta escolhida.
+        {
+
+        }
     }
 }
