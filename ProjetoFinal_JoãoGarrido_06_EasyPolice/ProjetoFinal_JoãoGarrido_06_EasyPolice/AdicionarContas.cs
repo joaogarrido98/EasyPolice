@@ -153,6 +153,39 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void button2_Click(object sender, EventArgs e) //para reativar a conta escolhida.
         {
+            try
+            {
+                DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer ativar a conta?", "Ativar", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    db.Open();
+                    string ativar = textusername.Text;
+                    string distintivoativar = textdistintivo.Text;
+
+                    SqlCommand cmdDelete = new SqlCommand();
+                    cmdDelete.Connection = db;
+
+                    cmdDelete.CommandText = ("UPDATE Utilizador SET Ativo_Inativo = 1 WHERE Distintivo = @Distintivo AND Nome = @Nome");
+                    cmdDelete.Parameters.Add("@Distintivo", SqlDbType.Int).Value = distintivoativar;
+                    cmdDelete.Parameters.Add("@Nome", SqlDbType.VarChar).Value = ativar;
+
+                    int afectados = cmdDelete.ExecuteNonQuery();
+                    db.Close();
+
+                    MessageBox.Show("Conta Desativada");
+
+                    if (textusername.Text != "" || textusername.Text != null && textdistintivo.Text != "" || textdistintivo.Text != null)
+                    {
+                        textdistintivo.Text = "";
+                        textusername.Text = "";
+                    }
+
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.ToString());
+            }
 
         }
     }
