@@ -84,7 +84,7 @@
             // 
             this.entrarbutton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.entrarbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.entrarbutton.Location = new System.Drawing.Point(317, 246);
+            this.entrarbutton.Location = new System.Drawing.Point(318, 258);
             this.entrarbutton.Name = "entrarbutton";
             this.entrarbutton.Size = new System.Drawing.Size(117, 35);
             this.entrarbutton.TabIndex = 5;
@@ -122,6 +122,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Sair";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Login
             // 

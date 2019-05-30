@@ -146,6 +146,15 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 textpassword.UseSystemPasswordChar = true;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Deseja Sair?", "Sair", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
 

@@ -38,11 +38,11 @@
             this.toolStripButton4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripSplitButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripDropDownButton();
             this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripSplitButton();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton12 = new System.Windows.Forms.ToolStripSeparator();
@@ -101,16 +101,16 @@
             // registarToolStripMenuItem
             // 
             this.registarToolStripMenuItem.Name = "registarToolStripMenuItem";
-            this.registarToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.registarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.registarToolStripMenuItem.Text = "Registar";
             this.registarToolStripMenuItem.Click += new System.EventHandler(this.registarToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.consultarToolStripMenuItem.Text = "Consultar";
-            this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
+            this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click_1);
             // 
             // toolStripButton4
             // 
@@ -141,13 +141,13 @@
             this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(73, 24);
+            this.toolStripButton7.Size = new System.Drawing.Size(68, 24);
             this.toolStripButton7.Text = "Contas";
             // 
             // adicionarToolStripMenuItem
             // 
             this.adicionarToolStripMenuItem.Name = "adicionarToolStripMenuItem";
-            this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
+            this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.adicionarToolStripMenuItem.Text = "Adicionar";
             this.adicionarToolStripMenuItem.Click += new System.EventHandler(this.adicionarToolStripMenuItem_Click);
             // 
@@ -169,7 +169,7 @@
             this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
             this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(73, 24);
+            this.toolStripButton9.Size = new System.Drawing.Size(68, 24);
             this.toolStripButton9.Text = "Ajudas";
             // 
             // toolStripButton10
@@ -214,20 +214,20 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripSeparator toolStripButton3;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripButton1;
-        private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripSeparator toolStripButton6;
-        private System.Windows.Forms.ToolStripSplitButton toolStripButton7;
-        private System.Windows.Forms.ToolStripMenuItem adicionarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removerToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripButton8;
-        private System.Windows.Forms.ToolStripSplitButton toolStripButton9;
         private System.Windows.Forms.ToolStripSeparator toolStripButton10;
         private System.Windows.Forms.ToolStripButton toolStripButton11;
         private System.Windows.Forms.ToolStripSeparator toolStripButton12;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripButton7;
+        private System.Windows.Forms.ToolStripMenuItem adicionarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripButton9;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripButton1;
+        private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
     }
 }
 

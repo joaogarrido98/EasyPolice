@@ -24,20 +24,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             mdiMW.Show();
         }
 
-        private void registarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RegistoOcorrencias mdiRO = new RegistoOcorrencias();
-            mdiRO.MdiParent = this;
-            mdiRO.Show();
-        }
-
-        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ConsultaOcorrências mdiCO = new ConsultaOcorrências();
-            mdiCO.MdiParent = this;
-            mdiCO.Show();
-        }
-
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
             CadastroPesquisa mdiCP = new CadastroPesquisa();
@@ -68,6 +54,20 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 Login log = new Login();
                 log.ShowDialog();
             }
+        }
+
+        private void consultarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ConsultaOcorrências mdiCO = new ConsultaOcorrências();
+            mdiCO.MdiParent = this;
+            mdiCO.Show();
+        }
+
+        private void registarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistoOcorrencias mdiRO = new RegistoOcorrencias();
+            mdiRO.MdiParent = this;
+            mdiRO.Show();
         }
     }
 }
