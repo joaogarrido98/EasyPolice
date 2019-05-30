@@ -8,15 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
     public partial class AdicionarContas : Form
     {
-        private static string connectionString = "Data Source=.;Initial Catalog=EasyPolice_Bd; Integrated Security=True";
-        private static SqlConnection db = new SqlConnection(connectionString);
-
-
         public AdicionarContas()
         {
             InitializeComponent();
@@ -27,11 +24,13 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             this.Close();
         }
 
-        
         //sistema de registo
 
         private void Criar_Click(object sender, EventArgs e)
         {
+            string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
+            SqlConnection db = new SqlConnection(connectionString);
+
             if (AdminCheck.Checked)
             {
                 db.Open(); //abrir a base de dados
@@ -149,44 +148,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             {
                 e.Handled = true;
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e) //para reativar a conta escolhida.
-        {
-            try
-            {
-                DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer ativar a conta?", "Ativar", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    db.Open();
-                    string ativar = textusername.Text;
-                    string distintivoativar = textdistintivo.Text;
-
-                    SqlCommand cmdDelete = new SqlCommand();
-                    cmdDelete.Connection = db;
-
-                    cmdDelete.CommandText = ("UPDATE Utilizador SET Ativo_Inativo = 1 WHERE Distintivo = @Distintivo AND Nome = @Nome");
-                    cmdDelete.Parameters.Add("@Distintivo", SqlDbType.Int).Value = distintivoativar;
-                    cmdDelete.Parameters.Add("@Nome", SqlDbType.VarChar).Value = ativar;
-
-                    int afectados = cmdDelete.ExecuteNonQuery();
-                    db.Close();
-
-                    MessageBox.Show("Conta Desativada");
-
-                    if (textusername.Text != "" || textusername.Text != null && textdistintivo.Text != "" || textdistintivo.Text != null)
-                    {
-                        textdistintivo.Text = "";
-                        textusername.Text = "";
-                    }
-
-                }
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.ToString());
-            }
-
         }
     }
 }

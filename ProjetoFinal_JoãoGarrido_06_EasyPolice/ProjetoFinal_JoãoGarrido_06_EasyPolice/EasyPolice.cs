@@ -17,52 +17,43 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Mostwanted mw = new Mostwanted();
-            mw.ShowDialog();
-            this.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            RegistoOcorrencias RO = new RegistoOcorrencias();
-            RO.ShowDialog();
-            this.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ConsultaOcorrências CO = new ConsultaOcorrências();
-            CO.ShowDialog();
-            this.Show();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CadastroPesquisa CP = new CadastroPesquisa();
-            CP.ShowDialog();
-            this.Show();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
+        private void toolStripButton9_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer fazer logout?", "Logout", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 this.Hide();
-                Logo lgt = new Logo();
-                lgt.ShowDialog();
+                Login log = new Login();
+                log.ShowDialog();
             }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Mostwanted mdiMW = new Mostwanted();
+            mdiMW.MdiParent = this;
+            mdiMW.Show();
+        }
+
+        private void registoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistoOcorrencias mdiRO = new RegistoOcorrencias();
+            mdiRO.MdiParent = this;
+            mdiRO.Show();
+        }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaOcorrências mdiCO = new ConsultaOcorrências();
+            mdiCO.MdiParent = this;
+            mdiCO.Show();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            CadastroPesquisa mdiCP = new CadastroPesquisa();
+            mdiCP.MdiParent = this;
+            mdiCP.Show();
         }
     }
 }

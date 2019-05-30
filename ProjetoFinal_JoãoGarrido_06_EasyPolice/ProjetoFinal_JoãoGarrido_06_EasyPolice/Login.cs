@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 
 namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
@@ -15,8 +16,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
     public partial class Login : Form
     {
         //fazer a ligação à base de dados
-        private static string connectionString = "Data Source=.;Initial Catalog=EasyPolice_Bd; Integrated Security=True";
-        private static SqlConnection db = new SqlConnection(connectionString);
+        
 
 
         public Login()
@@ -24,17 +24,13 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             InitializeComponent();
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         //Sistema de login
 
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
+            SqlConnection db = new SqlConnection(connectionString);
             string Username = "";
             string password = "";
             bool IsAdmin = false;
@@ -71,7 +67,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                         if (IsAdmin == true) //para ver se é admin ou não
                         {
                             db.Close();
-                            this.Dispose();
+                            this.Hide();
                             EasyPolice_Admin epa = new EasyPolice_Admin();
                             epa.ShowDialog();
                             this.Dispose();
@@ -79,7 +75,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                         else
                         {
                             db.Close();
-                            this.Dispose();
+                            this.Hide();
                             EasyPolice ep = new EasyPolice();
                             ep.ShowDialog();
                             this.Dispose();

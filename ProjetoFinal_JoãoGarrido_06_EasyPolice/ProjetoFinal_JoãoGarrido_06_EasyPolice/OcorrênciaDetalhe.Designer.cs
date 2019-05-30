@@ -63,7 +63,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OcorrênciaDetalhe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EasyPolice";
+            this.Text = "Ocorrência Detalhe";
             this.ResumeLayout(false);
             this.PerformLayout();
 

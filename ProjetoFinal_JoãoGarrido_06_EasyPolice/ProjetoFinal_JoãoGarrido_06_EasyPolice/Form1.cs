@@ -17,64 +17,57 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Mostwanted mw = new Mostwanted();
-            mw.ShowDialog();
-            this.Show();
+            Mostwanted mdiMW = new Mostwanted();
+            mdiMW.MdiParent = this;
+            mdiMW.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void registarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RegistoOcorrencias RO = new RegistoOcorrencias();
-            RO.ShowDialog();
-            this.Show();
+            RegistoOcorrencias mdiRO = new RegistoOcorrencias();
+            mdiRO.MdiParent = this;
+            mdiRO.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ConsultaOcorrências CO = new ConsultaOcorrências();
-            CO.ShowDialog();
-            this.Show();
+            ConsultaOcorrências mdiCO = new ConsultaOcorrências();
+            mdiCO.MdiParent = this;
+            mdiCO.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            CadastroPesquisa CP = new CadastroPesquisa();
-            CP.ShowDialog();
-            this.Show();
+            CadastroPesquisa mdiCP = new CadastroPesquisa();
+            mdiCP.MdiParent = this;
+            mdiCP.Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void adicionarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AdicionarContas registo = new AdicionarContas();
-            registo.ShowDialog();
-            this.Show();
+            AdicionarContas mdiregisto = new AdicionarContas();
+            mdiregisto.MdiParent = this;
+            mdiregisto.Show();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void removerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RemoverContas apagar = new RemoverContas();
-            apagar.ShowDialog();
-            this.Show();
+            RemoverContas mdiremover = new RemoverContas();
+            mdiremover.MdiParent = this;
+            mdiremover.Show();
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void toolStripButton11_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer fazer logout?", "Logout", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 this.Hide();
-                Logo lgt = new Logo();
-                lgt.ShowDialog();
+                Login log = new Login();
+                log.ShowDialog();
             }
         }
-
     }
 }
