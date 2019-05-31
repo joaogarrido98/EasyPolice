@@ -14,8 +14,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
     public partial class RemoverContas : Form
     {
-        
-        
+
+
 
         public RemoverContas()
         {
@@ -41,56 +41,56 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           /*string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
-           SqlConnection db = new SqlConnection(connectionString);
-           try
-           {
-              DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer desativar a conta?", "Desativar", MessageBoxButtons.YesNo);
-                 if (dialogResult == DialogResult.Yes)
-                 {
-                     (dataGridView1.DataSource as DataTable).Columns["IdUtilizador"]
-                     dataGridView1.Columns[e.ColumnIndex].DataPropertyName
+            string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
+            SqlConnection db = new SqlConnection(connectionString);
+            try
+            {
+                DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer desativar a conta?", "Desativar", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    (dataGridView1.DataSource as DataTable).Columns["IdUtilizador"]
+                    dataGridView1.Columns[e.ColumnIndex].DataPropertyName*/
 
 
-                         if (chk.Selected == true)
-                         {
-                             db.Open();
-                             SqlCommand cmdDelete = new SqlCommand();
-                             cmdDelete.Connection = db;
+                    if (chk.Selected == true)
+                    {
+                        db.Open();
+                        SqlCommand cmdDelete = new SqlCommand();
+                        cmdDelete.Connection = db;
 
-                             cmdDelete.CommandText = ("UPDATE Utilizador SET Ativo_Inativo = 0");
+                        cmdDelete.CommandText = ("UPDATE Utilizador SET Ativo_Inativo = 0");
 
-                             int afectados = cmdDelete.ExecuteNonQuery();
-                             db.Close();
+                        int afectados = cmdDelete.ExecuteNonQuery();
+                        db.Close();
 
-                             MessageBox.Show("Conta Desativada");
-                             chk.Selected = false;
-                         }
-                         else
-                         {
-                             db.Open();
-                             SqlCommand cmdDelete = new SqlCommand();
-                             cmdDelete.Connection = db;
+                        MessageBox.Show("Conta Desativada");
+                       // chk.Selected = false;
+                    }
+                    else
+                    {
+                        db.Open();
+                        SqlCommand cmdDelete = new SqlCommand();
+                        cmdDelete.Connection = db;
 
-                             cmdDelete.CommandText = ("UPDATE Utilizador SET Ativo_Inativo = 1");
+                        cmdDelete.CommandText = ("UPDATE Utilizador SET Ativo_Inativo = 1");
 
-                             int afectados = cmdDelete.ExecuteNonQuery();
-                             db.Close();
+                        int afectados = cmdDelete.ExecuteNonQuery();
+                        db.Close();
 
-                             MessageBox.Show("Conta Ativada");
-                             chk.Selected = true;
-                         }
-                 }
-             }
-             catch (Exception errado)
-             {
-                 MessageBox.Show(errado.ToString());
-             }
+                        MessageBox.Show("Conta Ativada");
+                      //  chk.Selected = true;
+                    }*/
+                }
+            }
+            catch (Exception errado)
+            {
+                MessageBox.Show(errado.ToString());
+            }
 
-         }*/
         }
-            private void RemoverContas_Load(object sender, EventArgs e)
-             {
+
+        private void RemoverContas_Load(object sender, EventArgs e)
+        {
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
             try
@@ -134,5 +134,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 }
             }
         }
-        }
+
     }
+}
