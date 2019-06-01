@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistoOcorrencias));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -39,37 +37,20 @@
             this.label9 = new System.Windows.Forms.Label();
             this.TextNome = new System.Windows.Forms.TextBox();
             this.TextFreguesia = new System.Windows.Forms.TextBox();
-            this.TextHora = new System.Windows.Forms.TextBox();
             this.TextConcelho = new System.Windows.Forms.TextBox();
             this.ComboCrime = new System.Windows.Forms.ComboBox();
             this.ComboDistrito = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.TextDetalhe = new System.Windows.Forms.TextBox();
-            this.TextData = new System.Windows.Forms.TextBox();
-            this.Idade = new System.Windows.Forms.Label();
             this.TextIdade = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.TextCC = new System.Windows.Forms.TextBox();
+            this.Idade = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textGravidade = new System.Windows.Forms.TextBox();
+            this.textdata = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(423, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Hora:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(423, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Data:";
             // 
             // label3
             // 
@@ -137,13 +118,6 @@
             this.TextFreguesia.Name = "TextFreguesia";
             this.TextFreguesia.Size = new System.Drawing.Size(100, 22);
             this.TextFreguesia.TabIndex = 4;
-            // 
-            // TextHora
-            // 
-            this.TextHora.Location = new System.Drawing.Point(467, 110);
-            this.TextHora.Name = "TextHora";
-            this.TextHora.Size = new System.Drawing.Size(100, 22);
-            this.TextHora.TabIndex = 8;
             // 
             // TextConcelho
             // 
@@ -229,22 +203,6 @@
             this.TextDetalhe.Size = new System.Drawing.Size(462, 183);
             this.TextDetalhe.TabIndex = 8;
             // 
-            // TextData
-            // 
-            this.TextData.Location = new System.Drawing.Point(467, 83);
-            this.TextData.Name = "TextData";
-            this.TextData.Size = new System.Drawing.Size(100, 22);
-            this.TextData.TabIndex = 7;
-            // 
-            // Idade
-            // 
-            this.Idade.AutoSize = true;
-            this.Idade.Location = new System.Drawing.Point(85, 107);
-            this.Idade.Name = "Idade";
-            this.Idade.Size = new System.Drawing.Size(47, 17);
-            this.Idade.TabIndex = 18;
-            this.Idade.Text = "Idade:";
-            // 
             // TextIdade
             // 
             this.TextIdade.Location = new System.Drawing.Point(140, 107);
@@ -268,23 +226,56 @@
             this.TextCC.Size = new System.Drawing.Size(100, 22);
             this.TextCC.TabIndex = 21;
             // 
+            // Idade
+            // 
+            this.Idade.AutoSize = true;
+            this.Idade.Location = new System.Drawing.Point(85, 107);
+            this.Idade.Name = "Idade";
+            this.Idade.Size = new System.Drawing.Size(47, 17);
+            this.Idade.TabIndex = 18;
+            this.Idade.Text = "Idade:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(423, 110);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 17);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Gravidade:";
+            // 
+            // textGravidade
+            // 
+            this.textGravidade.Location = new System.Drawing.Point(498, 110);
+            this.textGravidade.Name = "textGravidade";
+            this.textGravidade.Size = new System.Drawing.Size(100, 22);
+            this.textGravidade.TabIndex = 24;
+            // 
+            // textdata
+            // 
+            this.textdata.Location = new System.Drawing.Point(426, 81);
+            this.textdata.Name = "textdata";
+            this.textdata.Size = new System.Drawing.Size(172, 22);
+            this.textdata.TabIndex = 25;
+            // 
             // RegistoOcorrencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 403);
+            this.Controls.Add(this.textdata);
+            this.Controls.Add(this.textGravidade);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.TextCC);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.TextIdade);
             this.Controls.Add(this.Idade);
-            this.Controls.Add(this.TextData);
             this.Controls.Add(this.TextDetalhe);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ComboDistrito);
             this.Controls.Add(this.ComboCrime);
             this.Controls.Add(this.TextConcelho);
-            this.Controls.Add(this.TextHora);
             this.Controls.Add(this.TextFreguesia);
             this.Controls.Add(this.TextNome);
             this.Controls.Add(this.label9);
@@ -293,8 +284,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RegistoOcorrencias";
@@ -306,9 +295,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -317,17 +303,18 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox TextNome;
         private System.Windows.Forms.TextBox TextFreguesia;
-        private System.Windows.Forms.TextBox TextHora;
         private System.Windows.Forms.TextBox TextConcelho;
         private System.Windows.Forms.ComboBox ComboCrime;
         private System.Windows.Forms.ComboBox ComboDistrito;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox TextDetalhe;
-        private System.Windows.Forms.TextBox TextData;
-        private System.Windows.Forms.Label Idade;
         private System.Windows.Forms.TextBox TextIdade;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox TextCC;
+        private System.Windows.Forms.Label Idade;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textGravidade;
+        private System.Windows.Forms.DateTimePicker textdata;
     }
 }

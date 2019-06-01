@@ -48,8 +48,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer desativar a conta?", "Desativar", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    (dataGridView1.DataSource as DataTable).Columns["IdUtilizador"]
-                    dataGridView1.Columns[e.ColumnIndex].DataPropertyName*/
+                   /* (dataGridView1.DataSource as DataTable).Columns["IdUtilizador"]
+                    dataGridView1.Columns[e.ColumnIndex].DataPropertyName
 
 
                     if (chk.Selected == true)
