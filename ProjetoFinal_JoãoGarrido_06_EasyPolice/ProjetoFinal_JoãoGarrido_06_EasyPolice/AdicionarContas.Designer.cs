@@ -110,6 +110,7 @@
             // AdminCheck
             // 
             this.AdminCheck.AutoSize = true;
+            this.AdminCheck.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AdminCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminCheck.Location = new System.Drawing.Point(327, 232);
             this.AdminCheck.Name = "AdminCheck";

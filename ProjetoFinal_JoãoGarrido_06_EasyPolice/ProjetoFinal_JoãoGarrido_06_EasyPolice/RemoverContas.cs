@@ -43,17 +43,19 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
         {
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
+
             try
             {
-                DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer desativar a conta?", "Desativar", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                CheckBox chk = new CheckBox();
+                chk = sender as CheckBox;
+
+                if (chk.Checked == true)
                 {
-                   /* (dataGridView1.DataSource as DataTable).Columns["IdUtilizador"]
-                    dataGridView1.Columns[e.ColumnIndex].DataPropertyName
-
-
-                    if (chk.Selected == true)
+                    DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer desativar a conta?", "Desativar", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
                     {
+
+                        dataGridView1[0, 1].Value = true;
                         db.Open();
                         SqlCommand cmdDelete = new SqlCommand();
                         cmdDelete.Connection = db;
@@ -64,23 +66,27 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                         db.Close();
 
                         MessageBox.Show("Conta Desativada");
-                       // chk.Selected = false;
+                        
                     }
-                    else
-                    {
-                        db.Open();
-                        SqlCommand cmdDelete = new SqlCommand();
-                        cmdDelete.Connection = db;
 
-                        cmdDelete.CommandText = ("UPDATE Utilizador SET Ativo_Inativo = 1");
-
-                        int afectados = cmdDelete.ExecuteNonQuery();
-                        db.Close();
-
-                        MessageBox.Show("Conta Ativada");
-                      //  chk.Selected = true;
-                    }*/
                 }
+                else
+                {
+                    dataGridView1[0, 1].Value = false;
+
+                    db.Open();
+                    SqlCommand cmdDelete = new SqlCommand();
+                    cmdDelete.Connection = db;
+
+                    cmdDelete.CommandText = ("UPDATE Utilizador SET Ativo_Inativo = 1");
+
+                    int afectados = cmdDelete.ExecuteNonQuery();
+                    db.Close();
+
+                    MessageBox.Show("Conta Ativada");
+
+                }
+
             }
             catch (Exception errado)
             {
