@@ -50,6 +50,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 int afetados = cmdInsert.ExecuteNonQuery();
 
                 MessageBox.Show("Conta criada");
+              
             }
             else
             {

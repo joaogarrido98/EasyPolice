@@ -47,6 +47,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Procurar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseWaitCursor = true;
             // 
             // textBox3
             // 
@@ -54,6 +55,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(129, 22);
             this.textBox3.TabIndex = 2;
+            this.textBox3.UseWaitCursor = true;
             this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.procurar);
             // 
             // label2
@@ -64,6 +66,7 @@
             this.label2.Size = new System.Drawing.Size(30, 17);
             this.label2.TabIndex = 48;
             this.label2.Text = "CC:";
+            this.label2.UseWaitCursor = true;
             // 
             // label1
             // 
@@ -73,6 +76,7 @@
             this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 47;
             this.label1.Text = "Nome:";
+            this.label1.UseWaitCursor = true;
             // 
             // textBox2
             // 
@@ -80,6 +84,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(129, 22);
             this.textBox2.TabIndex = 1;
+            this.textBox2.UseWaitCursor = true;
             this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox1);
             // 
             // dataGridView1
@@ -90,6 +95,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(553, 303);
             this.dataGridView1.TabIndex = 44;
+            this.dataGridView1.UseWaitCursor = true;
             // 
             // CadastroPesquisa
             // 
@@ -107,6 +113,7 @@
             this.Name = "CadastroPesquisa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro";
+            this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.CadastroPesquisa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

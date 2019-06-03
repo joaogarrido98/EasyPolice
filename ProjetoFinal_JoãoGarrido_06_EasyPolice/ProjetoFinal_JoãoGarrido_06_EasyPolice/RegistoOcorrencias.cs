@@ -26,7 +26,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void CriarRegisto(object sender, EventArgs e)
         {
-         /*   try
+          try
             {
                 string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
                 SqlConnection db = new SqlConnection(connectionString);
@@ -108,7 +108,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             {
                     MessageBox.Show(erro.ToString());
             }
-            */
+            
 
         }
     }

@@ -14,9 +14,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
     public partial class RemoverContas : Form
     {
-
-
-
         public RemoverContas()
         {
             InitializeComponent();
@@ -37,62 +34,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             {
                 e.Handled = true;
             }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
-            SqlConnection db = new SqlConnection(connectionString);
-
-            try
-            {
-                CheckBox chk = new CheckBox();
-                chk = sender as CheckBox;
-
-                if (chk.Checked == true)
-                {
-                    DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer desativar a conta?", "Desativar", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
-                    {
-
-                        dataGridView1[0, 1].Value = true;
-                        db.Open();
-                        SqlCommand cmdDelete = new SqlCommand();
-                        cmdDelete.Connection = db;
-
-                        cmdDelete.CommandText = ("UPDATE Utilizador SET Ativo_Inativo = 0");
-
-                        int afectados = cmdDelete.ExecuteNonQuery();
-                        db.Close();
-
-                        MessageBox.Show("Conta Desativada");
-                        
-                    }
-
-                }
-                else
-                {
-                    dataGridView1[0, 1].Value = false;
-
-                    db.Open();
-                    SqlCommand cmdDelete = new SqlCommand();
-                    cmdDelete.Connection = db;
-
-                    cmdDelete.CommandText = ("UPDATE Utilizador SET Ativo_Inativo = 1");
-
-                    int afectados = cmdDelete.ExecuteNonQuery();
-                    db.Close();
-
-                    MessageBox.Show("Conta Ativada");
-
-                }
-
-            }
-            catch (Exception errado)
-            {
-                MessageBox.Show(errado.ToString());
-            }
-
         }
 
         private void RemoverContas_Load(object sender, EventArgs e)
@@ -141,5 +82,49 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             }
         }
 
+        private void cellclick(object sender, DataGridViewCellEventArgs e)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
+            SqlConnection db = new SqlConnection(connectionString);
+
+            try
+            {
+                if(e.ColumnIndex == 3)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer ativar/desativar a conta?", "Mudança", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                                db.Open();
+                                SqlCommand cmdDelete = new SqlCommand();
+                                cmdDelete.Connection = db;
+
+                                cmdDelete.CommandText = ("UPDATE Utilizador SET Ativo_Inativo = 0");
+
+                                int afectados = cmdDelete.ExecuteNonQuery();
+                                db.Close();
+
+                                MessageBox.Show("Conta Desativada");
+                    }
+                    else
+                        {
+                            db.Open();
+                            SqlCommand cmdDelete = new SqlCommand();
+                            cmdDelete.Connection = db;
+
+                            cmdDelete.CommandText = ("UPDATE Utilizador SET Ativo_Inativo = 1");
+
+                            int afectados = cmdDelete.ExecuteNonQuery();
+                            db.Close();
+
+                            MessageBox.Show("Conta Ativada");
+                    }
+                }
+                
+            }
+            catch (Exception errado)
+            {
+                MessageBox.Show(errado.ToString());
+            }
+        }
     }
 }
