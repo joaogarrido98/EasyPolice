@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsAdmin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Distintivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ativo_Inativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -61,10 +61,13 @@
             this.dataGridView1.Location = new System.Drawing.Point(126, 93);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(482, 283);
             this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cellclick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // Nome
             // 
@@ -82,6 +85,8 @@
             this.IsAdmin.HeaderText = "IsAdmin";
             this.IsAdmin.Name = "IsAdmin";
             this.IsAdmin.ReadOnly = true;
+            this.IsAdmin.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.IsAdmin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.IsAdmin.Width = 70;
             // 
             // Distintivo
@@ -125,7 +130,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IsAdmin;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsAdmin;
         private System.Windows.Forms.DataGridViewTextBoxColumn Distintivo;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Ativo_Inativo;
     }

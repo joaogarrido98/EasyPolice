@@ -23,61 +23,147 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void Criar_Click(object sender, EventArgs e)
         {
+            SqlDataReader dr;
+
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
 
             if (AdminCheck.Checked)
             {
-                db.Open(); //abrir a base de dados
+                try
+                {
+                    db.Open(); //abrir a base de dados
 
-                string usernameregisto = textusername.Text;
-                string passregisto = textpass.Text;
-                string distintivo = textdistintivo.Text;
+                    string usernameregisto = "";
+                    string passregisto = textpass.Text;
+                    string distintivo = "";
 
-                SqlCommand cmdInsert = new SqlCommand();
-                cmdInsert.Connection = db;
+                    string query = "SELECT Nome, Distintivo FROM Utilizador WHERE Nome LIKE @Nome AND Distintivo LIKE @Distintivo";
 
-                //query para inserir nome, password, distintivo e se é admin ou nao.
-                cmdInsert.CommandText = "Insert into Utilizador (Nome, Password, Distintivo, IsAdmin, Ativo_Inativo) values (@Nome, @Password, @Distintivo, @IsAdmin, @Ativo_Inativo)";
+                    SqlCommand cmdSelect = new SqlCommand(query, db);
 
-                cmdInsert.Parameters.Add("@Nome", SqlDbType.VarChar).Value = usernameregisto;
-                cmdInsert.Parameters.Add("@Password", SqlDbType.VarChar).Value = passregisto;
-                cmdInsert.Parameters.Add("@Distintivo", SqlDbType.Int).Value = distintivo;
-                cmdInsert.Parameters.Add("@IsAdmin", SqlDbType.Bit).Value = 1;
-                cmdInsert.Parameters.Add("@Ativo_Inativo", SqlDbType.Bit).Value = 1;
+                    cmdSelect.Parameters.Add("@Nome", SqlDbType.VarChar).Value = textusername.Text;
+                    cmdSelect.Parameters.Add("@Distintivo", SqlDbType.Int).Value = textdistintivo.Text;
+
+                    dr = cmdSelect.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        usernameregisto = dr["Nome"].ToString();
+                        distintivo = dr["Distintivo"].ToString();
+                    }
+                    dr.Close();
+
+                    if (usernameregisto != textusername.Text && distintivo != textdistintivo.Text)
+                    {
+                        SqlCommand cmdInsert = new SqlCommand();
+                        cmdInsert.Connection = db;
+
+                        //query para inserir nome, password, distintivo e se é admin ou nao.
+                        cmdInsert.CommandText = "Insert into Utilizador (Nome, Password, Distintivo, IsAdmin, Ativo_Inativo) values (@Nome, @Password, @Distintivo, @IsAdmin, @Ativo_Inativo)";
+
+                        cmdInsert.Parameters.Add("@Nome", SqlDbType.VarChar).Value = textusername.Text;
+                        cmdInsert.Parameters.Add("@Password", SqlDbType.VarChar).Value = textpass.Text;
+                        cmdInsert.Parameters.Add("@Distintivo", SqlDbType.Int).Value = textdistintivo.Text;
+                        cmdInsert.Parameters.Add("@IsAdmin", SqlDbType.Bit).Value = 1;
+                        cmdInsert.Parameters.Add("@Ativo_Inativo", SqlDbType.Bit).Value = 1;
 
 
-                int afetados = cmdInsert.ExecuteNonQuery();
+                        cmdInsert.ExecuteNonQuery();
 
-                MessageBox.Show("Conta criada");
-              
+                        MessageBox.Show("Conta criada");
+
+                    }
+                    else if (usernameregisto == textusername.Text && distintivo != textdistintivo.Text)
+                    {
+                        MessageBox.Show("Username existente");
+
+                    }
+                    else if (usernameregisto != textusername.Text && distintivo == textdistintivo.Text)
+                    {
+                        MessageBox.Show("Distintivo Existente");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username e Distintivo existentes");
+
+                    }
+                    db.Close();
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show(erro.ToString());
+                }
             }
             else
             {
-                db.Open();
+                try
+                {
+                    db.Open();
 
-                string usernameregisto = textusername.Text;
-                string passregisto = textpass.Text;
-                string distintivo = textdistintivo.Text;
+                    string usernameregisto = "";
+                    string passregisto = textpass.Text;
+                    string distintivo = "";
 
-                SqlCommand cmdInsert = new SqlCommand();
-                cmdInsert.Connection = db;
+                    string query = "SELECT Nome, Distintivo FROM Utilizador WHERE Nome LIKE @Nome AND Distintivo LIKE @Distintivo";
 
-                cmdInsert.CommandText = "Insert into Utilizador (Nome, Password, Distintivo, IsAdmin, Ativo_Inativo) values (@Nome, @Password, @Distintivo, @IsAdmin, @Ativo_Inativo)";
+                    SqlCommand cmdSelect = new SqlCommand(query, db);
 
-                cmdInsert.Parameters.Add("@Nome", SqlDbType.VarChar).Value = usernameregisto;
-                cmdInsert.Parameters.Add("@Password", SqlDbType.VarChar).Value = passregisto;
-                cmdInsert.Parameters.Add("@Distintivo", SqlDbType.Int).Value = distintivo;
-                cmdInsert.Parameters.Add("@IsAdmin", SqlDbType.Bit).Value = 0;
-                cmdInsert.Parameters.Add("@Ativo_Inativo", SqlDbType.Bit).Value = 1;
+                    cmdSelect.Parameters.Add("@Nome", SqlDbType.VarChar).Value = textusername.Text;
+                    cmdSelect.Parameters.Add("@Distintivo", SqlDbType.Int).Value = textdistintivo.Text;
+
+                    dr = cmdSelect.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        usernameregisto = dr["Nome"].ToString();
+                        distintivo = dr["Distintivo"].ToString();
+                    }
+                    dr.Close();
 
 
-                int afetados = cmdInsert.ExecuteNonQuery();
+                    if (usernameregisto != textusername.Text && distintivo != textdistintivo.Text)
+                    {
+                        SqlCommand cmdInsert = new SqlCommand();
+                        cmdInsert.Connection = db;
 
-                MessageBox.Show("Conta criada");
+                        cmdInsert.CommandText = "Insert into Utilizador (Nome, Password, Distintivo, IsAdmin, Ativo_Inativo) values (@Nome, @Password, @Distintivo, @IsAdmin, @Ativo_Inativo)";
+
+                        cmdInsert.Parameters.Add("@Nome", SqlDbType.VarChar).Value = textusername.Text;
+                        cmdInsert.Parameters.Add("@Password", SqlDbType.VarChar).Value = textpass.Text;
+                        cmdInsert.Parameters.Add("@Distintivo", SqlDbType.Int).Value = textdistintivo.Text;
+                        cmdInsert.Parameters.Add("@IsAdmin", SqlDbType.Bit).Value = 0;
+                        cmdInsert.Parameters.Add("@Ativo_Inativo", SqlDbType.Bit).Value = 1;
+
+
+                        cmdInsert.ExecuteNonQuery();
+
+                        MessageBox.Show("Conta criada");
+                    }
+                    else if (usernameregisto == textusername.Text && distintivo != textdistintivo.Text)
+                    {
+                        MessageBox.Show("Username existente");
+                    }
+                    else if (usernameregisto != textusername.Text && distintivo == textdistintivo.Text)
+                    {
+                        MessageBox.Show("Distintivo Existente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username e Distintivo existentes");
+                    }
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show(erro.ToString());
+                }
             }
 
             db.Close();
+            
+           
+            
             //serve para apagar as caixas de texto depois de criar a conta 
             if (textusername.Text != "" || textusername.Text != null || textpass.Text != "" || textpass.Text != null || textdistintivo.Text != "" || textdistintivo.Text != null)
             {
@@ -120,7 +206,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             {
                 e.Handled = true;
             }
-            if ((sender as TextBox).Text.Count(Char.IsDigit) >= 4) //so deixar esscrever ate quatro caracteres.
+            if ((sender as TextBox).Text.Count(Char.IsDigit) >= 4) //so deixar escrever ate quatro caracteres.
             {
                 e.Handled = true;
             }

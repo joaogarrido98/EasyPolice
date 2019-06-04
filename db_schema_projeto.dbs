@@ -33,10 +33,10 @@
 		<table name="Criminoso" row_count="0" >
 			<column name="IdCriminoso" type="int" length="10" decimal="0" jt="4" mandatory="y" autoincrement="y" />
 			<column name="Nome" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
-			<column name="Idade" type="int" length="10" decimal="0" jt="4" mandatory="y" />
-			<column name="CartaoCidadao" type="int" length="10" decimal="0" jt="4" />
+			<column name="CartaoCidadao" type="int" length="10" decimal="0" jt="4" mandatory="y" />
 			<column name="Fotografia" type="varchar" length="250" decimal="0" jt="12" />
 			<column name="IdDistrito" type="int" jt="4" mandatory="y" />
+			<column name="Nascimento" type="int" length="10" decimal="0" jt="4" mandatory="y" />
 			<index name="PK_Criminoso" unique="PRIMARY_KEY" >
 				<column name="IdCriminoso" />
 			</index>
@@ -77,11 +77,15 @@
 			<column name="Hora" type="datetime" length="23" decimal="3" jt="93" mandatory="y" />
 			<column name="Detalhe" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
 			<column name="idUtilizador" type="int" jt="4" mandatory="y" />
+			<column name="IdDistrito" type="int" jt="4" mandatory="y" />
 			<index name="PK_Ocorrencias" unique="PRIMARY_KEY" >
 				<column name="IdOcorrencia" />
 			</index>
 			<fk name="Fk_Ocorrencias_Utilizador" to_schema="dbo" to_table="Utilizador" >
 				<fk_column name="idUtilizador" pk="idUtilizador" />
+			</fk>
+			<fk name="fk_ocorrencias_distrito" to_schema="dbo" to_table="Distrito" >
+				<fk_column name="IdDistrito" pk="IdDistrito" />
 			</fk>
 		</table>
 		<table name="Utilizador" row_count="1" >
@@ -105,14 +109,14 @@
 	<connector name="SqlServer" database="SqlServer" driver_class="com.microsoft.sqlserver.jdbc.SQLServerDriver" driver_jar="mssql-jdbc-7.0.0.jre10.jar" driver_desc="Native Driver - Windows Authentication, Current User" url="jdbc:sqlserver://localhost:1433;databaseName=EasyPolice_Bd;integratedSecurity=true;" host="localhost" port="1433" user="sa" />
 	<layout name="Default Layout" id="Layout_585cc6f" show_relation="columns" >
 		<entity schema="dbo" name="Utilizador" color="FFFF4D" x="48" y="48" />
-		<entity schema="dbo" name="Distrito" color="BED3F4" x="720" y="128" />
-		<entity schema="dbo" name="Concelho" color="BED3F4" x="736" y="288" />
-		<entity schema="dbo" name="Freguesia" color="BED3F4" x="736" y="464" />
 		<entity schema="dbo" name="Criminoso" color="B3E6B3" x="528" y="64" />
-		<entity schema="dbo" name="Ocorrencias" color="E699B3" x="208" y="256" />
-		<entity schema="dbo" name="Crime_Ocorrencia" color="CCFFFF" x="128" y="448" />
-		<entity schema="dbo" name="Crimes" color="800000" x="320" y="432" />
 		<entity schema="dbo" name="Ocorrencia_Criminoso" color="CCFFFF" x="240" y="64" />
+		<entity schema="dbo" name="Crimes" color="800000" x="304" y="496" />
+		<entity schema="dbo" name="Crime_Ocorrencia" color="CCFFFF" x="80" y="416" />
+		<entity schema="dbo" name="Ocorrencias" color="E699B3" x="352" y="272" />
+		<entity schema="dbo" name="Distrito" color="BED3F4" x="768" y="96" />
+		<entity schema="dbo" name="Concelho" color="BED3F4" x="784" y="288" />
+		<entity schema="dbo" name="Freguesia" color="BED3F4" x="784" y="464" />
 	</layout>
 	<layout name="Sample Layout with Tools" id="Layout_162c486" show_column_type="y" show_relation="columns" >
 		<entity schema="dbo" name="Concelho" color="BED3F4" x="256" y="272" />

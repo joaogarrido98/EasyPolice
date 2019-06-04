@@ -9,11 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using System.Threading;
 
 namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
     public partial class RemoverContas : Form
     {
+        DataSet ds = new DataSet(); // dataset representa uma estrura de base de dados em memória
+        DataTable dataTable = new DataTable("Utilizadores"); //assim necessitamos de uma tabela ao dataset
+
+
         public RemoverContas()
         {
             InitializeComponent();
@@ -38,6 +43,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void RemoverContas_Load(object sender, EventArgs e)
         {
+            ds.Tables.Add(dataTable);
+            dataGridView1.AutoGenerateColumns = false;
+
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
             try
@@ -47,16 +55,14 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 SqlCommand cmd = db.CreateCommand();
 
                 db.Open();
-                cmd.CommandText = "SELECT Nome, IsAdmin, Distintivo, Ativo_Inativo FROM Utilizador";
+                cmd.CommandText = "SELECT IdUtilizador, Nome, IsAdmin, Distintivo, Ativo_Inativo FROM Utilizador";
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
                 if (dr.HasRows)
                 {
-                    DataSet ds = new DataSet(); // dataset representa uma estrura de base de dados em memória
-                    DataTable dataTable = new DataTable("Utilizadores"); //assim necessitamos de uma tabela ao dataset
-                    ds.Tables.Add(dataTable);
                     ds.Load(dr, LoadOption.PreserveChanges, ds.Tables["Utilizadores"]); //carregar
+
                     dataGridView1.DataSource = ds.Tables["Utilizadores"];
                 }
 
@@ -82,49 +88,47 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             }
         }
 
-        private void cellclick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if( dataGridView1.Columns[e.ColumnIndex].DataPropertyName.ToLowerInvariant() != "ativo_inativo" ) return;
+
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
 
             try
             {
-                if(e.ColumnIndex == 3)
-                {
-                    DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer ativar/desativar a conta?", "Mudança", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                                db.Open();
-                                SqlCommand cmdDelete = new SqlCommand();
-                                cmdDelete.Connection = db;
+                bool IsActive = !Convert.ToBoolean((dataGridView1.DataSource as DataTable).Rows[e.RowIndex]["ativo_inativo"]);
+                int userID = Convert.ToInt32((dataGridView1.DataSource as DataTable).Rows[e.RowIndex]["idutilizador"]);
 
-                                cmdDelete.CommandText = ("UPDATE Utilizador SET Ativo_Inativo = 0");
+                Cursor = Cursors.WaitCursor;
 
-                                int afectados = cmdDelete.ExecuteNonQuery();
-                                db.Close();
+                db.Open();
+                SqlCommand cmdDelete = new SqlCommand();
+                cmdDelete.Connection = db;
 
-                                MessageBox.Show("Conta Desativada");
-                    }
-                    else
-                        {
-                            db.Open();
-                            SqlCommand cmdDelete = new SqlCommand();
-                            cmdDelete.Connection = db;
+                cmdDelete.CommandText = ("UPDATE Utilizador SET Ativo_Inativo = @activo where IdUtilizador = @iduser");
+                cmdDelete.Parameters.Add("@iduser", SqlDbType.Int).Value = userID;
+                cmdDelete.Parameters.Add("@activo", SqlDbType.Bit).Value = IsActive;
 
-                            cmdDelete.CommandText = ("UPDATE Utilizador SET Ativo_Inativo = 1");
+                int afectados = cmdDelete.ExecuteNonQuery();
+                db.Close();
 
-                            int afectados = cmdDelete.ExecuteNonQuery();
-                            db.Close();
+                Thread.Sleep(125);
+                Cursor = Cursors.Default;
 
-                            MessageBox.Show("Conta Ativada");
-                    }
-                }
+                ds.Tables["Utilizadores"].Rows[e.RowIndex]["ativo_inativo"] = IsActive;
                 
             }
             catch (Exception errado)
             {
                 MessageBox.Show(errado.ToString());
             }
+
         }
     }
 }

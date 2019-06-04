@@ -107,8 +107,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             {
                 MessageBox.Show(erro.ToString());
             }
-            
-          
+
+
         }
 
         private void textbox1(object sender, KeyEventArgs e)
