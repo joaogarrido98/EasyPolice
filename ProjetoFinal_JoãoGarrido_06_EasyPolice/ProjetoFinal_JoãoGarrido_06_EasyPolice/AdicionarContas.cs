@@ -38,7 +38,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     string passregisto = textpass.Text;
                     string distintivo = "";
 
-                    string query = "SELECT Nome, Distintivo FROM Utilizador WHERE Nome LIKE @Nome AND Distintivo LIKE @Distintivo";
+                    string query = "SELECT Nome, Distintivo FROM Utilizador WHERE Nome=@Nome or Distintivo=@Distintivo";
 
                     SqlCommand cmdSelect = new SqlCommand(query, db);
 
@@ -106,7 +106,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     string passregisto = textpass.Text;
                     string distintivo = "";
 
-                    string query = "SELECT Nome, Distintivo FROM Utilizador WHERE Nome LIKE @Nome AND Distintivo LIKE @Distintivo";
+                    string query = "SELECT Nome, Distintivo FROM Utilizador WHERE Nome=@Nome or Distintivo=@Distintivo";
 
                     SqlCommand cmdSelect = new SqlCommand(query, db);
 
@@ -162,8 +162,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
             db.Close();
             
-           
-            
+ 
             //serve para apagar as caixas de texto depois de criar a conta 
             if (textusername.Text != "" || textusername.Text != null || textpass.Text != "" || textpass.Text != null || textdistintivo.Text != "" || textdistintivo.Text != null)
             {

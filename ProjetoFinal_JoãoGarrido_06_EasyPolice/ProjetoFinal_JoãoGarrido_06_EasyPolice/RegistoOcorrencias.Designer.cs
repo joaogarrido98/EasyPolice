@@ -47,8 +47,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.TextCC = new System.Windows.Forms.TextBox();
             this.Idade = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textGravidade = new System.Windows.Forms.TextBox();
             this.textdata = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
@@ -235,22 +233,6 @@
             this.Idade.TabIndex = 18;
             this.Idade.Text = "Idade:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(423, 110);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 17);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Gravidade:";
-            // 
-            // textGravidade
-            // 
-            this.textGravidade.Location = new System.Drawing.Point(498, 110);
-            this.textGravidade.Name = "textGravidade";
-            this.textGravidade.Size = new System.Drawing.Size(100, 22);
-            this.textGravidade.TabIndex = 24;
-            // 
             // textdata
             // 
             this.textdata.Location = new System.Drawing.Point(426, 81);
@@ -264,8 +246,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 403);
             this.Controls.Add(this.textdata);
-            this.Controls.Add(this.textGravidade);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.TextCC);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.TextIdade);
@@ -313,8 +293,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox TextCC;
         private System.Windows.Forms.Label Idade;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textGravidade;
         private System.Windows.Forms.DateTimePicker textdata;
     }
 }

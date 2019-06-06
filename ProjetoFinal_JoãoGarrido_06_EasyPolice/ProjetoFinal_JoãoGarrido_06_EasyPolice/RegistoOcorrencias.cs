@@ -36,7 +36,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 string Nome = TextNome.Text;
                 string Idade = TextIdade.Text;
                 string CC = TextCC.Text;
-                string Gravidade = textGravidade.Text;
                 string Data = textdata.Text;
                 string Freguesia = TextFreguesia.Text;
                 string Concelho = TextConcelho.Text;
@@ -48,8 +47,10 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 //Insert criminoso
                 SqlCommand cmdInsertCriminoso = new SqlCommand();
                 cmdInsertCriminoso.Connection = db;
-                cmdInsertCriminoso.CommandText = "Insert into Criminoso (Nome, Idade, CartaoCidadao) values (@Nome, @Idade, @CartaoCidadao)";
-
+                cmdInsertCriminoso.CommandText = "Insert into Criminoso (Nome) values (@Nome, @Idade, @CartaoCidadao)";
+                cmdInsertCriminoso.CommandText = "Insert into Criminoso (Idade) values (@Idade)";
+                cmdInsertCriminoso.CommandText = "Insert into Criminoso (CartaoCidadao) values (@CartaoCidadao)";
+                    
                 //insertFreguesia
                 SqlCommand cmdInsertFreguesia = new SqlCommand();
                 cmdInsertFreguesia.Connection = db;
@@ -75,7 +76,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 SqlCommand cmdInsertCrimes = new SqlCommand();
                 cmdInsertCrimes.Connection = db;
                 cmdInsertCrimes.CommandText = "Insert into Crimes (Tipo) values (@Tipo)";
-                cmdInsertCrimes.CommandText = "Insert into Crimes (Gravidade) values (@Gravidade)";
 
 
                 cmdInsertCriminoso.Parameters.Add("@Nome", SqlDbType.VarChar).Value = Nome;
@@ -92,17 +92,18 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 cmdInsertOcorrencias.Parameters.Add("@Hora", SqlDbType.DateTime).Value = Data;
 
                 cmdInsertCrimes.Parameters.Add("@Tipo", SqlDbType.VarChar).Value = Crime;
-                cmdInsertCrimes.Parameters.Add("@Gravidade", SqlDbType.Int).Value = Gravidade;
 
-                int afetados = cmdInsertCriminoso.ExecuteNonQuery();
-                int afetados2 = cmdInsertFreguesia.ExecuteNonQuery();
-                int afetados3 = cmdInsertConcelho.ExecuteNonQuery();
-                int afetados4 = cmdInsertDistrito.ExecuteNonQuery();
-                int afetados5 = cmdInsertOcorrencias.ExecuteNonQuery();
-                int afetados6 = cmdInsertCrimes.ExecuteNonQuery();
+                cmdInsertCriminoso.ExecuteNonQuery();
+                cmdInsertFreguesia.ExecuteNonQuery();
+                cmdInsertConcelho.ExecuteNonQuery();
+                cmdInsertDistrito.ExecuteNonQuery();
+                cmdInsertOcorrencias.ExecuteNonQuery();
+                cmdInsertCrimes.ExecuteNonQuery();
 
 
                 MessageBox.Show("Registo Criado");
+                db.Close();
+
             }
             catch (Exception erro)
             {

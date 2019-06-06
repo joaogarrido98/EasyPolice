@@ -115,7 +115,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 cmdDelete.Parameters.Add("@iduser", SqlDbType.Int).Value = userID;
                 cmdDelete.Parameters.Add("@activo", SqlDbType.Bit).Value = IsActive;
 
-                int afectados = cmdDelete.ExecuteNonQuery();
+                cmdDelete.ExecuteNonQuery();
                 db.Close();
 
                 Thread.Sleep(125);
