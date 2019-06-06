@@ -149,7 +149,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Deseja Sair?", "Sair", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Deseja Sair?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 Application.Exit();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistoOcorrencias));
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,15 +40,23 @@
             this.TextFreguesia = new System.Windows.Forms.TextBox();
             this.TextConcelho = new System.Windows.Forms.TextBox();
             this.ComboCrime = new System.Windows.Forms.ComboBox();
+            this.crimesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.easyPolice_BdDataSet1 = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet1();
             this.ComboDistrito = new System.Windows.Forms.ComboBox();
+            this.distritoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.TextDetalhe = new System.Windows.Forms.TextBox();
-            this.TextIdade = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.TextCC = new System.Windows.Forms.TextBox();
-            this.Idade = new System.Windows.Forms.Label();
             this.textdata = new System.Windows.Forms.DateTimePicker();
+            this.distritoTableAdapter = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet1TableAdapters.DistritoTableAdapter();
+            this.distritoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.crimesTableAdapter = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet1TableAdapters.CrimesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.crimesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.distritoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.distritoBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -97,7 +106,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(423, 139);
+            this.label9.Location = new System.Drawing.Point(86, 138);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 17);
             this.label9.TabIndex = 8;
@@ -126,51 +135,42 @@
             // 
             // ComboCrime
             // 
+            this.ComboCrime.DataSource = this.crimesBindingSource;
+            this.ComboCrime.DisplayMember = "Tipo";
             this.ComboCrime.FormattingEnabled = true;
-            this.ComboCrime.Items.AddRange(new object[] {
-            "Homicidio",
-            "Roubo",
-            "Violação",
-            "Posse de droga",
-            "Assalto",
-            "Tráfico",
-            "Sequestro",
-            "Bullying"});
-            this.ComboCrime.Location = new System.Drawing.Point(467, 138);
+            this.ComboCrime.Location = new System.Drawing.Point(140, 139);
             this.ComboCrime.Name = "ComboCrime";
             this.ComboCrime.Size = new System.Drawing.Size(100, 24);
             this.ComboCrime.TabIndex = 9;
+            this.ComboCrime.ValueMember = "IdCrime";
+            // 
+            // crimesBindingSource
+            // 
+            this.crimesBindingSource.DataMember = "Crimes";
+            this.crimesBindingSource.DataSource = this.easyPolice_BdDataSet1;
+            // 
+            // easyPolice_BdDataSet1
+            // 
+            this.easyPolice_BdDataSet1.DataSetName = "EasyPolice_BdDataSet1";
+            this.easyPolice_BdDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ComboDistrito
             // 
             this.ComboDistrito.BackColor = System.Drawing.Color.White;
+            this.ComboDistrito.DataSource = this.distritoBindingSource;
+            this.ComboDistrito.DisplayMember = "Nome";
             this.ComboDistrito.ForeColor = System.Drawing.SystemColors.WindowText;
             this.ComboDistrito.FormattingEnabled = true;
-            this.ComboDistrito.Items.AddRange(new object[] {
-            "Lisboa",
-            "Porto",
-            "Vila Real",
-            "Bragança",
-            "Guarda",
-            "Braga",
-            "Viana De Castelo",
-            "Beja",
-            "Coimbra",
-            "Évora",
-            "Castelo Branco",
-            "Faro",
-            "Viseu",
-            "Leiria",
-            "Santarém",
-            "Portalegre",
-            "Setubal",
-            "Aveiro",
-            "Açores",
-            "Madeira"});
             this.ComboDistrito.Location = new System.Drawing.Point(317, 139);
             this.ComboDistrito.Name = "ComboDistrito";
             this.ComboDistrito.Size = new System.Drawing.Size(100, 24);
             this.ComboDistrito.TabIndex = 6;
+            this.ComboDistrito.ValueMember = "IdDistrito";
+            // 
+            // distritoBindingSource
+            // 
+            this.distritoBindingSource.DataMember = "Distrito";
+            this.distritoBindingSource.DataSource = this.easyPolice_BdDataSet1;
             // 
             // button1
             // 
@@ -201,17 +201,10 @@
             this.TextDetalhe.Size = new System.Drawing.Size(462, 183);
             this.TextDetalhe.TabIndex = 8;
             // 
-            // TextIdade
-            // 
-            this.TextIdade.Location = new System.Drawing.Point(140, 107);
-            this.TextIdade.Name = "TextIdade";
-            this.TextIdade.Size = new System.Drawing.Size(100, 22);
-            this.TextIdade.TabIndex = 19;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(102, 138);
+            this.label10.Location = new System.Drawing.Point(104, 109);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(30, 17);
             this.label10.TabIndex = 20;
@@ -219,26 +212,30 @@
             // 
             // TextCC
             // 
-            this.TextCC.Location = new System.Drawing.Point(140, 138);
+            this.TextCC.Location = new System.Drawing.Point(140, 110);
             this.TextCC.Name = "TextCC";
             this.TextCC.Size = new System.Drawing.Size(100, 22);
             this.TextCC.TabIndex = 21;
             // 
-            // Idade
-            // 
-            this.Idade.AutoSize = true;
-            this.Idade.Location = new System.Drawing.Point(85, 107);
-            this.Idade.Name = "Idade";
-            this.Idade.Size = new System.Drawing.Size(47, 17);
-            this.Idade.TabIndex = 18;
-            this.Idade.Text = "Idade:";
-            // 
             // textdata
             // 
-            this.textdata.Location = new System.Drawing.Point(426, 81);
+            this.textdata.Location = new System.Drawing.Point(440, 104);
             this.textdata.Name = "textdata";
-            this.textdata.Size = new System.Drawing.Size(172, 22);
+            this.textdata.Size = new System.Drawing.Size(145, 22);
             this.textdata.TabIndex = 25;
+            // 
+            // distritoTableAdapter
+            // 
+            this.distritoTableAdapter.ClearBeforeFill = true;
+            // 
+            // distritoBindingSource1
+            // 
+            this.distritoBindingSource1.DataMember = "Distrito";
+            this.distritoBindingSource1.DataSource = this.easyPolice_BdDataSet1;
+            // 
+            // crimesTableAdapter
+            // 
+            this.crimesTableAdapter.ClearBeforeFill = true;
             // 
             // RegistoOcorrencias
             // 
@@ -248,8 +245,6 @@
             this.Controls.Add(this.textdata);
             this.Controls.Add(this.TextCC);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.TextIdade);
-            this.Controls.Add(this.Idade);
             this.Controls.Add(this.TextDetalhe);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button1);
@@ -269,6 +264,11 @@
             this.Name = "RegistoOcorrencias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registar Ocorrências";
+            this.Load += new System.EventHandler(this.RegistoOcorrencias_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.crimesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.distritoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.distritoBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,10 +289,14 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox TextDetalhe;
-        private System.Windows.Forms.TextBox TextIdade;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox TextCC;
-        private System.Windows.Forms.Label Idade;
         private System.Windows.Forms.DateTimePicker textdata;
+        private EasyPolice_BdDataSet1 easyPolice_BdDataSet1;
+        private System.Windows.Forms.BindingSource distritoBindingSource;
+        private EasyPolice_BdDataSet1TableAdapters.DistritoTableAdapter distritoTableAdapter;
+        private System.Windows.Forms.BindingSource distritoBindingSource1;
+        private System.Windows.Forms.BindingSource crimesBindingSource;
+        private EasyPolice_BdDataSet1TableAdapters.CrimesTableAdapter crimesTableAdapter;
     }
 }

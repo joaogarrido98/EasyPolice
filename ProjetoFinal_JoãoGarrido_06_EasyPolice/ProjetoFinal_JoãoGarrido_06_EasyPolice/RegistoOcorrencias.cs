@@ -34,82 +34,100 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 db.Open();
 
                 string Nome = TextNome.Text;
-                string Idade = TextIdade.Text;
                 string CC = TextCC.Text;
-                string Data = textdata.Text;
+                DateTime Data;
+                Data = textdata.Value;
+                Convert.ToString(Data);
                 string Freguesia = TextFreguesia.Text;
                 string Concelho = TextConcelho.Text;
-                string Distrito = ComboDistrito.SelectedItem.ToString();
+                string Distrito = ComboDistrito.SelectedValue.ToString();
                 string Detalhe = TextDetalhe.Text;
-                string Crime = ComboCrime.SelectedItem.ToString();
+                string Crime = ComboCrime.SelectedValue.ToString();
 
-
-                //Insert criminoso
-                SqlCommand cmdInsertCriminoso = new SqlCommand();
-                cmdInsertCriminoso.Connection = db;
-                cmdInsertCriminoso.CommandText = "Insert into Criminoso (Nome) values (@Nome, @Idade, @CartaoCidadao)";
-                cmdInsertCriminoso.CommandText = "Insert into Criminoso (Idade) values (@Idade)";
-                cmdInsertCriminoso.CommandText = "Insert into Criminoso (CartaoCidadao) values (@CartaoCidadao)";
-                    
-                //insertFreguesia
-                SqlCommand cmdInsertFreguesia = new SqlCommand();
-                cmdInsertFreguesia.Connection = db;
-                cmdInsertFreguesia.CommandText = "Insert into Freguesia (Nome) values (@Nome)";
 
                 //insertConcelho
                 SqlCommand cmdInsertConcelho = new SqlCommand();
                 cmdInsertConcelho.Connection = db;
-                cmdInsertConcelho.CommandText = "Insert into Concelho (Nome) values (@Nome)";
+                cmdInsertConcelho.CommandText = "Insert into Concelho (Nome, IdDistrito) values (@Nome, @IdDistrito)";
 
-                //insertDistrito
-                SqlCommand cmdInsertDistrito = new SqlCommand();
-                cmdInsertDistrito.Connection = db;
-                cmdInsertDistrito.CommandText = "Insert into Distrito (Nome) values (@Nome)";
+                cmdInsertConcelho.Parameters.Add("@Nome", SqlDbType.VarChar).Value = Concelho;
+                cmdInsertConcelho.Parameters.Add("@IdDistrito", SqlDbType.Int).Value = Convert.ToInt32(Distrito);
+                cmdInsertConcelho.ExecuteNonQuery();
+
+                SqlDataReader dr;
+                SqlCommand cmdMaxIdConcelho = new SqlCommand();
+                cmdMaxIdConcelho.CommandText = "Select Max(IdConcelho) as MaxId FROM Concelho";
+                cmdMaxIdConcelho.Connection = db;
+
+
+                string MaxIdConcelho = "";
+
+                dr = cmdMaxIdConcelho.ExecuteReader();
+                while(dr.Read())
+                {
+                    MaxIdConcelho = dr["MaxId"].ToString();
+                }
+                dr.Close();
+
+                //insertFreguesia
+                SqlCommand cmdInsertFreguesia = new SqlCommand();
+                cmdInsertFreguesia.Connection = db;
+                cmdInsertFreguesia.CommandText = "Insert into Freguesia (Nome, IdConcelho) values (@Nome, @IdConcelho)";
+
+                cmdInsertFreguesia.Parameters.Add("@Nome", SqlDbType.VarChar).Value = Freguesia;
+                cmdInsertFreguesia.Parameters.Add("@IdConcelho", SqlDbType.Int).Value = MaxIdConcelho;
+                cmdInsertFreguesia.ExecuteNonQuery();
+
 
                 //insertOcorrencias
                 SqlCommand cmdInsertOcorrencias = new SqlCommand();
                 cmdInsertOcorrencias.Connection = db;
                 cmdInsertOcorrencias.CommandText = "Insert into Ocorrencias (Hora) values (@Hora)";
                 cmdInsertOcorrencias.CommandText = "Insert into Ocorrencias (Detalhe) values (@Detalhe)";
+                cmdInsertOcorrencias.CommandText = "Insert into Ocorrencias (IdDistrito) values (@IdDistrito)";
+
+                cmdInsertOcorrencias.Parameters.Add("@Detalhe", SqlDbType.VarChar).Value = Detalhe;
+                cmdInsertOcorrencias.Parameters.Add("@Hora", SqlDbType.Date).Value = Data;
+                cmdInsertOcorrencias.Parameters.Add("@IdDistrito", SqlDbType.Int).Value = Convert.ToInt32(Distrito);
+                cmdInsertOcorrencias.ExecuteNonQuery();
 
                 //insertCrimes
                 SqlCommand cmdInsertCrimes = new SqlCommand();
                 cmdInsertCrimes.Connection = db;
                 cmdInsertCrimes.CommandText = "Insert into Crimes (Tipo) values (@Tipo)";
 
-
-                cmdInsertCriminoso.Parameters.Add("@Nome", SqlDbType.VarChar).Value = Nome;
-                cmdInsertCriminoso.Parameters.Add("@Idade", SqlDbType.Int).Value = Idade;
-                cmdInsertCriminoso.Parameters.Add("@CartaoCidadao", SqlDbType.Int).Value = CC;
-
-                cmdInsertFreguesia.Parameters.Add("@Nome", SqlDbType.VarChar).Value = Freguesia;
-
-                cmdInsertConcelho.Parameters.Add("@Nome", SqlDbType.VarChar).Value = Concelho;
-
-                cmdInsertDistrito.Parameters.Add("@Nome", SqlDbType.VarChar).Value = Distrito;
-
-                cmdInsertOcorrencias.Parameters.Add("@Detalhe", SqlDbType.VarChar).Value = Detalhe;
-                cmdInsertOcorrencias.Parameters.Add("@Hora", SqlDbType.DateTime).Value = Data;
-
                 cmdInsertCrimes.Parameters.Add("@Tipo", SqlDbType.VarChar).Value = Crime;
-
-                cmdInsertCriminoso.ExecuteNonQuery();
-                cmdInsertFreguesia.ExecuteNonQuery();
-                cmdInsertConcelho.ExecuteNonQuery();
-                cmdInsertDistrito.ExecuteNonQuery();
-                cmdInsertOcorrencias.ExecuteNonQuery();
                 cmdInsertCrimes.ExecuteNonQuery();
 
+                //Insert criminoso
+                SqlCommand cmdInsertCriminoso = new SqlCommand();
+                cmdInsertCriminoso.Connection = db;
+                cmdInsertCriminoso.CommandText = "Insert into Criminoso (Nome, CartaoCidadao, IdDistrito) values (@Nome, @CartaoCidadao, @IdDistrito)";
 
+                cmdInsertCriminoso.Parameters.Add("@Nome", SqlDbType.VarChar).Value = Nome;
+                cmdInsertCriminoso.Parameters.Add("@CartaoCidadao", SqlDbType.Int).Value = CC;
+                cmdInsertCriminoso.Parameters.Add("@IdDistrito", SqlDbType.Int).Value = Convert.ToInt32(Distrito);
+
+                cmdInsertCriminoso.ExecuteNonQuery();
+                
                 MessageBox.Show("Registo Criado");
                 db.Close();
-
+ 
             }
             catch (Exception erro)
             {
                     MessageBox.Show(erro.ToString());
             }
             
+
+        }
+
+        private void RegistoOcorrencias_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'easyPolice_BdDataSet1.Crimes' table. You can move, or remove it, as needed.
+            this.crimesTableAdapter.Fill(this.easyPolice_BdDataSet1.Crimes);
+            // TODO: This line of code loads data into the 'easyPolice_BdDataSet1.Distrito' table. You can move, or remove it, as needed.
+            this.distritoTableAdapter.Fill(this.easyPolice_BdDataSet1.Distrito);
 
         }
     }
