@@ -201,7 +201,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void textdistintivo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != Convert.ToChar(Keys.Back)) //so deixar escrever numeros
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar !=8) //so deixar escrever numeros
             {
                 e.Handled = true;
             }

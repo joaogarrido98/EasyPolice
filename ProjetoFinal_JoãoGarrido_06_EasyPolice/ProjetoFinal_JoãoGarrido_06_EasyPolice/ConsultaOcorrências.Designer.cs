@@ -43,65 +43,37 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox2
             // 
-            this.comboBox2.Items.AddRange(new object[] {
-            "Lisboa",
-            "Porto",
-            "Vila Real",
-            "Bragança",
-            "Guarda",
-            "Braga",
-            "Viana De Castelo",
-            "Beja",
-            "Coimbra",
-            "Évora",
-            "Castelo Branco",
-            "Faro",
-            "Viseu",
-            "Leiria",
-            "Santarém",
-            "Porto Alegre",
-            "Setubal",
-            "Aveiro",
-            "Açores",
-            "Madeira"});
-            this.comboBox2.Location = new System.Drawing.Point(428, 49);
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Location = new System.Drawing.Point(398, 32);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(100, 24);
             this.comboBox2.TabIndex = 2;
+            this.comboBox2.ValueMember = "IdDistrito";
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Homicidio",
-            "Roubo",
-            "Violação",
-            "Posse de droga",
-            "Assalto",
-            "Tráfico",
-            "Sequestro",
-            "Bullying"});
-            this.comboBox1.Location = new System.Drawing.Point(428, 83);
+            this.comboBox1.Location = new System.Drawing.Point(398, 58);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 24);
             this.comboBox1.TabIndex = 4;
+            this.comboBox1.ValueMember = "IdCrime";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(248, 83);
+            this.textBox3.Location = new System.Drawing.Point(239, 60);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 22);
             this.textBox3.TabIndex = 3;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(248, 52);
+            this.textBox1.Location = new System.Drawing.Point(239, 32);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 1;
@@ -109,7 +81,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(374, 86);
+            this.label9.Location = new System.Drawing.Point(351, 59);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 17);
             this.label9.TabIndex = 19;
@@ -118,7 +90,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(193, 55);
+            this.label7.Location = new System.Drawing.Point(193, 32);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 17);
             this.label7.TabIndex = 18;
@@ -127,7 +99,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(366, 52);
+            this.label6.Location = new System.Drawing.Point(345, 32);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 17);
             this.label6.TabIndex = 17;
@@ -136,7 +108,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(200, 83);
+            this.label2.Location = new System.Drawing.Point(200, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 17);
             this.label2.TabIndex = 16;
@@ -145,7 +117,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(323, 112);
+            this.button1.Location = new System.Drawing.Point(319, 88);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 31);
             this.button1.TabIndex = 5;
@@ -197,21 +169,11 @@
             this.button7.Text = "5";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(126, 149);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(483, 206);
-            this.dataGridView1.TabIndex = 31;
-            // 
             // ConsultaOcorrências
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 403);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -231,7 +193,6 @@
             this.Name = "ConsultaOcorrências";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Ocorrências";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,6 +214,5 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

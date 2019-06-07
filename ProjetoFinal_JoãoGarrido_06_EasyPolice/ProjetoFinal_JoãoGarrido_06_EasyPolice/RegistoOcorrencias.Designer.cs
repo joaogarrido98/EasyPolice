@@ -30,15 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistoOcorrencias));
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.TextNome = new System.Windows.Forms.TextBox();
-            this.TextFreguesia = new System.Windows.Forms.TextBox();
-            this.TextConcelho = new System.Windows.Forms.TextBox();
             this.ComboCrime = new System.Windows.Forms.ComboBox();
             this.crimesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.easyPolice_BdDataSet1 = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet1();
@@ -53,42 +48,25 @@
             this.distritoTableAdapter = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet1TableAdapters.DistritoTableAdapter();
             this.distritoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.crimesTableAdapter = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet1TableAdapters.CrimesTableAdapter();
+            this.textidade = new System.Windows.Forms.TextBox();
+            this.Idade = new System.Windows.Forms.Label();
+            this.Distintivo = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.easyPolice_BdDataSet2 = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet2();
+            this.utilizadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.utilizadorTableAdapter = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet2TableAdapters.UtilizadorTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.crimesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.distritoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.distritoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.utilizadorBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(246, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Freguesia:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(246, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Concelho:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(281, 110);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 17);
-            this.label5.TabIndex = 4;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(246, 139);
+            this.label6.Location = new System.Drawing.Point(246, 110);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 17);
             this.label6.TabIndex = 5;
@@ -106,7 +84,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(86, 138);
+            this.label9.Location = new System.Drawing.Point(254, 82);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 17);
             this.label9.TabIndex = 8;
@@ -119,27 +97,13 @@
             this.TextNome.Size = new System.Drawing.Size(100, 22);
             this.TextNome.TabIndex = 1;
             // 
-            // TextFreguesia
-            // 
-            this.TextFreguesia.Location = new System.Drawing.Point(317, 81);
-            this.TextFreguesia.Name = "TextFreguesia";
-            this.TextFreguesia.Size = new System.Drawing.Size(100, 22);
-            this.TextFreguesia.TabIndex = 4;
-            // 
-            // TextConcelho
-            // 
-            this.TextConcelho.Location = new System.Drawing.Point(317, 109);
-            this.TextConcelho.Name = "TextConcelho";
-            this.TextConcelho.Size = new System.Drawing.Size(100, 22);
-            this.TextConcelho.TabIndex = 5;
-            // 
             // ComboCrime
             // 
             this.ComboCrime.DataSource = this.crimesBindingSource;
             this.ComboCrime.DisplayMember = "Tipo";
             this.ComboCrime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboCrime.FormattingEnabled = true;
-            this.ComboCrime.Location = new System.Drawing.Point(140, 139);
+            this.ComboCrime.Location = new System.Drawing.Point(299, 79);
             this.ComboCrime.Name = "ComboCrime";
             this.ComboCrime.Size = new System.Drawing.Size(100, 24);
             this.ComboCrime.TabIndex = 9;
@@ -163,7 +127,7 @@
             this.ComboDistrito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboDistrito.ForeColor = System.Drawing.SystemColors.WindowText;
             this.ComboDistrito.FormattingEnabled = true;
-            this.ComboDistrito.Location = new System.Drawing.Point(317, 139);
+            this.ComboDistrito.Location = new System.Drawing.Point(299, 107);
             this.ComboDistrito.Name = "ComboDistrito";
             this.ComboDistrito.Size = new System.Drawing.Size(100, 24);
             this.ComboDistrito.TabIndex = 6;
@@ -177,7 +141,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(556, 324);
+            this.button1.Location = new System.Drawing.Point(556, 326);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 54);
             this.button1.TabIndex = 9;
@@ -189,7 +153,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(85, 175);
+            this.label8.Location = new System.Drawing.Point(85, 177);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(107, 17);
             this.label8.TabIndex = 17;
@@ -197,7 +161,7 @@
             // 
             // TextDetalhe
             // 
-            this.TextDetalhe.Location = new System.Drawing.Point(88, 195);
+            this.TextDetalhe.Location = new System.Drawing.Point(88, 197);
             this.TextDetalhe.Multiline = true;
             this.TextDetalhe.Name = "TextDetalhe";
             this.TextDetalhe.Size = new System.Drawing.Size(462, 183);
@@ -206,7 +170,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(104, 109);
+            this.label10.Location = new System.Drawing.Point(104, 135);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(30, 17);
             this.label10.TabIndex = 20;
@@ -214,14 +178,14 @@
             // 
             // TextCC
             // 
-            this.TextCC.Location = new System.Drawing.Point(140, 110);
+            this.TextCC.Location = new System.Drawing.Point(140, 135);
             this.TextCC.Name = "TextCC";
             this.TextCC.Size = new System.Drawing.Size(100, 22);
             this.TextCC.TabIndex = 21;
             // 
             // textdata
             // 
-            this.textdata.Location = new System.Drawing.Point(440, 104);
+            this.textdata.Location = new System.Drawing.Point(408, 79);
             this.textdata.Name = "textdata";
             this.textdata.Size = new System.Drawing.Size(151, 22);
             this.textdata.TabIndex = 25;
@@ -239,11 +203,66 @@
             // 
             this.crimesTableAdapter.ClearBeforeFill = true;
             // 
+            // textidade
+            // 
+            this.textidade.Location = new System.Drawing.Point(140, 107);
+            this.textidade.Name = "textidade";
+            this.textidade.Size = new System.Drawing.Size(100, 22);
+            this.textidade.TabIndex = 26;
+            // 
+            // Idade
+            // 
+            this.Idade.AutoSize = true;
+            this.Idade.Location = new System.Drawing.Point(91, 107);
+            this.Idade.Name = "Idade";
+            this.Idade.Size = new System.Drawing.Size(43, 17);
+            this.Idade.TabIndex = 27;
+            this.Idade.Text = "Idade";
+            // 
+            // Distintivo
+            // 
+            this.Distintivo.AutoSize = true;
+            this.Distintivo.Location = new System.Drawing.Point(405, 110);
+            this.Distintivo.Name = "Distintivo";
+            this.Distintivo.Size = new System.Drawing.Size(69, 17);
+            this.Distintivo.TabIndex = 28;
+            this.Distintivo.Text = "Distintivo:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.utilizadorBindingSource;
+            this.comboBox1.DisplayMember = "Distintivo";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(471, 105);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(111, 24);
+            this.comboBox1.TabIndex = 29;
+            this.comboBox1.ValueMember = "IdUtilizador";
+            // 
+            // easyPolice_BdDataSet2
+            // 
+            this.easyPolice_BdDataSet2.DataSetName = "EasyPolice_BdDataSet2";
+            this.easyPolice_BdDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // utilizadorBindingSource
+            // 
+            this.utilizadorBindingSource.DataMember = "Utilizador";
+            this.utilizadorBindingSource.DataSource = this.easyPolice_BdDataSet2;
+            // 
+            // utilizadorTableAdapter
+            // 
+            this.utilizadorTableAdapter.ClearBeforeFill = true;
+            // 
             // RegistoOcorrencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 403);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Distintivo);
+            this.Controls.Add(this.Idade);
+            this.Controls.Add(this.textidade);
             this.Controls.Add(this.textdata);
             this.Controls.Add(this.TextCC);
             this.Controls.Add(this.label10);
@@ -252,15 +271,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ComboDistrito);
             this.Controls.Add(this.ComboCrime);
-            this.Controls.Add(this.TextConcelho);
-            this.Controls.Add(this.TextFreguesia);
             this.Controls.Add(this.TextNome);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RegistoOcorrencias";
@@ -271,21 +285,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.distritoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.distritoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.utilizadorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox TextNome;
-        private System.Windows.Forms.TextBox TextFreguesia;
-        private System.Windows.Forms.TextBox TextConcelho;
         private System.Windows.Forms.ComboBox ComboCrime;
         private System.Windows.Forms.ComboBox ComboDistrito;
         private System.Windows.Forms.Button button1;
@@ -300,5 +311,12 @@
         private System.Windows.Forms.BindingSource distritoBindingSource1;
         private System.Windows.Forms.BindingSource crimesBindingSource;
         private EasyPolice_BdDataSet1TableAdapters.CrimesTableAdapter crimesTableAdapter;
+        private System.Windows.Forms.TextBox textidade;
+        private System.Windows.Forms.Label Idade;
+        private System.Windows.Forms.Label Distintivo;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private EasyPolice_BdDataSet2 easyPolice_BdDataSet2;
+        private System.Windows.Forms.BindingSource utilizadorBindingSource;
+        private EasyPolice_BdDataSet2TableAdapters.UtilizadorTableAdapter utilizadorTableAdapter;
     }
 }

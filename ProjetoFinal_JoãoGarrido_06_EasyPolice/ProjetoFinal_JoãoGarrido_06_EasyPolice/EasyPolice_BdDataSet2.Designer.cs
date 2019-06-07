@@ -20,9 +20,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("EasyPolice_BdDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("EasyPolice_BdDataSet2")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class EasyPolice_BdDataSet : global::System.Data.DataSet {
+    public partial class EasyPolice_BdDataSet2 : global::System.Data.DataSet {
         
         private UtilizadorDataTable tableUtilizador;
         
@@ -30,7 +30,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public EasyPolice_BdDataSet() {
+        public EasyPolice_BdDataSet2() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected EasyPolice_BdDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected EasyPolice_BdDataSet2(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            EasyPolice_BdDataSet cln = ((EasyPolice_BdDataSet)(base.Clone()));
+            EasyPolice_BdDataSet2 cln = ((EasyPolice_BdDataSet2)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "EasyPolice_BdDataSet";
+            this.DataSetName = "EasyPolice_BdDataSet2";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/EasyPolice_BdDataSet.xsd";
+            this.Namespace = "http://tempuri.org/EasyPolice_BdDataSet2.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableUtilizador = new UtilizadorDataTable();
@@ -225,7 +225,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            EasyPolice_BdDataSet ds = new EasyPolice_BdDataSet();
+            EasyPolice_BdDataSet2 ds = new EasyPolice_BdDataSet2();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -279,15 +279,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class UtilizadorDataTable : global::System.Data.TypedTableBase<UtilizadorRow> {
             
-            private global::System.Data.DataColumn columnNome;
-            
-            private global::System.Data.DataColumn columnPassword;
-            
-            private global::System.Data.DataColumn columnIsAdmin;
+            private global::System.Data.DataColumn columnIdUtilizador;
             
             private global::System.Data.DataColumn columnDistintivo;
-            
-            private global::System.Data.DataColumn columnAtivo_Inativo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -324,25 +318,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn NomeColumn {
+            public global::System.Data.DataColumn IdUtilizadorColumn {
                 get {
-                    return this.columnNome;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PasswordColumn {
-                get {
-                    return this.columnPassword;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn IsAdminColumn {
-                get {
-                    return this.columnIsAdmin;
+                    return this.columnIdUtilizador;
                 }
             }
             
@@ -351,14 +329,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice {
             public global::System.Data.DataColumn DistintivoColumn {
                 get {
                     return this.columnDistintivo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Ativo_InativoColumn {
-                get {
-                    return this.columnAtivo_Inativo;
                 }
             }
             
@@ -399,17 +369,21 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public UtilizadorRow AddUtilizadorRow(string Nome, string Password, bool IsAdmin, int Distintivo, bool Ativo_Inativo) {
+            public UtilizadorRow AddUtilizadorRow(int Distintivo) {
                 UtilizadorRow rowUtilizadorRow = ((UtilizadorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Nome,
-                        Password,
-                        IsAdmin,
-                        Distintivo,
-                        Ativo_Inativo};
+                        null,
+                        Distintivo};
                 rowUtilizadorRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUtilizadorRow);
                 return rowUtilizadorRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public UtilizadorRow FindByIdUtilizador(int IdUtilizador) {
+                return ((UtilizadorRow)(this.Rows.Find(new object[] {
+                            IdUtilizador})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -429,30 +403,25 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnNome = base.Columns["Nome"];
-                this.columnPassword = base.Columns["Password"];
-                this.columnIsAdmin = base.Columns["IsAdmin"];
+                this.columnIdUtilizador = base.Columns["IdUtilizador"];
                 this.columnDistintivo = base.Columns["Distintivo"];
-                this.columnAtivo_Inativo = base.Columns["Ativo_Inativo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnNome = new global::System.Data.DataColumn("Nome", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNome);
-                this.columnPassword = new global::System.Data.DataColumn("Password", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPassword);
-                this.columnIsAdmin = new global::System.Data.DataColumn("IsAdmin", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIsAdmin);
+                this.columnIdUtilizador = new global::System.Data.DataColumn("IdUtilizador", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdUtilizador);
                 this.columnDistintivo = new global::System.Data.DataColumn("Distintivo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDistintivo);
-                this.columnAtivo_Inativo = new global::System.Data.DataColumn("Ativo_Inativo", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAtivo_Inativo);
-                this.columnNome.AllowDBNull = false;
-                this.columnNome.MaxLength = 50;
-                this.columnPassword.AllowDBNull = false;
-                this.columnPassword.MaxLength = 50;
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnIdUtilizador}, true));
+                this.columnIdUtilizador.AutoIncrement = true;
+                this.columnIdUtilizador.AutoIncrementSeed = -1;
+                this.columnIdUtilizador.AutoIncrementStep = -1;
+                this.columnIdUtilizador.AllowDBNull = false;
+                this.columnIdUtilizador.ReadOnly = true;
+                this.columnIdUtilizador.Unique = true;
                 this.columnDistintivo.AllowDBNull = false;
             }
             
@@ -521,7 +490,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                EasyPolice_BdDataSet ds = new EasyPolice_BdDataSet();
+                EasyPolice_BdDataSet2 ds = new EasyPolice_BdDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -596,39 +565,12 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Nome {
+            public int IdUtilizador {
                 get {
-                    return ((string)(this[this.tableUtilizador.NomeColumn]));
+                    return ((int)(this[this.tableUtilizador.IdUtilizadorColumn]));
                 }
                 set {
-                    this[this.tableUtilizador.NomeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Password {
-                get {
-                    return ((string)(this[this.tableUtilizador.PasswordColumn]));
-                }
-                set {
-                    this[this.tableUtilizador.PasswordColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsAdmin {
-                get {
-                    try {
-                        return ((bool)(this[this.tableUtilizador.IsAdminColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'IsAdmin\' in table \'Utilizador\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableUtilizador.IsAdminColumn] = value;
+                    this[this.tableUtilizador.IdUtilizadorColumn] = value;
                 }
             }
             
@@ -641,46 +583,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice {
                 set {
                     this[this.tableUtilizador.DistintivoColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Ativo_Inativo {
-                get {
-                    try {
-                        return ((bool)(this[this.tableUtilizador.Ativo_InativoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Ativo_Inativo\' in table \'Utilizador\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableUtilizador.Ativo_InativoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsIsAdminNull() {
-                return this.IsNull(this.tableUtilizador.IsAdminColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetIsAdminNull() {
-                this[this.tableUtilizador.IsAdminColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsAtivo_InativoNull() {
-                return this.IsNull(this.tableUtilizador.Ativo_InativoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetAtivo_InativoNull() {
-                this[this.tableUtilizador.Ativo_InativoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -719,7 +621,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice {
         }
     }
 }
-namespace ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSetTableAdapters {
+namespace ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet2TableAdapters {
     
     
     /// <summary>
@@ -843,22 +745,26 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSetTableAdapt
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Utilizador";
-            tableMapping.ColumnMappings.Add("Nome", "Nome");
-            tableMapping.ColumnMappings.Add("Password", "Password");
-            tableMapping.ColumnMappings.Add("IsAdmin", "IsAdmin");
+            tableMapping.ColumnMappings.Add("IdUtilizador", "IdUtilizador");
             tableMapping.ColumnMappings.Add("Distintivo", "Distintivo");
-            tableMapping.ColumnMappings.Add("Ativo_Inativo", "Ativo_Inativo");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Utilizador] ([Nome], [Password], [IsAdmin], [Distintivo], [Ati" +
-                "vo_Inativo]) VALUES (@Nome, @Password, @IsAdmin, @Distintivo, @Ativo_Inativo)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsAdmin", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsAdmin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Distintivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Distintivo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ativo_Inativo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ativo_Inativo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Utilizador] WHERE (([IdUtilizador] = @Original_IdUtilizador) A" +
+                "ND ([Distintivo] = @Original_Distintivo))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdUtilizador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdUtilizador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Distintivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Distintivo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Utilizador] SET [Distintivo] = @Distintivo WHERE (([IdUtilizador] =" +
+                " @Original_IdUtilizador) AND ([Distintivo] = @Original_Distintivo));\r\nSELECT IdU" +
+                "tilizador, Distintivo FROM Utilizador WHERE (IdUtilizador = @IdUtilizador)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Distintivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Distintivo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdUtilizador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdUtilizador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Distintivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Distintivo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdUtilizador", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdUtilizador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -874,7 +780,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSetTableAdapt
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Nome, Password, IsAdmin, Distintivo, Ativo_Inativo FROM dbo.Utilizador";
+            this._commandCollection[0].CommandText = "SELECT IdUtilizador, Distintivo FROM dbo.Utilizador";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -882,7 +788,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSetTableAdapt
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(EasyPolice_BdDataSet.UtilizadorDataTable dataTable) {
+        public virtual int Fill(EasyPolice_BdDataSet2.UtilizadorDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -895,9 +801,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSetTableAdapt
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual EasyPolice_BdDataSet.UtilizadorDataTable GetData() {
+        public virtual EasyPolice_BdDataSet2.UtilizadorDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            EasyPolice_BdDataSet.UtilizadorDataTable dataTable = new EasyPolice_BdDataSet.UtilizadorDataTable();
+            EasyPolice_BdDataSet2.UtilizadorDataTable dataTable = new EasyPolice_BdDataSet2.UtilizadorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -905,14 +811,14 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSetTableAdapt
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(EasyPolice_BdDataSet.UtilizadorDataTable dataTable) {
+        public virtual int Update(EasyPolice_BdDataSet2.UtilizadorDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(EasyPolice_BdDataSet dataSet) {
+        public virtual int Update(EasyPolice_BdDataSet2 dataSet) {
             return this.Adapter.Update(dataSet, "Utilizador");
         }
         
@@ -934,47 +840,57 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSetTableAdapt
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nome, string Password, global::System.Nullable<bool> IsAdmin, int Distintivo, global::System.Nullable<bool> Ativo_Inativo) {
-            if ((Nome == null)) {
-                throw new global::System.ArgumentNullException("Nome");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nome));
-            }
-            if ((Password == null)) {
-                throw new global::System.ArgumentNullException("Password");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Password));
-            }
-            if ((IsAdmin.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(IsAdmin.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Distintivo));
-            if ((Ativo_Inativo.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((bool)(Ativo_Inativo.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_IdUtilizador, int Original_Distintivo) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IdUtilizador));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Distintivo));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
+                this.Adapter.DeleteCommand.Connection.Open();
             }
             try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
                 return returnValue;
             }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
+                    this.Adapter.DeleteCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int Distintivo, int Original_IdUtilizador, int Original_Distintivo, int IdUtilizador) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Distintivo));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_IdUtilizador));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Distintivo));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(IdUtilizador));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int Distintivo, int Original_IdUtilizador, int Original_Distintivo) {
+            return this.Update(Distintivo, Original_IdUtilizador, Original_Distintivo, Original_IdUtilizador);
         }
     }
     
@@ -1069,7 +985,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSetTableAdapt
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(EasyPolice_BdDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(EasyPolice_BdDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._utilizadorTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Utilizador.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1088,7 +1004,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSetTableAdapt
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(EasyPolice_BdDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(EasyPolice_BdDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._utilizadorTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Utilizador.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1106,7 +1022,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSetTableAdapt
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(EasyPolice_BdDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(EasyPolice_BdDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._utilizadorTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Utilizador.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1148,7 +1064,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSetTableAdapt
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(EasyPolice_BdDataSet dataSet) {
+        public virtual int UpdateAll(EasyPolice_BdDataSet2 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
