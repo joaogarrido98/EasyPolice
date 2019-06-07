@@ -35,9 +35,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
                 string Nome = TextNome.Text;
                 string CC = TextCC.Text;
-                DateTime Data;
-                Data = textdata.Value;
-                Convert.ToString(Data);
+                string Data = textdata.Value.ToString();
                 string Freguesia = TextFreguesia.Text;
                 string Concelho = TextConcelho.Text;
                 string Distrito = ComboDistrito.SelectedValue.ToString();

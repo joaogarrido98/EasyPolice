@@ -137,6 +137,7 @@
             // 
             this.ComboCrime.DataSource = this.crimesBindingSource;
             this.ComboCrime.DisplayMember = "Tipo";
+            this.ComboCrime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboCrime.FormattingEnabled = true;
             this.ComboCrime.Location = new System.Drawing.Point(140, 139);
             this.ComboCrime.Name = "ComboCrime";
@@ -159,6 +160,7 @@
             this.ComboDistrito.BackColor = System.Drawing.Color.White;
             this.ComboDistrito.DataSource = this.distritoBindingSource;
             this.ComboDistrito.DisplayMember = "Nome";
+            this.ComboDistrito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboDistrito.ForeColor = System.Drawing.SystemColors.WindowText;
             this.ComboDistrito.FormattingEnabled = true;
             this.ComboDistrito.Location = new System.Drawing.Point(317, 139);
@@ -221,7 +223,7 @@
             // 
             this.textdata.Location = new System.Drawing.Point(440, 104);
             this.textdata.Name = "textdata";
-            this.textdata.Size = new System.Drawing.Size(145, 22);
+            this.textdata.Size = new System.Drawing.Size(151, 22);
             this.textdata.TabIndex = 25;
             // 
             // distritoTableAdapter
