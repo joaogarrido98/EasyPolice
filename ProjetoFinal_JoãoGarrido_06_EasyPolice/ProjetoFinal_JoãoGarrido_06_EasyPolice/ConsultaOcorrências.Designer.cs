@@ -43,10 +43,19 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.IdOcorrencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Criminoso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Crime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Policia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox2
             // 
+            this.comboBox2.DisplayMember = "IdDistrito";
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Location = new System.Drawing.Point(398, 32);
             this.comboBox2.Name = "comboBox2";
@@ -56,6 +65,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DisplayMember = "IdCrime";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(398, 58);
@@ -169,11 +179,60 @@
             this.button7.Text = "5";
             this.button7.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdOcorrencia,
+            this.Criminoso,
+            this.Data,
+            this.Crime,
+            this.Distrito,
+            this.Policia});
+            this.dataGridView1.Location = new System.Drawing.Point(76, 125);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(611, 229);
+            this.dataGridView1.TabIndex = 20;
+            // 
+            // IdOcorrencia
+            // 
+            this.IdOcorrencia.HeaderText = "IdOcorrencia";
+            this.IdOcorrencia.Name = "IdOcorrencia";
+            this.IdOcorrencia.Visible = false;
+            // 
+            // Criminoso
+            // 
+            this.Criminoso.HeaderText = "Criminoso";
+            this.Criminoso.Name = "Criminoso";
+            // 
+            // Data
+            // 
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
+            // 
+            // Crime
+            // 
+            this.Crime.HeaderText = "Crime";
+            this.Crime.Name = "Crime";
+            // 
+            // Distrito
+            // 
+            this.Distrito.HeaderText = "Distrito";
+            this.Distrito.Name = "Distrito";
+            // 
+            // Policia
+            // 
+            this.Policia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Policia.HeaderText = "Policia";
+            this.Policia.Name = "Policia";
+            // 
             // ConsultaOcorrências
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 403);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -193,6 +252,8 @@
             this.Name = "ConsultaOcorrências";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Ocorrências";
+            this.Load += new System.EventHandler(this.ConsultaOcorrências_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +275,12 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdOcorrencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Criminoso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Crime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Distrito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Policia;
     }
 }
