@@ -135,13 +135,18 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     MessageBox.Show("Registo Criado");
                     db.Close();
                 }
- 
+
+                TextNome.Clear();
+                TextDetalhe.Clear();
+                textidade.Clear();
+                TextCC.Clear();
+
+
             }
             catch (Exception erro)
             {
                     MessageBox.Show(erro.ToString());
             }
-            
 
         }
 

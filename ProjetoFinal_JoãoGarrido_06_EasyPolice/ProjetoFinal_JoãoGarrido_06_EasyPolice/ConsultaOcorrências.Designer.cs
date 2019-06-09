@@ -40,9 +40,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.IdOcorrencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Criminoso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -136,48 +133,23 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(284, 360);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(350, 360);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(29, 30);
             this.button3.TabIndex = 6;
-            this.button3.Text = "1";
+            this.button3.Text = "<";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(319, 360);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(385, 360);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(29, 30);
             this.button4.TabIndex = 7;
-            this.button4.Text = "2";
+            this.button4.Text = ">";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(354, 360);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(29, 30);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "3";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(389, 360);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(29, 30);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "4";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(424, 361);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(29, 30);
-            this.button7.TabIndex = 10;
-            this.button7.Text = "5";
-            this.button7.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -191,39 +163,48 @@
             this.Policia});
             this.dataGridView1.Location = new System.Drawing.Point(76, 125);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(611, 229);
             this.dataGridView1.TabIndex = 20;
             // 
             // IdOcorrencia
             // 
+            this.IdOcorrencia.DataPropertyName = "IdOcorrencia";
             this.IdOcorrencia.HeaderText = "IdOcorrencia";
             this.IdOcorrencia.Name = "IdOcorrencia";
             this.IdOcorrencia.Visible = false;
             // 
             // Criminoso
             // 
+            this.Criminoso.DataPropertyName = "IdCriminoso";
             this.Criminoso.HeaderText = "Criminoso";
             this.Criminoso.Name = "Criminoso";
             // 
             // Data
             // 
+            this.Data.DataPropertyName = "Data";
             this.Data.HeaderText = "Data";
             this.Data.Name = "Data";
             // 
             // Crime
             // 
+            this.Crime.DataPropertyName = "IdCrime";
             this.Crime.HeaderText = "Crime";
             this.Crime.Name = "Crime";
+            this.Crime.Width = 80;
             // 
             // Distrito
             // 
+            this.Distrito.DataPropertyName = "IdDistrito";
             this.Distrito.HeaderText = "Distrito";
             this.Distrito.Name = "Distrito";
+            this.Distrito.Width = 80;
             // 
             // Policia
             // 
             this.Policia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Policia.DataPropertyName = "IdUtilizador";
             this.Policia.HeaderText = "Policia";
             this.Policia.Name = "Policia";
             // 
@@ -233,9 +214,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 403);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
@@ -272,9 +250,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdOcorrencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Criminoso;

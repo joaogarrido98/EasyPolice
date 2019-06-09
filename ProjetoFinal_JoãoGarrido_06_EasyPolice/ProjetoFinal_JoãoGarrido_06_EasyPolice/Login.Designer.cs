@@ -42,7 +42,6 @@
             // 
             // Username
             // 
-            this.Username.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Username.AutoSize = true;
             this.Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Username.Location = new System.Drawing.Point(259, 191);
@@ -53,7 +52,6 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(264, 219);
@@ -64,7 +62,6 @@
             // 
             // textuser
             // 
-            this.textuser.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textuser.Location = new System.Drawing.Point(367, 193);
             this.textuser.Name = "textuser";
             this.textuser.Size = new System.Drawing.Size(107, 22);
@@ -73,7 +70,6 @@
             // 
             // textpassword
             // 
-            this.textpassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textpassword.Location = new System.Drawing.Point(367, 221);
             this.textpassword.Name = "textpassword";
             this.textpassword.Size = new System.Drawing.Size(107, 22);

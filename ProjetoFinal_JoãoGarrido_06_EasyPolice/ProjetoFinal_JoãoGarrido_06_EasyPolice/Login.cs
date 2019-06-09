@@ -96,6 +96,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     MessageBox.Show("Utilizador e/ou Password errados");
                     textuser.Text = "";
                     textpassword.Text = "";
+                    textuser.Focus();
                     db.Close();
                 }
                 if (!dr.IsClosed)

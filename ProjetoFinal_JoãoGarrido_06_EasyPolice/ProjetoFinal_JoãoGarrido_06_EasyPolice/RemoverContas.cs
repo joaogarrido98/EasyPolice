@@ -87,11 +87,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 }
             }
         }
-
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

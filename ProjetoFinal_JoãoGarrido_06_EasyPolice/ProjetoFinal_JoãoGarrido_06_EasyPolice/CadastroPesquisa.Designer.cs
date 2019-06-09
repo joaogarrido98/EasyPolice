@@ -35,6 +35,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.IdCriminoso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CartaoCidadado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Idade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +62,6 @@
             this.textBox3.Size = new System.Drawing.Size(129, 22);
             this.textBox3.TabIndex = 2;
             this.textBox3.UseWaitCursor = true;
-            this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.procurar);
             // 
             // label2
             // 
@@ -90,18 +95,71 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(107, 124);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdCriminoso,
+            this.Nome,
+            this.CartaoCidadado,
+            this.Idade});
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dataGridView1.Location = new System.Drawing.Point(100, 124);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(553, 303);
+            this.dataGridView1.Size = new System.Drawing.Size(553, 272);
             this.dataGridView1.TabIndex = 44;
-            this.dataGridView1.UseWaitCursor = true;
+            // 
+            // IdCriminoso
+            // 
+            this.IdCriminoso.DataPropertyName = "IdCriminoso";
+            this.IdCriminoso.HeaderText = "IdCriminoso";
+            this.IdCriminoso.Name = "IdCriminoso";
+            this.IdCriminoso.Visible = false;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // CartaoCidadado
+            // 
+            this.CartaoCidadado.DataPropertyName = "CartaoCidadao";
+            this.CartaoCidadado.HeaderText = "CartaoCidadado";
+            this.CartaoCidadado.Name = "CartaoCidadado";
+            // 
+            // Idade
+            // 
+            this.Idade.DataPropertyName = "Idade";
+            this.Idade.HeaderText = "Idade";
+            this.Idade.Name = "Idade";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(344, 402);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 36);
+            this.button1.TabIndex = 49;
+            this.button1.Text = "<";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(383, 402);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(34, 36);
+            this.button3.TabIndex = 50;
+            this.button3.Text = ">";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // CadastroPesquisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label2);
@@ -128,5 +186,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCriminoso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CartaoCidadado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Idade;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }

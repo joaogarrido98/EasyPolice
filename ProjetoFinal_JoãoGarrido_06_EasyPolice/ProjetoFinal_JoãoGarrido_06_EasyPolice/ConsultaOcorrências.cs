@@ -35,9 +35,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             try
             {
                 SqlCommand cmd = db.CreateCommand();
-
                 db.Open();
-                cmd.CommandText = "SELECT FROM Ocorrencias";
+
+                cmd.CommandText = "SELECT IdOcorrencia, IdCriminoso, Data, IdCrime, IdDistrito, IdUtilizador FROM Ocorrencias";
 
                 SqlDataReader dr = cmd.ExecuteReader();
 

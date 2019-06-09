@@ -52,15 +52,15 @@
             this.Idade = new System.Windows.Forms.Label();
             this.Distintivo = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.easyPolice_BdDataSet2 = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet2();
             this.utilizadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.easyPolice_BdDataSet2 = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet2();
             this.utilizadorTableAdapter = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet2TableAdapters.UtilizadorTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.crimesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.distritoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.distritoBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilizadorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -106,7 +106,7 @@
             this.ComboCrime.Location = new System.Drawing.Point(299, 79);
             this.ComboCrime.Name = "ComboCrime";
             this.ComboCrime.Size = new System.Drawing.Size(100, 24);
-            this.ComboCrime.TabIndex = 9;
+            this.ComboCrime.TabIndex = 4;
             this.ComboCrime.ValueMember = "IdCrime";
             // 
             // crimesBindingSource
@@ -130,7 +130,7 @@
             this.ComboDistrito.Location = new System.Drawing.Point(299, 107);
             this.ComboDistrito.Name = "ComboDistrito";
             this.ComboDistrito.Size = new System.Drawing.Size(100, 24);
-            this.ComboDistrito.TabIndex = 6;
+            this.ComboDistrito.TabIndex = 5;
             this.ComboDistrito.ValueMember = "IdDistrito";
             // 
             // distritoBindingSource
@@ -181,14 +181,14 @@
             this.TextCC.Location = new System.Drawing.Point(140, 135);
             this.TextCC.Name = "TextCC";
             this.TextCC.Size = new System.Drawing.Size(100, 22);
-            this.TextCC.TabIndex = 21;
+            this.TextCC.TabIndex = 3;
             // 
             // textdata
             // 
             this.textdata.Location = new System.Drawing.Point(408, 79);
             this.textdata.Name = "textdata";
             this.textdata.Size = new System.Drawing.Size(151, 22);
-            this.textdata.TabIndex = 25;
+            this.textdata.TabIndex = 6;
             // 
             // distritoTableAdapter
             // 
@@ -208,7 +208,7 @@
             this.textidade.Location = new System.Drawing.Point(140, 107);
             this.textidade.Name = "textidade";
             this.textidade.Size = new System.Drawing.Size(100, 22);
-            this.textidade.TabIndex = 26;
+            this.textidade.TabIndex = 2;
             // 
             // Idade
             // 
@@ -237,18 +237,18 @@
             this.comboBox1.Location = new System.Drawing.Point(471, 105);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(111, 24);
-            this.comboBox1.TabIndex = 29;
+            this.comboBox1.TabIndex = 7;
             this.comboBox1.ValueMember = "IdUtilizador";
-            // 
-            // easyPolice_BdDataSet2
-            // 
-            this.easyPolice_BdDataSet2.DataSetName = "EasyPolice_BdDataSet2";
-            this.easyPolice_BdDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // utilizadorBindingSource
             // 
             this.utilizadorBindingSource.DataMember = "Utilizador";
             this.utilizadorBindingSource.DataSource = this.easyPolice_BdDataSet2;
+            // 
+            // easyPolice_BdDataSet2
+            // 
+            this.easyPolice_BdDataSet2.DataSetName = "EasyPolice_BdDataSet2";
+            this.easyPolice_BdDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // utilizadorTableAdapter
             // 
@@ -285,8 +285,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.distritoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.distritoBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilizadorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
