@@ -16,9 +16,21 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
     public partial class CadastroPesquisa : Form
     {
-       
 
-        public void DoRefresh()
+        public CadastroPesquisa()
+        {
+            InitializeComponent();
+        }
+
+        private void textbox1(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode== Keys.Enter)
+            {
+                textBox3.Focus();
+            }
+        }
+
+        private void CadastroPesquisa_Load(object sender, EventArgs e)
         {
             DataSet dc = new DataSet(); // dataset representa uma estrutura de base de dados em memória
             DataTable dataTable = new DataTable("Criminoso"); //assim necessitamos de uma tabela ao dataset
@@ -64,30 +76,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     db.Dispose();
                 }
             }
-        }
-        
-
-        public CadastroPesquisa()
-        {
-            InitializeComponent();
-        }
-
-        private void textbox1(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode== Keys.Enter)
-            {
-                textBox3.Focus();
-            }
-        }
-
-        private void CadastroPesquisa_Load(object sender, EventArgs e)
-        {
-            DoRefresh();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            DoRefresh();
         }
     }
 }

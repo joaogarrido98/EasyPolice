@@ -159,5 +159,13 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             this.distritoTableAdapter.Fill(this.easyPolice_BdDataSet1.Distrito);
 
         }
+
+        private void keypress(object sender, KeyPressEventArgs e)
+        {
+            if ((sender as TextBox).Text.Count(Char.IsDigit) >= 10) //so deixar escrever ate quatro caracteres.
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

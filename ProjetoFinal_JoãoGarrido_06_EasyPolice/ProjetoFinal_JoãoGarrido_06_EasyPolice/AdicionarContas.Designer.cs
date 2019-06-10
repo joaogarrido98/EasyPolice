@@ -41,7 +41,7 @@
             // 
             // textusername
             // 
-            this.textusername.Location = new System.Drawing.Point(286, 100);
+            this.textusername.Location = new System.Drawing.Point(169, 97);
             this.textusername.Name = "textusername";
             this.textusername.Size = new System.Drawing.Size(193, 22);
             this.textusername.TabIndex = 1;
@@ -50,7 +50,7 @@
             // 
             // textpass
             // 
-            this.textpass.Location = new System.Drawing.Point(286, 152);
+            this.textpass.Location = new System.Drawing.Point(169, 149);
             this.textpass.Name = "textpass";
             this.textpass.Size = new System.Drawing.Size(193, 22);
             this.textpass.TabIndex = 2;
@@ -59,7 +59,7 @@
             // 
             // textdistintivo
             // 
-            this.textdistintivo.Location = new System.Drawing.Point(286, 204);
+            this.textdistintivo.Location = new System.Drawing.Point(169, 201);
             this.textdistintivo.Name = "textdistintivo";
             this.textdistintivo.Size = new System.Drawing.Size(193, 22);
             this.textdistintivo.TabIndex = 3;
@@ -70,7 +70,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(282, 73);
+            this.label1.Location = new System.Drawing.Point(165, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 24);
             this.label1.TabIndex = 3;
@@ -80,7 +80,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(282, 177);
+            this.label2.Location = new System.Drawing.Point(165, 174);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 24);
             this.label2.TabIndex = 4;
@@ -90,7 +90,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(282, 125);
+            this.label3.Location = new System.Drawing.Point(165, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 24);
             this.label3.TabIndex = 5;
@@ -99,7 +99,7 @@
             // Criar
             // 
             this.Criar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Criar.Location = new System.Drawing.Point(340, 260);
+            this.Criar.Location = new System.Drawing.Point(223, 257);
             this.Criar.Name = "Criar";
             this.Criar.Size = new System.Drawing.Size(95, 31);
             this.Criar.TabIndex = 5;
@@ -112,7 +112,7 @@
             this.AdminCheck.AutoSize = true;
             this.AdminCheck.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AdminCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminCheck.Location = new System.Drawing.Point(327, 232);
+            this.AdminCheck.Location = new System.Drawing.Point(210, 229);
             this.AdminCheck.Name = "AdminCheck";
             this.AdminCheck.Size = new System.Drawing.Size(121, 22);
             this.AdminCheck.TabIndex = 4;
@@ -123,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 403);
+            this.ClientSize = new System.Drawing.Size(513, 381);
             this.Controls.Add(this.AdminCheck);
             this.Controls.Add(this.Criar);
             this.Controls.Add(this.label3);

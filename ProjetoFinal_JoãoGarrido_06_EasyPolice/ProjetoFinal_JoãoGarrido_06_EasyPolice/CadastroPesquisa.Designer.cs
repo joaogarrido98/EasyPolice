@@ -35,13 +35,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.IdCriminoso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CartaoCidadao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Idade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +91,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCriminoso,
@@ -104,6 +107,34 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(511, 272);
             this.dataGridView1.TabIndex = 44;
+            // 
+            // IdCriminoso
+            // 
+            this.IdCriminoso.DataPropertyName = "IdCriminoso";
+            this.IdCriminoso.HeaderText = "IdCriminoso";
+            this.IdCriminoso.Name = "IdCriminoso";
+            this.IdCriminoso.Visible = false;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.Width = 140;
+            // 
+            // CartaoCidadao
+            // 
+            this.CartaoCidadao.DataPropertyName = "CartaoCidadao";
+            this.CartaoCidadao.HeaderText = "Cartão Cidadão";
+            this.CartaoCidadao.Name = "CartaoCidadao";
+            this.CartaoCidadao.Width = 140;
+            // 
+            // Idade
+            // 
+            this.Idade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Idade.DataPropertyName = "Idade";
+            this.Idade.HeaderText = "Idade";
+            this.Idade.Name = "Idade";
             // 
             // button1
             // 
@@ -137,35 +168,6 @@
             this.button4.TabIndex = 51;
             this.button4.Text = "Recarregar";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // IdCriminoso
-            // 
-            this.IdCriminoso.DataPropertyName = "IdCriminoso";
-            this.IdCriminoso.HeaderText = "IdCriminoso";
-            this.IdCriminoso.Name = "IdCriminoso";
-            this.IdCriminoso.Visible = false;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.Width = 140;
-            // 
-            // CartaoCidadao
-            // 
-            this.CartaoCidadao.DataPropertyName = "CartaoCidadao";
-            this.CartaoCidadao.HeaderText = "Cartão Cidadão";
-            this.CartaoCidadao.Name = "CartaoCidadao";
-            this.CartaoCidadao.Width = 140;
-            // 
-            // Idade
-            // 
-            this.Idade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Idade.DataPropertyName = "Idade";
-            this.Idade.HeaderText = "Idade";
-            this.Idade.Name = "Idade";
             // 
             // CadastroPesquisa
             // 
@@ -181,6 +183,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "CadastroPesquisa";

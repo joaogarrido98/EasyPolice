@@ -182,6 +182,7 @@
             this.TextCC.Name = "TextCC";
             this.TextCC.Size = new System.Drawing.Size(100, 22);
             this.TextCC.TabIndex = 3;
+            this.TextCC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keypress);
             // 
             // textdata
             // 
@@ -213,11 +214,11 @@
             // Idade
             // 
             this.Idade.AutoSize = true;
-            this.Idade.Location = new System.Drawing.Point(91, 107);
+            this.Idade.Location = new System.Drawing.Point(87, 107);
             this.Idade.Name = "Idade";
-            this.Idade.Size = new System.Drawing.Size(43, 17);
+            this.Idade.Size = new System.Drawing.Size(47, 17);
             this.Idade.TabIndex = 27;
-            this.Idade.Text = "Idade";
+            this.Idade.Text = "Idade:";
             // 
             // Distintivo
             // 
@@ -234,7 +235,7 @@
             this.comboBox1.DisplayMember = "Distintivo";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(470, 107);
+            this.comboBox1.Location = new System.Drawing.Point(471, 107);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(111, 24);
             this.comboBox1.TabIndex = 7;
