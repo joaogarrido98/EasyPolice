@@ -27,7 +27,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
         private void CriarRegisto(object sender, EventArgs e)
         {
 
-          try
+            try
             {
                 SqlDataReader dr;
 
@@ -140,7 +140,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 TextDetalhe.Clear();
                 textidade.Clear();
                 TextCC.Clear();
-
 
             }
             catch (Exception erro)

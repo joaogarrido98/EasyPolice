@@ -69,7 +69,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void ConsultaOcorrências_Load(object sender, EventArgs e)
         {
-            DoRefresh();
+                DoRefresh();
         }
 
         private void button2_Click(object sender, EventArgs e)

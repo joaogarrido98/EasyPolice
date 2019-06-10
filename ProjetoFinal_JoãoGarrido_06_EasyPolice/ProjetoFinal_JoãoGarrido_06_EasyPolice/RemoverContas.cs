@@ -15,34 +15,16 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
     public partial class RemoverContas : Form
     {
-        DataSet ds = new DataSet(); // dataset representa uma estrura de base de dados em memória
-        DataTable dataTable = new DataTable("Utilizadores"); //assim necessitamos de uma tabela ao dataset
-
-
         public RemoverContas()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public void Atualizar()
         {
-            this.Close();
-        }
+            DataSet ds = new DataSet(); // dataset representa uma estrura de base de dados em memória
+            DataTable dataTable = new DataTable("Utilizadores"); //assim necessitamos de uma tabela ao dataset
 
-        private void distintivopress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.') //so deixar escrever numeros
-            {
-                e.Handled = true;
-            }
-            if ((sender as TextBox).Text.Count(Char.IsDigit) >= 4) //so deixar esscrever ate quatro caracteres.
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void RemoverContas_Load(object sender, EventArgs e)
-        {
             ds.Tables.Add(dataTable);
             dataGridView1.AutoGenerateColumns = false;
 
@@ -87,10 +69,40 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 }
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void distintivopress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.') //so deixar escrever numeros
+            {
+                e.Handled = true;
+            }
+            if ((sender as TextBox).Text.Count(Char.IsDigit) >= 4) //so deixar esscrever ate quatro caracteres.
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void RemoverContas_Load(object sender, EventArgs e)
+        {
+            Atualizar();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Atualizar();
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataSet ds = new DataSet(); // dataset representa uma estrura de base de dados em memória
+            DataTable dataTable = new DataTable("Utilizadores"); //assim necessitamos de uma tabela ao dataset
 
-            if( dataGridView1.Columns[e.ColumnIndex].DataPropertyName.ToLowerInvariant() != "ativo_inativo" ) return;
+            if ( dataGridView1.Columns[e.ColumnIndex].DataPropertyName.ToLowerInvariant() != "ativo_inativo" ) return;
 
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
@@ -125,5 +137,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             }
 
         }
+
     }
 }

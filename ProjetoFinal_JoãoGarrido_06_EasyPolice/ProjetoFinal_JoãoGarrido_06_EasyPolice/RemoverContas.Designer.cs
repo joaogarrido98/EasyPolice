@@ -35,6 +35,7 @@
             this.IsAdmin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Distintivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ativo_Inativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             this.IsAdmin,
             this.Distintivo,
             this.Ativo_Inativo});
-            this.dataGridView1.Location = new System.Drawing.Point(105, 93);
+            this.dataGridView1.Location = new System.Drawing.Point(117, 74);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
@@ -67,7 +68,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(544, 291);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            
             // 
             // Nome
             // 
@@ -108,11 +108,23 @@
             this.Ativo_Inativo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Ativo_Inativo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(327, 371);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(123, 36);
+            this.button4.TabIndex = 52;
+            this.button4.Text = "Recarregar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // RemoverContas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 423);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -134,5 +146,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsAdmin;
         private System.Windows.Forms.DataGridViewTextBoxColumn Distintivo;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Ativo_Inativo;
+        private System.Windows.Forms.Button button4;
     }
 }

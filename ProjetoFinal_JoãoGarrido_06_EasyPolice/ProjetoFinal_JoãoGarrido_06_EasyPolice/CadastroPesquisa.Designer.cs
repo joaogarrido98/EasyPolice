@@ -40,13 +40,14 @@
             this.button4 = new System.Windows.Forms.Button();
             this.IdCriminoso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CartaoCidadado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CartaoCidadao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Idade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
             // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(309, 82);
             this.button2.Name = "button2";
@@ -54,7 +55,6 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Procurar";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.UseWaitCursor = true;
             // 
             // textBox3
             // 
@@ -62,7 +62,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(129, 22);
             this.textBox3.TabIndex = 2;
-            this.textBox3.UseWaitCursor = true;
             // 
             // label2
             // 
@@ -72,7 +71,6 @@
             this.label2.Size = new System.Drawing.Size(30, 17);
             this.label2.TabIndex = 48;
             this.label2.Text = "CC:";
-            this.label2.UseWaitCursor = true;
             // 
             // label1
             // 
@@ -82,7 +80,6 @@
             this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 47;
             this.label1.Text = "Nome:";
-            this.label1.UseWaitCursor = true;
             // 
             // textBox2
             // 
@@ -90,7 +87,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(129, 22);
             this.textBox2.TabIndex = 1;
-            this.textBox2.UseWaitCursor = true;
             this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox1);
             // 
             // dataGridView1
@@ -99,7 +95,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCriminoso,
             this.Nome,
-            this.CartaoCidadado,
+            this.CartaoCidadao,
             this.Idade});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridView1.Location = new System.Drawing.Point(129, 124);
@@ -111,6 +107,7 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(276, 402);
             this.button1.Name = "button1";
@@ -118,10 +115,10 @@
             this.button1.TabIndex = 49;
             this.button1.Text = "<";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.UseWaitCursor = true;
             // 
             // button3
             // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Default;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(444, 402);
             this.button3.Name = "button3";
@@ -129,10 +126,10 @@
             this.button3.TabIndex = 50;
             this.button3.Text = ">";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.UseWaitCursor = true;
             // 
             // button4
             // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Default;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(315, 402);
             this.button4.Name = "button4";
@@ -140,7 +137,6 @@
             this.button4.TabIndex = 51;
             this.button4.Text = "Recarregar";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.UseWaitCursor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // IdCriminoso
@@ -157,12 +153,12 @@
             this.Nome.Name = "Nome";
             this.Nome.Width = 140;
             // 
-            // CartaoCidadado
+            // CartaoCidadao
             // 
-            this.CartaoCidadado.DataPropertyName = "CartaoCidadao";
-            this.CartaoCidadado.HeaderText = "CartaoCidadado";
-            this.CartaoCidadado.Name = "CartaoCidadado";
-            this.CartaoCidadado.Width = 140;
+            this.CartaoCidadao.DataPropertyName = "CartaoCidadao";
+            this.CartaoCidadao.HeaderText = "Cartão Cidadão";
+            this.CartaoCidadao.Name = "CartaoCidadao";
+            this.CartaoCidadao.Width = 140;
             // 
             // Idade
             // 
@@ -190,7 +186,6 @@
             this.Name = "CadastroPesquisa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro";
-            this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.CadastroPesquisa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -210,7 +205,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCriminoso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CartaoCidadado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CartaoCidadao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Idade;
     }
 }
