@@ -15,17 +15,11 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
     public partial class ConsultaOcorrências : Form
     {
-        DataSet dt = new DataSet(); // dataset representa uma estrutura de base de dados em memória
-        DataTable dataTable = new DataTable("Ocorrencias"); //assim necessitamos de uma tabela ao dataset
-
-
-        public ConsultaOcorrências()
+        public void DoRefresh()
         {
-            InitializeComponent();
-        }
+            DataSet dt = new DataSet(); // dataset representa uma estrutura de base de dados em memória
+            DataTable dataTable = new DataTable("Ocorrencias"); //assim necessitamos de uma tabela ao dataset
 
-        private void ConsultaOcorrências_Load(object sender, EventArgs e)
-        {
             dt.Tables.Add(dataTable);
             dataGridView1.AutoGenerateColumns = false;
 
@@ -67,6 +61,20 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     db.Dispose();
                 }
             }
+        }
+        public ConsultaOcorrências()
+        {
+            InitializeComponent();
+        }
+
+        private void ConsultaOcorrências_Load(object sender, EventArgs e)
+        {
+            DoRefresh();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DoRefresh();
         }
     }
 }

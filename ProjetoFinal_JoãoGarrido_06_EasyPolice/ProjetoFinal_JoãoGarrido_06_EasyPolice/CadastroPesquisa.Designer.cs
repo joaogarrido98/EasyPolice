@@ -35,12 +35,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.IdCriminoso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CartaoCidadado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Idade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,12 +102,46 @@
             this.CartaoCidadado,
             this.Idade});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataGridView1.Location = new System.Drawing.Point(100, 124);
+            this.dataGridView1.Location = new System.Drawing.Point(129, 124);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(553, 272);
+            this.dataGridView1.Size = new System.Drawing.Size(511, 272);
             this.dataGridView1.TabIndex = 44;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(276, 402);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 36);
+            this.button1.TabIndex = 49;
+            this.button1.Text = "<";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseWaitCursor = true;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(444, 402);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(34, 36);
+            this.button3.TabIndex = 50;
+            this.button3.Text = ">";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseWaitCursor = true;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(315, 402);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(123, 36);
+            this.button4.TabIndex = 51;
+            this.button4.Text = "Recarregar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseWaitCursor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // IdCriminoso
             // 
@@ -120,44 +155,28 @@
             this.Nome.DataPropertyName = "Nome";
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
+            this.Nome.Width = 140;
             // 
             // CartaoCidadado
             // 
             this.CartaoCidadado.DataPropertyName = "CartaoCidadao";
             this.CartaoCidadado.HeaderText = "CartaoCidadado";
             this.CartaoCidadado.Name = "CartaoCidadado";
+            this.CartaoCidadado.Width = 140;
             // 
             // Idade
             // 
+            this.Idade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Idade.DataPropertyName = "Idade";
             this.Idade.HeaderText = "Idade";
             this.Idade.Name = "Idade";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(344, 402);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 36);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "<";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(383, 402);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(34, 36);
-            this.button3.TabIndex = 50;
-            this.button3.Text = ">";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // CadastroPesquisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
@@ -186,11 +205,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCriminoso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn CartaoCidadado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Idade;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
     }
 }
