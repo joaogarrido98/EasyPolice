@@ -17,6 +17,15 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
     {
         public void DoRefresh()
         {
+          
+        }
+        public ConsultaOcorrências()
+        {
+            InitializeComponent();
+        }
+
+        private void ConsultaOcorrências_Load(object sender, EventArgs e)
+        {
             DataSet dt = new DataSet(); // dataset representa uma estrutura de base de dados em memória
             DataTable dataTable = new DataTable("Ocorrencias"); //assim necessitamos de uma tabela ao dataset
 
@@ -31,7 +40,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 SqlCommand cmd = db.CreateCommand();
                 db.Open();
 
-                cmd.CommandText = "SELECT IdOcorrencia, IdCriminoso, Data, IdCrime, IdDistrito, IdUtilizador FROM Ocorrencias";
+                cmd.CommandText = "SELECT Data, Distrito.Nome AS Distrito, Criminoso.Nome, Crimes.Tipo, Utilizador.Distintivo FROM Ocorrencias INNER JOIN Distrito ON Ocorrencias.IdDistrito = Distrito.IdDistrito INNER JOIN Criminoso ON Ocorrencias.IdCriminoso = Criminoso.IdCriminoso INNER JOIN Crimes ON Ocorrencias.IdCrime = Crimes.IdCrime INNER JOIN Utilizador ON Ocorrencias.idUtilizador = Utilizador.IdUtilizador";
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
@@ -61,20 +70,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     db.Dispose();
                 }
             }
-        }
-        public ConsultaOcorrências()
-        {
-            InitializeComponent();
-        }
-
-        private void ConsultaOcorrências_Load(object sender, EventArgs e)
-        {
-                DoRefresh();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DoRefresh();
         }
     }
 }
