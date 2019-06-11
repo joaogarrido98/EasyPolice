@@ -15,23 +15,12 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
     public partial class ConsultaOcorrências : Form
     {
+        DataSet dt = new DataSet(); // dataset representa uma estrutura de base de dados em memória
+        DataTable dataTable = new DataTable("Ocorrencias"); //assim necessitamos de uma tabela ao dataset
+
+
         public void DoRefresh()
         {
-          
-        }
-        public ConsultaOcorrências()
-        {
-            InitializeComponent();
-        }
-
-        private void ConsultaOcorrências_Load(object sender, EventArgs e)
-        {
-            DataSet dt = new DataSet(); // dataset representa uma estrutura de base de dados em memória
-            DataTable dataTable = new DataTable("Ocorrencias"); //assim necessitamos de uma tabela ao dataset
-
-            dt.Tables.Add(dataTable);
-            dataGridView1.AutoGenerateColumns = false;
-
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
 
@@ -70,6 +59,27 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     db.Dispose();
                 }
             }
+        }
+        public ConsultaOcorrências()
+        {
+            InitializeComponent();
+            dt.Tables.Add(dataTable);
+            dataGridView1.AutoGenerateColumns = false;
+        }
+
+        private void ConsultaOcorrências_Load(object sender, EventArgs e)
+        {
+            DoRefresh();    
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DoRefresh();
+        }
+
+        private void clickcell(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

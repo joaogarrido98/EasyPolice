@@ -18,5 +18,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());            
         }
+        
     }
 }

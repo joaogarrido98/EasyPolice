@@ -16,10 +16,14 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
     public partial class CadastroPesquisa : Form
     {
+        DataSet dc = new DataSet(); // dataset representa uma estrutura de base de dados em memória
+        DataTable dataTable = new DataTable("Criminoso"); //assim necessitamos de uma tabela ao dataset
 
         public CadastroPesquisa()
         {
             InitializeComponent();
+            dc.Tables.Add(dataTable);
+            dataGridView1.AutoGenerateColumns = false;
         }
 
         private void textbox1(object sender, KeyEventArgs e)
@@ -30,14 +34,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             }
         }
 
-        private void CadastroPesquisa_Load(object sender, EventArgs e)
+        public void DoRefreshness()
         {
-            DataSet dc = new DataSet(); // dataset representa uma estrutura de base de dados em memória
-            DataTable dataTable = new DataTable("Criminoso"); //assim necessitamos de uma tabela ao dataset
-
-            dc.Tables.Add(dataTable);
-            dataGridView1.AutoGenerateColumns = false;
-
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
 
@@ -75,6 +73,35 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     db.Close();
                     db.Dispose();
                 }
+            }
+        }
+
+        private void CadastroPesquisa_Load(object sender, EventArgs e)
+        {
+            DoRefreshness();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DoRefreshness();
+        }
+
+        private void clickcell(object sender, DataGridViewCellEventArgs e)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
+            SqlConnection db = new SqlConnection(connectionString);
+
+            try
+            {
+                int criminosoID = Convert.ToInt32((dataGridView1.DataSource as DataTable).Rows[e.RowIndex]["IdCriminoso"]);
+                CadastroDetalhe cd = new CadastroDetalhe();
+                cd.carregamento(criminosoID);
+                cd.Show();
+
+            }
+            catch (Exception errado)
+            {
+                MessageBox.Show(errado.ToString());
             }
         }
     }

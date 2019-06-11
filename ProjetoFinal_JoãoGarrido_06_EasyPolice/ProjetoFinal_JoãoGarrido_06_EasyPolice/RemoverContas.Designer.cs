@@ -58,7 +58,7 @@
             this.IsAdmin,
             this.Distintivo,
             this.Ativo_Inativo});
-            this.dataGridView1.Location = new System.Drawing.Point(117, 74);
+            this.dataGridView1.Location = new System.Drawing.Point(109, 76);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
