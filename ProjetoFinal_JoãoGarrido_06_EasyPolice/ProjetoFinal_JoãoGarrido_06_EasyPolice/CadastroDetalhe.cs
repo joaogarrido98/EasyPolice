@@ -32,7 +32,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 db.Open();
                 SqlDataReader dr;
 
-                string query = ("SELECT Criminoso.IdDistrito, Distrito.Nome, Criminoso.IdConcelho, Concelho.Nome AS Concelho, Criminoso.IdFreguesia, Freguesia.Nome AS Freguesia FROM Criminoso INNER JOIN Distrito ON Criminoso.IdDistrito = Distrito.IdDistrito INNER JOIN Concelho ON Criminoso.IdConcelho = Concelho.IdConcelho AND Distrito.IdDistrito = Concelho.IDDistrito INNER JOIN Freguesia ON Criminoso.IdFreguesia = Freguesia.IdFreguesia AND Concelho.IdConcelho = Freguesia.IDConcelho");
+                string query = ("");
 
                 SqlCommand cmd = new SqlCommand(query, db);
 
