@@ -43,6 +43,9 @@
             this.lblConcelho = new System.Windows.Forms.Label();
             this.lblFreguesia = new System.Windows.Forms.Label();
             this.lblDistrito = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -100,7 +103,8 @@
             // lblnome
             // 
             this.lblnome.AutoSize = true;
-            this.lblnome.Location = new System.Drawing.Point(77, 48);
+            this.lblnome.BackColor = System.Drawing.SystemColors.Control;
+            this.lblnome.Location = new System.Drawing.Point(132, 57);
             this.lblnome.Name = "lblnome";
             this.lblnome.Size = new System.Drawing.Size(45, 17);
             this.lblnome.TabIndex = 3;
@@ -109,7 +113,7 @@
             // lblIdade
             // 
             this.lblIdade.AutoSize = true;
-            this.lblIdade.Location = new System.Drawing.Point(258, 131);
+            this.lblIdade.Location = new System.Drawing.Point(272, 131);
             this.lblIdade.Name = "lblIdade";
             this.lblIdade.Size = new System.Drawing.Size(47, 17);
             this.lblIdade.TabIndex = 8;
@@ -136,7 +140,7 @@
             // lblCC
             // 
             this.lblCC.AutoSize = true;
-            this.lblCC.Location = new System.Drawing.Point(258, 91);
+            this.lblCC.Location = new System.Drawing.Point(272, 91);
             this.lblCC.Name = "lblCC";
             this.lblCC.Size = new System.Drawing.Size(30, 17);
             this.lblCC.TabIndex = 10;
@@ -169,11 +173,44 @@
             this.lblDistrito.TabIndex = 13;
             this.lblDistrito.Text = "Distrito:";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label1.Location = new System.Drawing.Point(77, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 17);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Nome:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label2.Location = new System.Drawing.Point(236, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 17);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "CC:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label3.Location = new System.Drawing.Point(219, 131);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 17);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Idade:";
+            // 
             // CadastroDetalhe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblDistrito);
             this.Controls.Add(this.lblFreguesia);
             this.Controls.Add(this.lblConcelho);
@@ -210,5 +247,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Detalhe;
         private System.Windows.Forms.DataGridViewTextBoxColumn Distrito;
         private System.Windows.Forms.DataGridViewTextBoxColumn Policia;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

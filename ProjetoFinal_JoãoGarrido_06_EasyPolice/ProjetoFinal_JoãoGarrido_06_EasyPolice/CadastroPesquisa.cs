@@ -44,7 +44,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 SqlCommand cmd = db.CreateCommand();
                 db.Open();
 
-                cmd.CommandText = "SELECT IdCriminoso, Nome, CartaoCidadao, Idade FROM Criminoso";
+                cmd.CommandText = "SELECT IdCriminoso, Nome, CartaoCidadao, Idade FROM Criminoso ORDER BY Nome ASC";
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
@@ -97,7 +97,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 CadastroDetalhe cd = new CadastroDetalhe();
                 cd.carregamento(criminosoID);
                 cd.Show();
-
             }
             catch (Exception errado)
             {

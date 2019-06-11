@@ -29,16 +29,13 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
             try
             {
+                SqlCommand cmd = db.CreateCommand();
                 db.Open();
-                SqlDataReader dr;
 
-                string query = ("");
-
-                SqlCommand cmd = new SqlCommand(query, db);
-
+                cmd.CommandText = ("SELECT IdCriminoso, Nome, Idade, CartaoCidadao FROM Criminoso WHERE IdCriminoso = @IdCriminoso");            
                 cmd.Parameters.Add("@IdCriminoso", SqlDbType.Int).Value = criminosoID;
 
-                dr = cmd.ExecuteReader();
+                SqlDataReader dr = cmd.ExecuteReader();
 
                 if (dr.HasRows)
                 {
@@ -47,16 +44,14 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                         lblnome.Text = dr["Nome"].ToString();
                         lblCC.Text = dr["CartaoCidadao"].ToString();
                         lblIdade.Text = dr["Idade"].ToString();
-                        lblDistrito.Text = dr["Distrito"].ToString();
-                        lblConcelho.Text = dr["Concelho"].ToString();
-                        lblFreguesia.Text = dr["Freguesia"].ToString();
+                        //lblDistrito.Text = dr["Distrito"].ToString();
+                        //lblConcelho.Text = dr["Concelho"].ToString();
+                        //lblFreguesia.Text = dr["Freguesia"].ToString();
                     }
                     dr.Close();
-
                 }
-                    
                 db.Close();
-
+                cmd.Dispose();
             }
             catch (Exception errado)
             {
