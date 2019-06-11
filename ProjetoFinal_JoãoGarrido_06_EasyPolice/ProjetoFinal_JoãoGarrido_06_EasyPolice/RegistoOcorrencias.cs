@@ -140,6 +140,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 TextDetalhe.Clear();
                 textidade.Clear();
                 TextCC.Clear();
+                textdata.ResetText();
 
             }
             catch (Exception erro)
