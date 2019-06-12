@@ -48,6 +48,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                         txtpolicia.Text = dr["Distintivo"].ToString();
                         txtcrime.Text = dr["Tipo"].ToString();
                         txtgravidade.Text = dr["gravidade"].ToString();
+                        txtcriminoso.Text = dr["Nome"].ToString();
                     }
                     dr.Close();
                 }
@@ -74,10 +75,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             //cmdDetalheUpdate.Parameters.Add("@IdOcorrencia", SqlDbType.Int).Value = ocorrenciaId;
             cmdDetalheUpdate.Parameters.Add("@IdOcorrencia", SqlDbType.Int).Value = txtdetalhe.Text;
             cmdDetalheUpdate.ExecuteNonQuery();
-
-
-
-
         }*/
     }
 }

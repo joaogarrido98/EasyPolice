@@ -17,6 +17,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             InitializeComponent();
         }
 
+        //chamar os forms respetivos de cada botao. Em mdi
+
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             Mostwanted mdiMW = new Mostwanted();

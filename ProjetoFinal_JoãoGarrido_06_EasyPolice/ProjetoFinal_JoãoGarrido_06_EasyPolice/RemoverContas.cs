@@ -61,7 +61,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
                 if (dr.HasRows)
                 {
-                    ds.Load(dr, LoadOption.PreserveChanges, ds.Tables["Utilizadores"]); //carregar
+                    ds.Load(dr, LoadOption.PreserveChanges, ds.Tables["Utilizadores"]); //carregar a tabela
 
                     dataGridView1.DataSource = ds.Tables["Utilizadores"];
                 }

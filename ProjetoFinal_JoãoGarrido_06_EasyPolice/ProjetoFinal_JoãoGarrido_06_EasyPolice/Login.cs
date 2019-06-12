@@ -15,9 +15,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
     public partial class Login : Form
     {
-        //fazer a ligação à base de dados
         
-
 
         public Login()
         {
@@ -29,8 +27,11 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //fazer a ligação à base de dados
+
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
+
             string Username = "";
             string password = "";
             bool IsAdmin = false;
@@ -40,8 +41,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             {
                 db.Open();
                
-                //sistema de login! quando tiver também a funcionar o ativo inativo de conta é que posso completar a 100% o sistema de login 
-                SqlDataReader dr;
+                
+                SqlDataReader dr; //para ler o input do utilizador e ver se existe na base de dados os valores.
 
                 string Query = "SELECT Nome, Password, IsAdmin, Ativo_Inativo FROM Utilizador WHERE Nome = @Nome AND Password = @Password";
                 SqlCommand cmd = new SqlCommand(Query, db);
@@ -114,7 +115,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void textbox1(object sender, KeyEventArgs e)
         {
-            //para ficar focado na textbox que eu quero e ao pressionar enter passar à proxima.
+            //ficar focado na textbox que eu quero e ao pressionar enter passar à proxima.
             if (e.KeyCode == Keys.Enter)
             {
                 textpassword.Focus();
@@ -123,7 +124,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void Login_Load(object sender, EventArgs e)
         {
-            this.ActiveControl = textuser; //para meter a password encriptada
+            this.ActiveControl = textuser; //meter a password encriptada
             textpassword.UseSystemPasswordChar = true;
         }
 
@@ -150,6 +151,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Sair do programa
+
             DialogResult dialogResult = MessageBox.Show("Deseja Sair?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {

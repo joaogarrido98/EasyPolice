@@ -45,12 +45,14 @@
             this.txtgravidade = new System.Windows.Forms.TextBox();
             this.txtpolicia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblcriminoso = new System.Windows.Forms.Label();
+            this.txtcriminoso = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblgravidade
             // 
             this.lblgravidade.AutoSize = true;
-            this.lblgravidade.Location = new System.Drawing.Point(39, 107);
+            this.lblgravidade.Location = new System.Drawing.Point(39, 102);
             this.lblgravidade.Name = "lblgravidade";
             this.lblgravidade.Size = new System.Drawing.Size(78, 17);
             this.lblgravidade.TabIndex = 3;
@@ -68,7 +70,7 @@
             // lbldata
             // 
             this.lbldata.AutoSize = true;
-            this.lbldata.Location = new System.Drawing.Point(225, 107);
+            this.lbldata.Location = new System.Drawing.Point(216, 105);
             this.lbldata.Name = "lbldata";
             this.lbldata.Size = new System.Drawing.Size(42, 17);
             this.lbldata.TabIndex = 5;
@@ -109,7 +111,6 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Adicionar Informação";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtdetalhe
             // 
@@ -121,14 +122,16 @@
             // 
             // txtdata
             // 
-            this.txtdata.Location = new System.Drawing.Point(264, 102);
+            this.txtdata.BackColor = System.Drawing.SystemColors.Info;
+            this.txtdata.Location = new System.Drawing.Point(264, 104);
             this.txtdata.Name = "txtdata";
             this.txtdata.ReadOnly = true;
-            this.txtdata.Size = new System.Drawing.Size(85, 22);
+            this.txtdata.Size = new System.Drawing.Size(88, 22);
             this.txtdata.TabIndex = 11;
             // 
             // txtfreguesia
             // 
+            this.txtfreguesia.BackColor = System.Drawing.SystemColors.Info;
             this.txtfreguesia.Location = new System.Drawing.Point(306, 149);
             this.txtfreguesia.Name = "txtfreguesia";
             this.txtfreguesia.ReadOnly = true;
@@ -137,6 +140,7 @@
             // 
             // txtdistrito
             // 
+            this.txtdistrito.BackColor = System.Drawing.SystemColors.Info;
             this.txtdistrito.Location = new System.Drawing.Point(600, 104);
             this.txtdistrito.Name = "txtdistrito";
             this.txtdistrito.ReadOnly = true;
@@ -145,14 +149,16 @@
             // 
             // txtConcelho
             // 
+            this.txtConcelho.BackColor = System.Drawing.SystemColors.Info;
             this.txtConcelho.Location = new System.Drawing.Point(503, 149);
             this.txtConcelho.Name = "txtConcelho";
             this.txtConcelho.ReadOnly = true;
-            this.txtConcelho.Size = new System.Drawing.Size(100, 22);
+            this.txtConcelho.Size = new System.Drawing.Size(88, 22);
             this.txtConcelho.TabIndex = 14;
             // 
             // txtcrime
             // 
+            this.txtcrime.BackColor = System.Drawing.SystemColors.Info;
             this.txtcrime.Location = new System.Drawing.Point(84, 149);
             this.txtcrime.Name = "txtcrime";
             this.txtcrime.ReadOnly = true;
@@ -161,14 +167,16 @@
             // 
             // txtgravidade
             // 
-            this.txtgravidade.Location = new System.Drawing.Point(119, 104);
+            this.txtgravidade.BackColor = System.Drawing.SystemColors.Info;
+            this.txtgravidade.Location = new System.Drawing.Point(119, 102);
             this.txtgravidade.Name = "txtgravidade";
             this.txtgravidade.ReadOnly = true;
-            this.txtgravidade.Size = new System.Drawing.Size(100, 22);
+            this.txtgravidade.Size = new System.Drawing.Size(26, 22);
             this.txtgravidade.TabIndex = 16;
             // 
             // txtpolicia
             // 
+            this.txtpolicia.BackColor = System.Drawing.SystemColors.Info;
             this.txtpolicia.Location = new System.Drawing.Point(433, 104);
             this.txtpolicia.Name = "txtpolicia";
             this.txtpolicia.ReadOnly = true;
@@ -184,11 +192,31 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Policia:";
             // 
+            // lblcriminoso
+            // 
+            this.lblcriminoso.AutoSize = true;
+            this.lblcriminoso.Location = new System.Drawing.Point(39, 57);
+            this.lblcriminoso.Name = "lblcriminoso";
+            this.lblcriminoso.Size = new System.Drawing.Size(74, 17);
+            this.lblcriminoso.TabIndex = 19;
+            this.lblcriminoso.Text = "Criminoso:";
+            // 
+            // txtcriminoso
+            // 
+            this.txtcriminoso.BackColor = System.Drawing.SystemColors.Info;
+            this.txtcriminoso.Location = new System.Drawing.Point(110, 52);
+            this.txtcriminoso.Name = "txtcriminoso";
+            this.txtcriminoso.ReadOnly = true;
+            this.txtcriminoso.Size = new System.Drawing.Size(100, 22);
+            this.txtcriminoso.TabIndex = 20;
+            // 
             // OcorrênciaDetalhe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 403);
+            this.Controls.Add(this.txtcriminoso);
+            this.Controls.Add(this.lblcriminoso);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtpolicia);
             this.Controls.Add(this.txtgravidade);
@@ -231,5 +259,7 @@
         private System.Windows.Forms.TextBox txtgravidade;
         private System.Windows.Forms.TextBox txtpolicia;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblcriminoso;
+        private System.Windows.Forms.TextBox txtcriminoso;
     }
 }

@@ -23,12 +23,12 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void Criar_Click(object sender, EventArgs e)
         {
-            SqlDataReader dr;
+            SqlDataReader dr; //usado para ler se já existe o nome ou o distintivo que o utilizador escreveu
 
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
 
-            if (AdminCheck.Checked)
+            if (AdminCheck.Checked) //se a checkbox tiver checked passa a ser conta de administrador
             {
                 try
                 {

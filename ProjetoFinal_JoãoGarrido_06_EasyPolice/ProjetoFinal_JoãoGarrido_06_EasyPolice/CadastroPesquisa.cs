@@ -30,7 +30,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
         {
             if(e.KeyCode== Keys.Enter)
             {
-                textBox3.Focus();
+                txtcc.Focus();
             }
         }
 
@@ -56,7 +56,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 }
 
                 dr.Dispose();
-                cmd.Dispose();
+                cmd.Dispose();      
             }
             catch (SqlException ex)
             {
@@ -101,6 +101,56 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             catch (Exception errado)
             {
                 MessageBox.Show(errado.ToString());
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            
+            string nome = txtnome.Text;
+            string CC = txtcc.Text;
+
+
+            string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
+            SqlConnection db = new SqlConnection(connectionString);
+
+            try
+            {
+                SqlCommand cmd = db.CreateCommand();
+                db.Open();
+
+                cmd.CommandText = "SELECT IdCriminoso, Nome, CartaoCidadao, Idade FROM Criminoso WHERE Nome = @Nome OR CartaoCidadao = @CartaoCidadao";
+                cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = nome;
+                cmd.Parameters.Add("@CartaoCidadao", SqlDbType.VarChar).Value = CC;
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    dc.Load(dr, LoadOption.PreserveChanges, dc.Tables["Criminoso"]); //carregar
+
+                    dataGridView1.DataSource = dc.Tables["Criminoso"];
+                }
+
+                dr.Dispose();
+                cmd.Dispose();
+                
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Erro de BASE DE DADOS!!", MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Erro GERAL!!", MessageBoxButtons.OK);
+            }
+            finally
+            {
+                if (db.State == System.Data.ConnectionState.Open)
+                {
+                    db.Close();
+                    db.Dispose();
+                }
             }
         }
     }

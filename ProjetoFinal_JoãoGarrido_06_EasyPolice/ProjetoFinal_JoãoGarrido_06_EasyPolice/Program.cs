@@ -16,7 +16,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());            
+            Application.Run(new Login());    //rodar o programa a partir do form login        
         }
         
     }

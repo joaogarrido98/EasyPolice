@@ -15,11 +15,11 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
     public partial class ConsultaOcorrências : Form
     {
-        DataSet dt = new DataSet(); // dataset representa uma estrutura de base de dados em memória
+        DataSet dt = new DataSet(); //dataset representa uma estrutura de base de dados em memória
         DataTable dataTable = new DataTable("Ocorrencias"); //assim necessitamos de uma tabela ao dataset
 
 
-        public void DoRefresh()
+        public void DoRefresh() //função para realizar mais que uma vez o mesmo codigo de chamar as informações na query para a datagridview
         {
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
@@ -69,7 +69,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void ConsultaOcorrências_Load(object sender, EventArgs e)
         {
-            DoRefresh();    
+            DoRefresh();    //chamar a funçao
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -82,16 +82,67 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
 
-            try
+            try //registar o IdOcorrencia da ocorrencia na qual se carregou na row da datagridview
             {
                 int ocorrenciaID = Convert.ToInt32((dataGridView1.DataSource as DataTable).Rows[e.RowIndex]["IdOcorrencia"]);
-                OcorrênciaDetalhe od = new OcorrênciaDetalhe();
+                OcorrênciaDetalhe od = new OcorrênciaDetalhe(); //chamar o form 
                 od.carregar(ocorrenciaID);
                 od.Show();
             }
             catch (Exception errado)
             {
                 MessageBox.Show(errado.ToString());
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //sistema de fazer pesquisa a partir das textbox
+
+            string nome = txtnome.Text;
+            string data = txtdata.Value.ToString();
+
+
+            string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
+            SqlConnection db = new SqlConnection(connectionString);
+
+            try
+            {
+                SqlCommand cmd = db.CreateCommand();
+                db.Open();
+
+                cmd.CommandText = "SELECT IdOcorrencia, Data, Nome FROM Ocorrencias WHERE Data = @Data OR Nome = @Nome";
+                cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = nome;
+                cmd.Parameters.Add("@Data", SqlDbType.VarChar).Value = data;
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    dt.Load(dr, LoadOption.PreserveChanges, dt.Tables["Ocorrencias"]); //carregar
+
+                    dataGridView1.DataSource = dt.Tables["Ocorrencias"];
+                }
+
+                dr.Dispose();
+                cmd.Dispose();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Erro de BASE DE DADOS!!", MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Erro GERAL!!", MessageBoxButtons.OK);
+            }
+            finally
+            {
+                if (db.State == System.Data.ConnectionState.Open)
+                {
+                    db.Close();
+                    db.Dispose();
+                }
             }
         }
     }

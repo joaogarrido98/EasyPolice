@@ -145,12 +145,6 @@
     <Compile Include="Mostwanted.Designer.cs">
       <DependentUpon>Mostwanted.cs</DependentUpon>
     </Compile>
-    <Compile Include="MostWantedDetalhe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MostWantedDetalhe.Designer.cs">
-      <DependentUpon>MostWantedDetalhe.cs</DependentUpon>
-    </Compile>
     <Compile Include="OcorrênciaDetalhe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,9 +191,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mostwanted.resx">
       <DependentUpon>Mostwanted.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MostWantedDetalhe.resx">
-      <DependentUpon>MostWantedDetalhe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OcorrênciaDetalhe.resx">
       <DependentUpon>OcorrênciaDetalhe.cs</DependentUpon>

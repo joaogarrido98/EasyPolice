@@ -29,7 +29,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
             try
             {
-                SqlDataReader dr;
+                SqlDataReader dr; //ler se existe o CC e se existir nao criar criminoso
 
                 string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
                 SqlConnection db = new SqlConnection(connectionString);
@@ -47,7 +47,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 string freguesia = combofreguesia.SelectedValue.ToString();
                 string concelho = comboconcelho.SelectedValue.ToString();
 
-                string queryCriminoso = "SELECT CartaoCidadao FROM Criminoso WHERE CartaoCidadao=@CartaoCidadao";
+                string queryCriminoso = "SELECT CartaoCidadao FROM Criminoso WHERE CartaoCidadao=@CartaoCidadao"; 
 
                 SqlCommand cmdSelectCriminoso = new SqlCommand(queryCriminoso, db);
 
@@ -64,6 +64,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 if (CC != TextCC.Text)
                 {
                     //insertcriminoso
+
                     SqlCommand cmdInsertCriminoso = new SqlCommand();
                     cmdInsertCriminoso.Connection = db;
                     cmdInsertCriminoso.CommandText = "Insert into Criminoso (Nome, CartaoCidadao, Idade) values (@Nome, @Cartaocidadao, @Idade)";
@@ -159,6 +160,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void RegistoOcorrencias_Load(object sender, EventArgs e)
         {
+            //fazer o load dos combobox com a informaçao pretendida da base de dados
+
             // TODO: This line of code loads data into the 'easyPolice_BdDataSet4.Concelho' table. You can move, or remove it, as needed.
             this.concelhoTableAdapter.Fill(this.easyPolice_BdDataSet4.Concelho);
             // TODO: This line of code loads data into the 'easyPolice_BdDataSet5.Freguesia' table. You can move, or remove it, as needed.

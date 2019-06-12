@@ -17,6 +17,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             InitializeComponent();
         }
 
+        //chamar os forms respetivos de cada botao. Em mdi
+
         private void toolStripButton9_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer fazer logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
