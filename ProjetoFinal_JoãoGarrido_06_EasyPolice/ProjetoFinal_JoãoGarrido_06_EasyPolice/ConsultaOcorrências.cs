@@ -29,7 +29,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 SqlCommand cmd = db.CreateCommand();
                 db.Open();
 
-                cmd.CommandText = "SELECT Data, Distrito.Nome AS Distrito, Criminoso.Nome, Crimes.Tipo, Utilizador.Distintivo FROM Ocorrencias INNER JOIN Distrito ON Ocorrencias.IdDistrito = Distrito.IdDistrito INNER JOIN Criminoso ON Ocorrencias.IdCriminoso = Criminoso.IdCriminoso INNER JOIN Crimes ON Ocorrencias.IdCrime = Crimes.IdCrime INNER JOIN Utilizador ON Ocorrencias.idUtilizador = Utilizador.IdUtilizador ORDER BY Data Desc";
+                cmd.CommandText = "SELECT IdOcorrencia, Data, Distrito.Nome AS Distrito, Criminoso.Nome, Crimes.Tipo, Utilizador.Distintivo FROM Ocorrencias INNER JOIN Distrito ON Ocorrencias.IdDistrito = Distrito.IdDistrito INNER JOIN Criminoso ON Ocorrencias.IdCriminoso = Criminoso.IdCriminoso INNER JOIN Crimes ON Ocorrencias.IdCrime = Crimes.IdCrime INNER JOIN Utilizador ON Ocorrencias.idUtilizador = Utilizador.IdUtilizador ORDER BY Data Desc";
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
@@ -79,7 +79,20 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void clickcell(object sender, DataGridViewCellEventArgs e)
         {
+            string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
+            SqlConnection db = new SqlConnection(connectionString);
 
+            try
+            {
+                int ocorrenciaID = Convert.ToInt32((dataGridView1.DataSource as DataTable).Rows[e.RowIndex]["IdOcorrencia"]);
+                OcorrênciaDetalhe od = new OcorrênciaDetalhe();
+                od.carregar(ocorrenciaID);
+                od.Show();
+            }
+            catch (Exception errado)
+            {
+                MessageBox.Show(errado.ToString());
+            }
         }
     }
 }

@@ -19,7 +19,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void toolStripButton9_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer fazer logout?", "Logout", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Tem a certeza que quer fazer logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 this.Hide();
