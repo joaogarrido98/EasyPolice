@@ -21,11 +21,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         public void carregar(int ocorrenciaId)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
@@ -36,7 +31,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 SqlCommand cmd = db.CreateCommand();
                 db.Open();
 
-                cmd.CommandText = ("SELECT dbo.Ocorrencias.IdOcorrencia, dbo.Ocorrencias.Data, dbo.Ocorrencias.Detalhe, dbo.Crimes.Tipo, dbo.Crimes.Gravidade, dbo.Distrito.Nome AS Distrito, dbo.Concelho.Nome AS Concelho, dbo.Freguesia.Nome AS Freguesia, dbo.Utilizador.Distintivo FROM dbo.Ocorrencias INNER JOIN dbo.Crimes ON dbo.Ocorrencias.IdCrime = dbo.Crimes.IdCrime INNER JOIN dbo.Distrito ON dbo.Ocorrencias.IdDistrito = dbo.Distrito.IdDistrito INNER JOIN dbo.Concelho ON dbo.Distrito.IdDistrito = dbo.Concelho.IDDistrito INNER JOIN dbo.Freguesia ON dbo.Concelho.IdConcelho = dbo.Freguesia.IDConcelho INNER JOIN dbo.Utilizador ON dbo.Ocorrencias.idUtilizador = dbo.Utilizador.IdUtilizador WHERE IdOcorrencia = @IdOcorrencia");
+                cmd.CommandText = ("SELECT dbo.Ocorrencias.IdOcorrencia, dbo.Criminoso.Nome, dbo.Ocorrencias.Data, dbo.Crimes.Tipo, dbo.Crimes.Gravidade, dbo.Ocorrencias.Detalhe, dbo.Distrito.Nome AS Distrito, dbo.Utilizador.Distintivo, dbo.Concelho.Nome AS Concelho,   dbo.Freguesia.Nome AS Freguesia FROM dbo.Ocorrencias INNER JOIN dbo.Criminoso ON dbo.Ocorrencias.IdCriminoso = dbo.Criminoso.IdCriminoso INNER JOIN dbo.Crimes ON dbo.Ocorrencias.IdCrime = dbo.Crimes.IdCrime INNER JOIN  dbo.Distrito ON dbo.Ocorrencias.IdDistrito = dbo.Distrito.IdDistrito INNER JOIN dbo.Utilizador ON dbo.Ocorrencias.idUtilizador = dbo.Utilizador.IdUtilizador INNER JOIN dbo.Concelho ON dbo.Ocorrencias.IdConcelho = dbo.Concelho.IdConcelho INNER JOIN dbo.Freguesia ON dbo.Ocorrencias.IdFreguesia = dbo.Freguesia.IdFreguesia WHERE IdOcorrencia = @IdOcorrencia");
                 cmd.Parameters.Add("@IdOcorrencia", SqlDbType.Int).Value = ocorrenciaId;
 
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -66,5 +61,23 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         }
 
+       /* public void button1_Click(object sender, EventArgs e)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
+            SqlConnection db = new SqlConnection(connectionString);
+
+            db.Open();
+            SqlCommand cmdDetalheUpdate = new SqlCommand();
+            cmdDetalheUpdate.Connection = db;
+
+            cmdDetalheUpdate.CommandText = ("UPDATE Ocorrencias SET Detalhe = @detalhe where IdOcorrencia = @IdOcorrencia");
+            //cmdDetalheUpdate.Parameters.Add("@IdOcorrencia", SqlDbType.Int).Value = ocorrenciaId;
+            cmdDetalheUpdate.Parameters.Add("@IdOcorrencia", SqlDbType.Int).Value = txtdetalhe.Text;
+            cmdDetalheUpdate.ExecuteNonQuery();
+
+
+
+
+        }*/
     }
 }

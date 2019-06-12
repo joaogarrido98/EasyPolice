@@ -44,6 +44,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 string Crime = ComboCrime.SelectedValue.ToString();
                 string idade = textidade.Text;
                 string distintivo = comboBox1.SelectedValue.ToString();
+                string freguesia = combofreguesia.SelectedValue.ToString();
+                string concelho = comboconcelho.SelectedValue.ToString();
 
                 string queryCriminoso = "SELECT CartaoCidadao FROM Criminoso WHERE CartaoCidadao=@CartaoCidadao";
 
@@ -89,7 +91,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     //insertOcorrencias
                     SqlCommand cmdInsertOcorrencias = new SqlCommand();
                     cmdInsertOcorrencias.Connection = db;
-                    cmdInsertOcorrencias.CommandText = "Insert into Ocorrencias (Data, Detalhe, IdDistrito, idUtilizador, IdCrime, IdCriminoso) values (@Data, @Detalhe, @IdDistrito, @IdUtilizador, @IdCrime, @IdCriminoso)";
+                    cmdInsertOcorrencias.CommandText = "Insert into Ocorrencias (Data, Detalhe, IdDistrito, idUtilizador, IdCrime, IdCriminoso, IdFreguesia, IdConcelho) values (@Data, @Detalhe, @IdDistrito, @IdUtilizador, @IdCrime, @IdCriminoso, @IdFreguesia, @IdConcelho)";
 
                     cmdInsertOcorrencias.Parameters.Add("@Data", SqlDbType.Date).Value = Data;
                     cmdInsertOcorrencias.Parameters.Add("@Detalhe", SqlDbType.VarChar).Value = Detalhe;
@@ -97,6 +99,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     cmdInsertOcorrencias.Parameters.Add("@idUtilizador", SqlDbType.Int).Value = distintivo;
                     cmdInsertOcorrencias.Parameters.Add("@Idcrime", SqlDbType.Int).Value = Crime;
                     cmdInsertOcorrencias.Parameters.Add("@IdCriminoso", SqlDbType.Int).Value = CC;
+                    cmdInsertOcorrencias.Parameters.Add("@IdFreguesia", SqlDbType.Int).Value = freguesia;
+                    cmdInsertOcorrencias.Parameters.Add("@IdConcelho", SqlDbType.Int).Value = concelho;
                     cmdInsertOcorrencias.ExecuteNonQuery();
 
                     MessageBox.Show("Registo Criado");
@@ -122,7 +126,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     //insertOcorrencias
                     SqlCommand cmdInsertOcorrencias = new SqlCommand();
                     cmdInsertOcorrencias.Connection = db;
-                    cmdInsertOcorrencias.CommandText = "Insert into Ocorrencias (Data, Detalhe, IdDistrito, idUtilizador, IdCrime, IdCriminoso) values (@Data, @Detalhe, @IdDistrito, @IdUtilizador, @IdCrime, @IdCriminoso)";
+                    cmdInsertOcorrencias.CommandText = "Insert into Ocorrencias (Data, Detalhe, IdDistrito, idUtilizador, IdCrime, IdCriminoso, IdFreguesia, IdConcelho) values (@Data, @Detalhe, @IdDistrito, @IdUtilizador, @IdCrime, @IdCriminoso, @IdFreguesia, @IdConcelho)";
 
                     cmdInsertOcorrencias.Parameters.Add("@Data", SqlDbType.Date).Value = Data;
                     cmdInsertOcorrencias.Parameters.Add("@Detalhe", SqlDbType.VarChar).Value = Detalhe;
@@ -130,6 +134,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     cmdInsertOcorrencias.Parameters.Add("@idUtilizador", SqlDbType.Int).Value = distintivo;
                     cmdInsertOcorrencias.Parameters.Add("@Idcrime", SqlDbType.Int).Value = Crime;
                     cmdInsertOcorrencias.Parameters.Add("@IdCriminoso", SqlDbType.Int).Value = CC;
+                    cmdInsertOcorrencias.Parameters.Add("@IdFreguesia", SqlDbType.Int).Value = freguesia;
+                    cmdInsertOcorrencias.Parameters.Add("@IdConcelho", SqlDbType.Int).Value = concelho;
+                    
                     cmdInsertOcorrencias.ExecuteNonQuery();
 
                     MessageBox.Show("Registo Criado");
@@ -152,6 +159,12 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void RegistoOcorrencias_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'easyPolice_BdDataSet4.Concelho' table. You can move, or remove it, as needed.
+            this.concelhoTableAdapter.Fill(this.easyPolice_BdDataSet4.Concelho);
+            // TODO: This line of code loads data into the 'easyPolice_BdDataSet5.Freguesia' table. You can move, or remove it, as needed.
+            this.freguesiaTableAdapter1.Fill(this.easyPolice_BdDataSet5.Freguesia);
+            // TODO: This line of code loads data into the 'easyPolice_BdDataSet3.Freguesia' table. You can move, or remove it, as needed.
+            this.freguesiaTableAdapter.Fill(this.easyPolice_BdDataSet3.Freguesia);
             // TODO: This line of code loads data into the 'easyPolice_BdDataSet2.Utilizador' table. You can move, or remove it, as needed.
             this.utilizadorTableAdapter.Fill(this.easyPolice_BdDataSet2.Utilizador); 
             // TODO: This line of code loads data into the 'easyPolice_BdDataSet1.Crimes' table. You can move, or remove it, as needed.

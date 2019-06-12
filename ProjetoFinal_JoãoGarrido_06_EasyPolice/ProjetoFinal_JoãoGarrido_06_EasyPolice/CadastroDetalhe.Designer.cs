@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroDetalhe));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Crime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Policia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblConcelho = new System.Windows.Forms.Label();
@@ -38,10 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Crime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Policia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblnome = new System.Windows.Forms.TextBox();
             this.lblCC = new System.Windows.Forms.TextBox();
             this.lblIdade = new System.Windows.Forms.TextBox();
@@ -65,6 +65,35 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(599, 207);
             this.dataGridView1.TabIndex = 5;
+            // 
+            // Data
+            // 
+            this.Data.DataPropertyName = "Data";
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
+            // 
+            // Crime
+            // 
+            this.Crime.DataPropertyName = "Tipo";
+            this.Crime.HeaderText = "Crime";
+            this.Crime.Name = "Crime";
+            this.Crime.ReadOnly = true;
+            // 
+            // Distrito
+            // 
+            this.Distrito.DataPropertyName = "Distrito";
+            this.Distrito.HeaderText = "Distrito";
+            this.Distrito.Name = "Distrito";
+            this.Distrito.ReadOnly = true;
+            // 
+            // Policia
+            // 
+            this.Policia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Policia.DataPropertyName = "Distintivo";
+            this.Policia.HeaderText = "Policia";
+            this.Policia.Name = "Policia";
+            this.Policia.ReadOnly = true;
             // 
             // button2
             // 
@@ -141,38 +170,9 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Idade:";
             // 
-            // Data
-            // 
-            this.Data.DataPropertyName = "Data";
-            this.Data.HeaderText = "Data";
-            this.Data.Name = "Data";
-            this.Data.ReadOnly = true;
-            // 
-            // Crime
-            // 
-            this.Crime.DataPropertyName = "Tipo";
-            this.Crime.HeaderText = "Crime";
-            this.Crime.Name = "Crime";
-            this.Crime.ReadOnly = true;
-            // 
-            // Distrito
-            // 
-            this.Distrito.DataPropertyName = "Distrito";
-            this.Distrito.HeaderText = "Distrito";
-            this.Distrito.Name = "Distrito";
-            this.Distrito.ReadOnly = true;
-            // 
-            // Policia
-            // 
-            this.Policia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Policia.DataPropertyName = "Distintivo";
-            this.Policia.HeaderText = "Policia";
-            this.Policia.Name = "Policia";
-            this.Policia.ReadOnly = true;
-            // 
             // lblnome
             // 
-            this.lblnome.Location = new System.Drawing.Point(124, 51);
+            this.lblnome.Location = new System.Drawing.Point(123, 49);
             this.lblnome.Name = "lblnome";
             this.lblnome.ReadOnly = true;
             this.lblnome.Size = new System.Drawing.Size(100, 22);

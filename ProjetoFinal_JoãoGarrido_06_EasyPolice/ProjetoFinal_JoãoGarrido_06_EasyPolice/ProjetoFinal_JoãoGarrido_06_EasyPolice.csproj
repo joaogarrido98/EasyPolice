@@ -102,6 +102,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EasyPolice_BdDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EasyPolice_BdDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EasyPolice_BdDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EasyPolice_BdDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EasyPolice_BdDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EasyPolice_BdDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EasyPolice_BdDataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -221,6 +236,39 @@
     </None>
     <None Include="EasyPolice_BdDataSet2.xss">
       <DependentUpon>EasyPolice_BdDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="EasyPolice_BdDataSet3.xsc">
+      <DependentUpon>EasyPolice_BdDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="EasyPolice_BdDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EasyPolice_BdDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EasyPolice_BdDataSet3.xss">
+      <DependentUpon>EasyPolice_BdDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="EasyPolice_BdDataSet4.xsc">
+      <DependentUpon>EasyPolice_BdDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="EasyPolice_BdDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EasyPolice_BdDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EasyPolice_BdDataSet4.xss">
+      <DependentUpon>EasyPolice_BdDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="EasyPolice_BdDataSet5.xsc">
+      <DependentUpon>EasyPolice_BdDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="EasyPolice_BdDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EasyPolice_BdDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EasyPolice_BdDataSet5.xss">
+      <DependentUpon>EasyPolice_BdDataSet5.xsd</DependentUpon>
     </None>
     <None Include="RegistoOcorrencias.xsc">
       <DependentUpon>RegistoOcorrencias.xsd</DependentUpon>

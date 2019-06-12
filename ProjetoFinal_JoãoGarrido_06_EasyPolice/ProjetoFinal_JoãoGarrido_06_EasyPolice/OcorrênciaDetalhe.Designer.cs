@@ -109,13 +109,13 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Adicionar Informação";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtdetalhe
             // 
             this.txtdetalhe.Location = new System.Drawing.Point(42, 194);
             this.txtdetalhe.Multiline = true;
             this.txtdetalhe.Name = "txtdetalhe";
-            this.txtdetalhe.ReadOnly = true;
             this.txtdetalhe.Size = new System.Drawing.Size(678, 179);
             this.txtdetalhe.TabIndex = 10;
             // 
