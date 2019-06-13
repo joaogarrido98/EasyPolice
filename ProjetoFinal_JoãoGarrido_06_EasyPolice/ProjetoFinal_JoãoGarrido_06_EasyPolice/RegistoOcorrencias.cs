@@ -151,9 +151,16 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 textdata.ResetText();
 
             }
-            catch (Exception erro)
+            catch (Exception)
             {
-                    MessageBox.Show(erro.ToString());
+                if (TextCC.Text == "")
+                {
+                    MessageBox.Show("Por Favor adicione um numero de Cartão de Cidadão", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if(textidade.Text == "")
+                {
+                    MessageBox.Show("Por Favor adicione a idade do criminoso", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
 
         }
@@ -179,7 +186,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void keypress(object sender, KeyPressEventArgs e)
         {
-            if ((sender as TextBox).Text.Count(Char.IsDigit) >= 10) //so deixar escrever ate quatro caracteres.
+            if ((sender as TextBox).Text.Count(Char.IsDigit) >= 10) //so deixar escrever ate dezcaracteres.
             {
                 e.Handled = true;
             }

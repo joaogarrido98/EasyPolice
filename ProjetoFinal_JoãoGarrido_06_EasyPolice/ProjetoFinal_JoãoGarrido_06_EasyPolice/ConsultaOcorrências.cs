@@ -69,6 +69,10 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void ConsultaOcorrências_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'easyPolice_BdDataSet1.Crimes' table. You can move, or remove it, as needed.
+            this.crimesTableAdapter.Fill(this.easyPolice_BdDataSet1.Crimes);
+            // TODO: This line of code loads data into the 'easyPolice_BdDataSet1.Distrito' table. You can move, or remove it, as needed.
+            this.distritoTableAdapter.Fill(this.easyPolice_BdDataSet1.Distrito);
             DoRefresh(); //chamar a funçao
         }
 
@@ -88,6 +92,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 int ocorrenciaID = Convert.ToInt32((dataGridView1.DataSource as DataTable).Rows[e.RowIndex]["IdOcorrencia"]);
                 OcorrênciaDetalhe od = new OcorrênciaDetalhe(); //chamar o form 
                 od.carregar(ocorrenciaID);
+                od.detalhe(ocorrenciaID);
                 od.Show();
             }
             catch (Exception errado)
@@ -101,9 +106,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             //sistema de fazer pesquisa a partir das textbox
 
             string nome = txtnome.Text;
-            //string data = txtdata.Value.ToString();
-
-
+            string data = txtdata.Value.ToString();
+            string crime = txtcrime.SelectedValue.ToString();
+            string distrito = txtdistrito.SelectedValue.ToString();
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
 
@@ -111,11 +116,13 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             {
                 SqlCommand cmd = db.CreateCommand();
                 db.Open();
+                //FROM dbo.Ocorrencias INNER JOIN dbo.Criminoso ON dbo.Ocorrencias.IdCriminoso = dbo.Criminoso.IdCriminoso INNER JOIN  dbo.Crimes ON dbo.Ocorrencias.IdCrime = dbo.Crimes.IdCrime
+                cmd.CommandText = "SELECT dbo.Ocorrencias.IdOcorrencia, dbo.Criminoso.Nome, dbo.Ocorrencias.Data, dbo.Crimes.Tipo, dbo.Distrito.Nome AS Distrito, dbo.Utilizador.Distintivo FROM dbo.Ocorrencias INNER JOIN dbo.Criminoso ON dbo.Ocorrencias.IdCriminoso = dbo.Criminoso.IdCriminoso INNER JOIN dbo.Crimes ON dbo.Ocorrencias.IdCrime = dbo.Crimes.IdCrime INNER JOIN  dbo.Distrito ON dbo.Ocorrencias.IdDistrito = dbo.Distrito.IdDistrito INNER JOIN dbo.Utilizador ON dbo.Ocorrencias.idUtilizador = dbo.Utilizador.IdUtilizador WHERE Data = @Data OR Nome = @Nome OR Distrito = @Distrito";
 
-                cmd.CommandText = "SELECT dbo.Ocorrencias.IdOcorrencia, dbo.Ocorrencias.Data, dbo.Criminoso.Nome, dbo.Distrito.Nome AS Distrito, dbo.Crimes.Tipo FROM dbo.Ocorrencias INNER JOIN dbo.Distrito ON dbo.Ocorrencias.IdDistrito = dbo.Distrito.IdDistrito INNER JOIN dbo.Criminoso ON dbo.Ocorrencias.IdCriminoso = dbo.Criminoso.IdCriminoso INNER JOIN dbo.Crimes ON dbo.Ocorrencias.IdCrime = dbo.Crimes.IdCrime WHERE Criminoso = @Criminoso";
-
-                cmd.Parameters.Add("@Criminoso", SqlDbType.VarChar).Value = nome;
-                //cmd.Parameters.Add("@Data", SqlDbType.VarChar).Value = data;
+                cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = nome;
+                cmd.Parameters.Add("@Data", SqlDbType.Date).Value = data;
+                cmd.Parameters.Add("@Crime", SqlDbType.VarChar).Value = crime;
+                cmd.Parameters.Add("@Distrito", SqlDbType.VarChar).Value = distrito;
 
                 SqlDataReader dr = cmd.ExecuteReader();
 

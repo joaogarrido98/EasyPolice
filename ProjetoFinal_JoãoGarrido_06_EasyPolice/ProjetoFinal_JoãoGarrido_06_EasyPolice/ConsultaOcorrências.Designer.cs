@@ -28,46 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaOcorrências));
-            this.cbDistrito = new System.Windows.Forms.ComboBox();
-            this.cbcrime = new System.Windows.Forms.ComboBox();
+            this.txtcrime = new System.Windows.Forms.ComboBox();
             this.txtnome = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.easyPolice_BdDataSet1 = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet1();
+            this.distritoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.distritoTableAdapter = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet1TableAdapters.DistritoTableAdapter();
+            this.crimesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.crimesTableAdapter = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet1TableAdapters.CrimesTableAdapter();
+            this.txtdata = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.IdOcorrencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Criminoso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Crime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Policia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtdistrito = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.distritoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crimesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // cbDistrito
+            // txtcrime
             // 
-            this.cbDistrito.DisplayMember = "IdDistrito";
-            this.cbDistrito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDistrito.Location = new System.Drawing.Point(398, 30);
-            this.cbDistrito.Name = "cbDistrito";
-            this.cbDistrito.Size = new System.Drawing.Size(100, 24);
-            this.cbDistrito.TabIndex = 2;
-            this.cbDistrito.ValueMember = "IdDistrito";
-            // 
-            // cbcrime
-            // 
-            this.cbcrime.DisplayMember = "IdCrime";
-            this.cbcrime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbcrime.FormattingEnabled = true;
-            this.cbcrime.Location = new System.Drawing.Point(398, 58);
-            this.cbcrime.Name = "cbcrime";
-            this.cbcrime.Size = new System.Drawing.Size(100, 24);
-            this.cbcrime.TabIndex = 4;
-            this.cbcrime.ValueMember = "IdCrime";
+            this.txtcrime.DataSource = this.crimesBindingSource;
+            this.txtcrime.DisplayMember = "Tipo";
+            this.txtcrime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtcrime.FormattingEnabled = true;
+            this.txtcrime.Location = new System.Drawing.Point(407, 60);
+            this.txtcrime.Name = "txtcrime";
+            this.txtcrime.Size = new System.Drawing.Size(100, 24);
+            this.txtcrime.TabIndex = 4;
+            this.txtcrime.ValueMember = "IdCrime";
             // 
             // txtnome
             // 
@@ -79,7 +80,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(351, 59);
+            this.label9.Location = new System.Drawing.Point(351, 61);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 17);
             this.label9.TabIndex = 19;
@@ -93,24 +94,6 @@
             this.label7.Size = new System.Drawing.Size(49, 17);
             this.label7.TabIndex = 18;
             this.label7.Text = "Nome:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(345, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 17);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Distrito:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(148, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 17);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Data:";
             // 
             // button1
             // 
@@ -142,6 +125,56 @@
             this.dataGridView1.Size = new System.Drawing.Size(611, 229);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clickcell);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(305, 360);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(123, 37);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "Recarregar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // easyPolice_BdDataSet1
+            // 
+            this.easyPolice_BdDataSet1.DataSetName = "EasyPolice_BdDataSet1";
+            this.easyPolice_BdDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // distritoBindingSource
+            // 
+            this.distritoBindingSource.DataMember = "Distrito";
+            this.distritoBindingSource.DataSource = this.easyPolice_BdDataSet1;
+            // 
+            // distritoTableAdapter
+            // 
+            this.distritoTableAdapter.ClearBeforeFill = true;
+            // 
+            // crimesBindingSource
+            // 
+            this.crimesBindingSource.DataMember = "Crimes";
+            this.crimesBindingSource.DataSource = this.easyPolice_BdDataSet1;
+            // 
+            // crimesTableAdapter
+            // 
+            this.crimesTableAdapter.ClearBeforeFill = true;
+            // 
+            // txtdata
+            // 
+            this.txtdata.Location = new System.Drawing.Point(192, 59);
+            this.txtdata.Name = "txtdata";
+            this.txtdata.Size = new System.Drawing.Size(153, 22);
+            this.txtdata.TabIndex = 22;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(144, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 17);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Data:";
             // 
             // IdOcorrencia
             // 
@@ -183,31 +216,42 @@
             this.Policia.HeaderText = "Policia";
             this.Policia.Name = "Policia";
             // 
-            // button2
+            // label1
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(305, 360);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 37);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Recarregar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(345, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Distrito:";
+            // 
+            // txtdistrito
+            // 
+            this.txtdistrito.DataSource = this.distritoBindingSource;
+            this.txtdistrito.DisplayMember = "Nome";
+            this.txtdistrito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtdistrito.FormattingEnabled = true;
+            this.txtdistrito.Location = new System.Drawing.Point(407, 30);
+            this.txtdistrito.Name = "txtdistrito";
+            this.txtdistrito.Size = new System.Drawing.Size(100, 24);
+            this.txtdistrito.TabIndex = 24;
+            this.txtdistrito.ValueMember = "IdDistrito";
             // 
             // ConsultaOcorrências
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 407);
+            this.Controls.Add(this.txtdistrito);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtdata);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.cbDistrito);
-            this.Controls.Add(this.cbcrime);
+            this.Controls.Add(this.txtcrime);
             this.Controls.Add(this.txtnome);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -217,28 +261,36 @@
             this.Text = "Consulta Ocorrências";
             this.Load += new System.EventHandler(this.ConsultaOcorrências_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.distritoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crimesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cbDistrito;
-        private System.Windows.Forms.ComboBox cbcrime;
+        private System.Windows.Forms.ComboBox txtcrime;
         private System.Windows.Forms.TextBox txtnome;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
+        private EasyPolice_BdDataSet1 easyPolice_BdDataSet1;
+        private System.Windows.Forms.BindingSource distritoBindingSource;
+        private EasyPolice_BdDataSet1TableAdapters.DistritoTableAdapter distritoTableAdapter;
+        private System.Windows.Forms.BindingSource crimesBindingSource;
+        private EasyPolice_BdDataSet1TableAdapters.CrimesTableAdapter crimesTableAdapter;
+        private System.Windows.Forms.DateTimePicker txtdata;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdOcorrencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Criminoso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
         private System.Windows.Forms.DataGridViewTextBoxColumn Crime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Distrito;
         private System.Windows.Forms.DataGridViewTextBoxColumn Policia;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox txtdistrito;
     }
 }

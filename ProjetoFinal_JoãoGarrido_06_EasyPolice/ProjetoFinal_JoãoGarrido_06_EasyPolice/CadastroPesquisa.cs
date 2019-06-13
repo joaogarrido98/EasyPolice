@@ -97,6 +97,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 int criminosoID = Convert.ToInt32((dataGridView1.DataSource as DataTable).Rows[e.RowIndex]["IdCriminoso"]);
                 CadastroDetalhe cd = new CadastroDetalhe();
                 cd.carregamento(criminosoID);
+                cd.detalhe(criminosoID);
                 cd.Show();
             }
             catch (Exception errado)

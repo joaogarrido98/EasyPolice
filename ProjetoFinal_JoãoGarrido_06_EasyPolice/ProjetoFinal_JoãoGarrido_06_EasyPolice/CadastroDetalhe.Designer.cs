@@ -30,21 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroDetalhe));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Crime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Policia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblConcelho = new System.Windows.Forms.Label();
-            this.lblFreguesia = new System.Windows.Forms.Label();
-            this.lblDistrito = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblnome = new System.Windows.Forms.TextBox();
             this.lblCC = new System.Windows.Forms.TextBox();
             this.lblIdade = new System.Windows.Forms.TextBox();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Crime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Policia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -66,43 +63,14 @@
             this.dataGridView1.Size = new System.Drawing.Size(599, 207);
             this.dataGridView1.TabIndex = 5;
             // 
-            // Data
-            // 
-            this.Data.DataPropertyName = "Data";
-            this.Data.HeaderText = "Data";
-            this.Data.Name = "Data";
-            this.Data.ReadOnly = true;
-            // 
-            // Crime
-            // 
-            this.Crime.DataPropertyName = "Tipo";
-            this.Crime.HeaderText = "Crime";
-            this.Crime.Name = "Crime";
-            this.Crime.ReadOnly = true;
-            // 
-            // Distrito
-            // 
-            this.Distrito.DataPropertyName = "Distrito";
-            this.Distrito.HeaderText = "Distrito";
-            this.Distrito.Name = "Distrito";
-            this.Distrito.ReadOnly = true;
-            // 
-            // Policia
-            // 
-            this.Policia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Policia.DataPropertyName = "Distintivo";
-            this.Policia.HeaderText = "Policia";
-            this.Policia.Name = "Policia";
-            this.Policia.ReadOnly = true;
-            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(522, 167);
+            this.button2.Location = new System.Drawing.Point(522, 166);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(157, 41);
             this.button2.TabIndex = 9;
-            this.button2.Text = "Adicionar Informações";
+            this.button2.Text = "Adicionar Fotografia";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
@@ -112,33 +80,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(133, 130);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            // 
-            // lblConcelho
-            // 
-            this.lblConcelho.AutoSize = true;
-            this.lblConcelho.Location = new System.Drawing.Point(482, 91);
-            this.lblConcelho.Name = "lblConcelho";
-            this.lblConcelho.Size = new System.Drawing.Size(71, 17);
-            this.lblConcelho.TabIndex = 11;
-            this.lblConcelho.Text = "Concelho:";
-            // 
-            // lblFreguesia
-            // 
-            this.lblFreguesia.AutoSize = true;
-            this.lblFreguesia.Location = new System.Drawing.Point(370, 131);
-            this.lblFreguesia.Name = "lblFreguesia";
-            this.lblFreguesia.Size = new System.Drawing.Size(75, 17);
-            this.lblFreguesia.TabIndex = 12;
-            this.lblFreguesia.Text = "Freguesia:";
-            // 
-            // lblDistrito
-            // 
-            this.lblDistrito.AutoSize = true;
-            this.lblDistrito.Location = new System.Drawing.Point(370, 91);
-            this.lblDistrito.Name = "lblDistrito";
-            this.lblDistrito.Size = new System.Drawing.Size(56, 17);
-            this.lblDistrito.TabIndex = 13;
-            this.lblDistrito.Text = "Distrito:";
             // 
             // label1
             // 
@@ -197,6 +138,35 @@
             this.lblIdade.Size = new System.Drawing.Size(100, 22);
             this.lblIdade.TabIndex = 19;
             // 
+            // Data
+            // 
+            this.Data.DataPropertyName = "Data";
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
+            // 
+            // Crime
+            // 
+            this.Crime.DataPropertyName = "Tipo";
+            this.Crime.HeaderText = "Crime";
+            this.Crime.Name = "Crime";
+            this.Crime.ReadOnly = true;
+            // 
+            // Distrito
+            // 
+            this.Distrito.DataPropertyName = "Nome";
+            this.Distrito.HeaderText = "Distrito";
+            this.Distrito.Name = "Distrito";
+            this.Distrito.ReadOnly = true;
+            // 
+            // Policia
+            // 
+            this.Policia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Policia.DataPropertyName = "Distintivo";
+            this.Policia.HeaderText = "Policia";
+            this.Policia.Name = "Policia";
+            this.Policia.ReadOnly = true;
+            // 
             // CadastroDetalhe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -208,9 +178,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblDistrito);
-            this.Controls.Add(this.lblFreguesia);
-            this.Controls.Add(this.lblConcelho);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
@@ -232,18 +199,15 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label lblConcelho;
-        private System.Windows.Forms.Label lblFreguesia;
-        private System.Windows.Forms.Label lblDistrito;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox lblnome;
+        private System.Windows.Forms.TextBox lblCC;
+        private System.Windows.Forms.TextBox lblIdade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
         private System.Windows.Forms.DataGridViewTextBoxColumn Crime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Distrito;
         private System.Windows.Forms.DataGridViewTextBoxColumn Policia;
-        private System.Windows.Forms.TextBox lblnome;
-        private System.Windows.Forms.TextBox lblCC;
-        private System.Windows.Forms.TextBox lblIdade;
     }
 }

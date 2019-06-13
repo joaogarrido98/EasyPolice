@@ -42,9 +42,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                         lblnome.Text = dr["Nome"].ToString();
                         lblCC.Text = dr["CartaoCidadao"].ToString();
                         lblIdade.Text = dr["Idade"].ToString();
-                        //lblDistrito.Text = dr["Distrito"].ToString();
-                        //lblConcelho.Text = dr["Concelho"].ToString();
-                        //lblFreguesia.Text = dr["Freguesia"].ToString();
+                        
                     }
                     dr.Close();
                 }
@@ -64,7 +62,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             this.Close();
         }
 
-        private void CadastroDetalhe_Load(object sender, EventArgs e)
+        public void detalhe(int criminosoID)
         {
 
             DataSet dc = new DataSet(); // dataset representa uma estrutura de base de dados em memória
@@ -81,8 +79,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 SqlCommand cmd = db.CreateCommand();
                 db.Open();
 
-                cmd.CommandText = "SELECT Ocorrencias.IdOcorrencia, Ocorrencias.Data, Crimes.Tipo, Distrito.Nome, Utilizador.Distintivo FROM Ocorrencias INNER JOIN Crimes ON Ocorrencias.IdCrime = Crimes.IdCrime INNER JOIN Distrito ON Ocorrencias.IdDistrito = Distrito.IdDistrito INNER JOIN Utilizador ON Ocorrencias.idUtilizador = Utilizador.IdUtilizador ORDER BY Data ASC";
-                //cmd.Parameters.Add("@IdCriminoso", SqlDbType.Int).Value = criminosoID;
+                cmd.CommandText = "SELECT Ocorrencias.IdOcorrencia, Ocorrencias.Data, Crimes.Tipo, Distrito.Nome, Utilizador.Distintivo FROM Ocorrencias INNER JOIN Crimes ON Ocorrencias.IdCrime = Crimes.IdCrime INNER JOIN Distrito ON Ocorrencias.IdDistrito = Distrito.IdDistrito INNER JOIN Utilizador ON Ocorrencias.idUtilizador = Utilizador.IdUtilizador WHERE IdCriminoso = @IdCriminoso ORDER BY Data ASC";
+                cmd.Parameters.Add("@IdCriminoso", SqlDbType.Int).Value = criminosoID;
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
@@ -114,6 +112,11 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     GC.Collect();
                 }
             }
+        }
+
+        private void CadastroDetalhe_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
