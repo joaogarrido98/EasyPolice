@@ -172,6 +172,7 @@
             // 
             // lblnome
             // 
+            this.lblnome.BackColor = System.Drawing.SystemColors.Info;
             this.lblnome.Location = new System.Drawing.Point(123, 49);
             this.lblnome.Name = "lblnome";
             this.lblnome.ReadOnly = true;
@@ -180,6 +181,7 @@
             // 
             // lblCC
             // 
+            this.lblCC.BackColor = System.Drawing.SystemColors.Info;
             this.lblCC.Location = new System.Drawing.Point(264, 88);
             this.lblCC.Name = "lblCC";
             this.lblCC.ReadOnly = true;
@@ -188,6 +190,7 @@
             // 
             // lblIdade
             // 
+            this.lblIdade.BackColor = System.Drawing.SystemColors.Info;
             this.lblIdade.Location = new System.Drawing.Point(264, 128);
             this.lblIdade.Name = "lblIdade";
             this.lblIdade.ReadOnly = true;

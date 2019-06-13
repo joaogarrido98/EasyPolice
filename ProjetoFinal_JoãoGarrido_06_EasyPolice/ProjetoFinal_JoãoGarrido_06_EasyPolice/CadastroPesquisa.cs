@@ -77,12 +77,12 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
         }
 
         private void CadastroPesquisa_Load(object sender, EventArgs e)
-        {
+        {    
             DoRefreshness();
         }
 
         private void button4_Click(object sender, EventArgs e)
-        {
+        { 
             DoRefreshness();
         }
 

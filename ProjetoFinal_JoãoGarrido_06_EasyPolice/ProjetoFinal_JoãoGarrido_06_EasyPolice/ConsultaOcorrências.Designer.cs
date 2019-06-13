@@ -45,7 +45,6 @@
             this.Distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Policia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtdata = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -195,19 +194,11 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // txtdata
-            // 
-            this.txtdata.Location = new System.Drawing.Point(196, 61);
-            this.txtdata.Name = "txtdata";
-            this.txtdata.Size = new System.Drawing.Size(143, 22);
-            this.txtdata.TabIndex = 22;
-            // 
             // ConsultaOcorrências
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 407);
-            this.Controls.Add(this.txtdata);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
@@ -249,6 +240,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Crime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Distrito;
         private System.Windows.Forms.DataGridViewTextBoxColumn Policia;
-        private System.Windows.Forms.DateTimePicker txtdata;
     }
 }

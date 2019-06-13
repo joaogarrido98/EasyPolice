@@ -62,8 +62,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         }
 
-       /* public void button1_Click(object sender, EventArgs e)
-        {
+       /* private void update(int ocorrenciaID)
+        { 
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
 
