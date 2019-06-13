@@ -103,23 +103,28 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void button1_Click(object sender, EventArgs e)
         {
+            dataTable.Rows.Clear();
             //sistema de fazer pesquisa a partir das textbox
 
-            string nome = txtnome.Text;
+            string criminoso = txtnome.Text;
             string data = txtdata.Value.ToString();
             string crime = txtcrime.SelectedValue.ToString();
             string distrito = txtdistrito.SelectedValue.ToString();
+
+
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
 
             try
             {
+              
+
                 SqlCommand cmd = db.CreateCommand();
                 db.Open();
-                //FROM dbo.Ocorrencias INNER JOIN dbo.Criminoso ON dbo.Ocorrencias.IdCriminoso = dbo.Criminoso.IdCriminoso INNER JOIN  dbo.Crimes ON dbo.Ocorrencias.IdCrime = dbo.Crimes.IdCrime
-                cmd.CommandText = "SELECT dbo.Ocorrencias.IdOcorrencia, dbo.Criminoso.Nome, dbo.Ocorrencias.Data, dbo.Crimes.Tipo, dbo.Distrito.Nome AS Distrito, dbo.Utilizador.Distintivo FROM dbo.Ocorrencias INNER JOIN dbo.Criminoso ON dbo.Ocorrencias.IdCriminoso = dbo.Criminoso.IdCriminoso INNER JOIN dbo.Crimes ON dbo.Ocorrencias.IdCrime = dbo.Crimes.IdCrime INNER JOIN  dbo.Distrito ON dbo.Ocorrencias.IdDistrito = dbo.Distrito.IdDistrito INNER JOIN dbo.Utilizador ON dbo.Ocorrencias.idUtilizador = dbo.Utilizador.IdUtilizador WHERE Data = @Data OR Nome = @Nome OR Distrito = @Distrito";
+                
+                cmd.CommandText = "SELECT Ocorrencias.IdOcorrencia, Ocorrencias.Data, Crimes.Tipo, Criminoso.Nome, Distrito.Nome AS Distrito, Utilizador.Distintivo FROM Ocorrencias INNER JOIN Crimes ON Ocorrencias.IdCrime = Crimes.IdCrime INNER JOIN Criminoso ON Ocorrencias.IdCriminoso = Criminoso.IdCriminoso INNER JOIN Distrito ON Ocorrencias.IdDistrito = Distrito.IdDistrito INNER JOIN Utilizador ON Ocorrencias.idUtilizador = Utilizador.IdUtilizador ";
 
-                cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = nome;
+                cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = criminoso;
                 cmd.Parameters.Add("@Data", SqlDbType.Date).Value = data;
                 cmd.Parameters.Add("@Crime", SqlDbType.VarChar).Value = crime;
                 cmd.Parameters.Add("@Distrito", SqlDbType.VarChar).Value = distrito;

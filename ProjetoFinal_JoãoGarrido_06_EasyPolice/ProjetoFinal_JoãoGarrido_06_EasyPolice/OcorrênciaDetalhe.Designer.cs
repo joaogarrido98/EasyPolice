@@ -209,7 +209,7 @@
             this.txtcriminoso.Location = new System.Drawing.Point(109, 54);
             this.txtcriminoso.Name = "txtcriminoso";
             this.txtcriminoso.ReadOnly = true;
-            this.txtcriminoso.Size = new System.Drawing.Size(100, 22);
+            this.txtcriminoso.Size = new System.Drawing.Size(120, 22);
             this.txtcriminoso.TabIndex = 20;
             // 
             // OcorrênciaDetalhe
