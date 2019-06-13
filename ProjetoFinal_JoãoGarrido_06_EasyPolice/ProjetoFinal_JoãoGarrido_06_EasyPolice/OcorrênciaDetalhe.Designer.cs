@@ -52,7 +52,7 @@
             // lblgravidade
             // 
             this.lblgravidade.AutoSize = true;
-            this.lblgravidade.Location = new System.Drawing.Point(39, 102);
+            this.lblgravidade.Location = new System.Drawing.Point(35, 102);
             this.lblgravidade.Name = "lblgravidade";
             this.lblgravidade.Size = new System.Drawing.Size(78, 17);
             this.lblgravidade.TabIndex = 3;
@@ -123,7 +123,7 @@
             // txtdata
             // 
             this.txtdata.BackColor = System.Drawing.SystemColors.Info;
-            this.txtdata.Location = new System.Drawing.Point(264, 104);
+            this.txtdata.Location = new System.Drawing.Point(255, 102);
             this.txtdata.Name = "txtdata";
             this.txtdata.ReadOnly = true;
             this.txtdata.Size = new System.Drawing.Size(88, 22);
@@ -168,10 +168,10 @@
             // txtgravidade
             // 
             this.txtgravidade.BackColor = System.Drawing.SystemColors.Info;
-            this.txtgravidade.Location = new System.Drawing.Point(119, 102);
+            this.txtgravidade.Location = new System.Drawing.Point(119, 99);
             this.txtgravidade.Name = "txtgravidade";
             this.txtgravidade.ReadOnly = true;
-            this.txtgravidade.Size = new System.Drawing.Size(26, 22);
+            this.txtgravidade.Size = new System.Drawing.Size(25, 22);
             this.txtgravidade.TabIndex = 16;
             // 
             // txtpolicia
@@ -195,6 +195,7 @@
             // lblcriminoso
             // 
             this.lblcriminoso.AutoSize = true;
+            this.lblcriminoso.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcriminoso.Location = new System.Drawing.Point(39, 57);
             this.lblcriminoso.Name = "lblcriminoso";
             this.lblcriminoso.Size = new System.Drawing.Size(74, 17);
@@ -204,7 +205,7 @@
             // txtcriminoso
             // 
             this.txtcriminoso.BackColor = System.Drawing.SystemColors.Info;
-            this.txtcriminoso.Location = new System.Drawing.Point(110, 52);
+            this.txtcriminoso.Location = new System.Drawing.Point(109, 54);
             this.txtcriminoso.Name = "txtcriminoso";
             this.txtcriminoso.ReadOnly = true;
             this.txtcriminoso.Size = new System.Drawing.Size(100, 22);
@@ -237,6 +238,7 @@
             this.Name = "OcorrênciaDetalhe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ocorrência Detalhe";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

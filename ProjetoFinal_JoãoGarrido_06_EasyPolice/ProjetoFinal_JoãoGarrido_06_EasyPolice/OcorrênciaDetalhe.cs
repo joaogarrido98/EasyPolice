@@ -54,6 +54,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 }
                 db.Close();
                 cmd.Dispose();
+                GC.Collect();
             }
             catch (Exception errado)
             {

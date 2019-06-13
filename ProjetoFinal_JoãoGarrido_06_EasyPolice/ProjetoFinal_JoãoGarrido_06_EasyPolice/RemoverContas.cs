@@ -21,6 +21,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
         public RemoverContas()
         {
             InitializeComponent();
+            ds.Tables.Add(dataTable);
+            dataGridView1.AutoGenerateColumns = false;
         }
 
 
@@ -41,11 +43,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             }
         }
 
-        private void RemoverContas_Load(object sender, EventArgs e)
+        public void remover()
         {
-            ds.Tables.Add(dataTable);
-            dataGridView1.AutoGenerateColumns = false;
-
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
             try
@@ -89,6 +88,11 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         }
 
+        private void RemoverContas_Load(object sender, EventArgs e)
+        {
+            remover();
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
          
@@ -126,6 +130,12 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 MessageBox.Show(errado.ToString());
             }
 
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            dataTable.Rows.Clear();
+            remover();
         }
     }
 }

@@ -74,6 +74,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void button2_Click(object sender, EventArgs e)
         {
+            dataTable.Rows.Clear();
             DoRefresh();
         }
 
@@ -127,6 +128,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
                 dr.Dispose();
                 cmd.Dispose();
+                GC.Collect();
 
             }
             catch (SqlException ex)
@@ -143,6 +145,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 {
                     db.Close();
                     db.Dispose();
+                    GC.Collect();
                 }
             }
         }

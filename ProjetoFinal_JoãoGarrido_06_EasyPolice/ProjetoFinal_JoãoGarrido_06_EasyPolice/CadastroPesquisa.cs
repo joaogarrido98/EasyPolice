@@ -82,7 +82,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
         }
 
         private void button4_Click(object sender, EventArgs e)
-        { 
+        {
+            dataTable.Rows.Clear();
             DoRefreshness();
         }
 
@@ -106,7 +107,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            
+            dataTable.Rows.Clear();
+
             string nome = txtnome.Text;
             string CC = txtcc.Text;
 
@@ -119,7 +121,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 SqlCommand cmd = db.CreateCommand();
                 db.Open();
 
-                cmd.CommandText = "SELECT IdCriminoso, Nome, CartaoCidadao, Idade FROM Criminoso WHERE Nome = @Nome OR CartaoCidadao = @CartaoCidadao";
+                cmd.CommandText = "SELECT IdCriminoso, Nome, CartaoCidadao, Idade FROM Criminoso WHERE Nome = @Nome or CartaoCidadao = @CartaoCidadao";
                 cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = nome;
                 cmd.Parameters.Add("@CartaoCidadao", SqlDbType.VarChar).Value = CC;
 
