@@ -51,11 +51,18 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             mdiCO.Show();
         }
 
-        private void toolStripButton5_Click(object sender, EventArgs e)
+        private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             CadastroPesquisa mdiCP = new CadastroPesquisa();
             mdiCP.MdiParent = this;
             mdiCP.Show();
+        }
+
+        private void informaçõesExtraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InformacoesExtra mdiIE = new InformacoesExtra();
+            mdiIE.MdiParent = this;
+            mdiIE.Show();
         }
     }
 }

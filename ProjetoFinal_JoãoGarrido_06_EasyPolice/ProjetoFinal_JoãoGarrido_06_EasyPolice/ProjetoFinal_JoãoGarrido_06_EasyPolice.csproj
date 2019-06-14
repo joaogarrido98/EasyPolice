@@ -117,6 +117,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EasyPolice_BdDataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="InformacoesExtra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformacoesExtra.Designer.cs">
+      <DependentUpon>InformacoesExtra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformacoesExtra.resx">
+      <DependentUpon>InformacoesExtra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

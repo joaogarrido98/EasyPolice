@@ -30,18 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroDetalhe));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Crime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Policia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblnome = new System.Windows.Forms.TextBox();
             this.lblCC = new System.Windows.Forms.TextBox();
             this.lblIdade = new System.Windows.Forms.TextBox();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Crime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Policia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblsexo = new System.Windows.Forms.Label();
+            this.txtsexo = new System.Windows.Forms.TextBox();
+            this.txtcor = new System.Windows.Forms.TextBox();
+            this.txtalt = new System.Windows.Forms.TextBox();
+            this.lblcor = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,23 +69,34 @@
             this.dataGridView1.Size = new System.Drawing.Size(599, 207);
             this.dataGridView1.TabIndex = 5;
             // 
-            // button2
+            // Data
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(522, 166);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(157, 41);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Adicionar Fotografia";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Data.DataPropertyName = "Data";
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
             // 
-            // pictureBox1
+            // Crime
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(80, 77);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 130);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.Crime.DataPropertyName = "Tipo";
+            this.Crime.HeaderText = "Crime";
+            this.Crime.Name = "Crime";
+            this.Crime.ReadOnly = true;
+            // 
+            // Distrito
+            // 
+            this.Distrito.DataPropertyName = "Nome";
+            this.Distrito.HeaderText = "Distrito";
+            this.Distrito.Name = "Distrito";
+            this.Distrito.ReadOnly = true;
+            // 
+            // Policia
+            // 
+            this.Policia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Policia.DataPropertyName = "Distintivo";
+            this.Policia.HeaderText = "Policia";
+            this.Policia.Name = "Policia";
+            this.Policia.ReadOnly = true;
             // 
             // label1
             // 
@@ -135,50 +152,102 @@
             this.lblIdade.Location = new System.Drawing.Point(264, 128);
             this.lblIdade.Name = "lblIdade";
             this.lblIdade.ReadOnly = true;
-            this.lblIdade.Size = new System.Drawing.Size(100, 22);
+            this.lblIdade.Size = new System.Drawing.Size(53, 22);
             this.lblIdade.TabIndex = 19;
             // 
-            // Data
+            // lblsexo
             // 
-            this.Data.DataPropertyName = "Data";
-            this.Data.HeaderText = "Data";
-            this.Data.Name = "Data";
-            this.Data.ReadOnly = true;
+            this.lblsexo.AutoSize = true;
+            this.lblsexo.BackColor = System.Drawing.SystemColors.Control;
+            this.lblsexo.Location = new System.Drawing.Point(393, 91);
+            this.lblsexo.Name = "lblsexo";
+            this.lblsexo.Size = new System.Drawing.Size(41, 17);
+            this.lblsexo.TabIndex = 20;
+            this.lblsexo.Text = "sexo:";
             // 
-            // Crime
+            // txtsexo
             // 
-            this.Crime.DataPropertyName = "Tipo";
-            this.Crime.HeaderText = "Crime";
-            this.Crime.Name = "Crime";
-            this.Crime.ReadOnly = true;
+            this.txtsexo.BackColor = System.Drawing.SystemColors.Info;
+            this.txtsexo.Location = new System.Drawing.Point(440, 91);
+            this.txtsexo.Name = "txtsexo";
+            this.txtsexo.ReadOnly = true;
+            this.txtsexo.Size = new System.Drawing.Size(54, 22);
+            this.txtsexo.TabIndex = 21;
             // 
-            // Distrito
+            // txtcor
             // 
-            this.Distrito.DataPropertyName = "Nome";
-            this.Distrito.HeaderText = "Distrito";
-            this.Distrito.Name = "Distrito";
-            this.Distrito.ReadOnly = true;
+            this.txtcor.BackColor = System.Drawing.SystemColors.Info;
+            this.txtcor.Location = new System.Drawing.Point(395, 128);
+            this.txtcor.Name = "txtcor";
+            this.txtcor.ReadOnly = true;
+            this.txtcor.Size = new System.Drawing.Size(99, 22);
+            this.txtcor.TabIndex = 22;
             // 
-            // Policia
+            // txtalt
             // 
-            this.Policia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Policia.DataPropertyName = "Distintivo";
-            this.Policia.HeaderText = "Policia";
-            this.Policia.Name = "Policia";
-            this.Policia.ReadOnly = true;
+            this.txtalt.BackColor = System.Drawing.SystemColors.Info;
+            this.txtalt.Location = new System.Drawing.Point(575, 91);
+            this.txtalt.Name = "txtalt";
+            this.txtalt.ReadOnly = true;
+            this.txtalt.Size = new System.Drawing.Size(49, 22);
+            this.txtalt.TabIndex = 23;
+            // 
+            // lblcor
+            // 
+            this.lblcor.AutoSize = true;
+            this.lblcor.BackColor = System.Drawing.SystemColors.Control;
+            this.lblcor.Location = new System.Drawing.Point(357, 131);
+            this.lblcor.Name = "lblcor";
+            this.lblcor.Size = new System.Drawing.Size(32, 17);
+            this.lblcor.TabIndex = 24;
+            this.lblcor.Text = "cor:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(520, 94);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 17);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Altura:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(80, 77);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(133, 130);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(630, 94);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(26, 17);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "cm";
             // 
             // CadastroDetalhe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblcor);
+            this.Controls.Add(this.txtalt);
+            this.Controls.Add(this.txtcor);
+            this.Controls.Add(this.txtsexo);
+            this.Controls.Add(this.lblsexo);
             this.Controls.Add(this.lblIdade);
             this.Controls.Add(this.lblCC);
             this.Controls.Add(this.lblnome);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -198,7 +267,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -209,5 +277,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Crime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Distrito;
         private System.Windows.Forms.DataGridViewTextBoxColumn Policia;
+        private System.Windows.Forms.Label lblsexo;
+        private System.Windows.Forms.TextBox txtsexo;
+        private System.Windows.Forms.TextBox txtcor;
+        private System.Windows.Forms.TextBox txtalt;
+        private System.Windows.Forms.Label lblcor;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

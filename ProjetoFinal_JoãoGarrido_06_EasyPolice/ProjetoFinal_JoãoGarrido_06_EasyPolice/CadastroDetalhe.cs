@@ -30,7 +30,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 SqlCommand cmd = db.CreateCommand();
                 db.Open();
 
-                cmd.CommandText = ("SELECT IdCriminoso, Nome, Idade, CartaoCidadao FROM Criminoso WHERE IdCriminoso = @IdCriminoso");            
+                cmd.CommandText = ("SELECT IdCriminoso, Nome, Idade, CartaoCidadao, Sexo, Altura, Cor FROM Criminoso WHERE IdCriminoso = @IdCriminoso");            
                 cmd.Parameters.Add("@IdCriminoso", SqlDbType.Int).Value = criminosoID;
 
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -42,6 +42,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                         lblnome.Text = dr["Nome"].ToString();
                         lblCC.Text = dr["CartaoCidadao"].ToString();
                         lblIdade.Text = dr["Idade"].ToString();
+                        txtalt.Text = dr["Altura"].ToString();
+                        txtcor.Text = dr["Cor"].ToString();
+                        txtsexo.Text = dr["Sexo"].ToString();
                         
                     }
                     dr.Close();
