@@ -83,5 +83,25 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
             }
         }
+
+        private void txttipo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtgravidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != 8) //so deixar escrever numeros
+            {
+                e.Handled = true;
+            }
+            if ((sender as TextBox).Text.Count(Char.IsDigit) >= 1)  //so deixar escrever ate quatro caracteres.
+            {
+                e.Handled = !(e.KeyChar == 8);
+            }
+        }
     }
 }

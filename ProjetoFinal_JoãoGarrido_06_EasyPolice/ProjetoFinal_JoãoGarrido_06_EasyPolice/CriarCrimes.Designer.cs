@@ -61,6 +61,7 @@
             this.txttipo.Name = "txttipo";
             this.txttipo.Size = new System.Drawing.Size(100, 22);
             this.txttipo.TabIndex = 1;
+            this.txttipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttipo_KeyPress);
             // 
             // label2
             // 
@@ -77,6 +78,7 @@
             this.txtgravidade.Name = "txtgravidade";
             this.txtgravidade.Size = new System.Drawing.Size(71, 22);
             this.txtgravidade.TabIndex = 3;
+            this.txtgravidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtgravidade_KeyPress);
             // 
             // CriarCrimes
             // 

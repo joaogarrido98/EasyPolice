@@ -63,49 +63,55 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
                 if (CC != TextCC.Text)
                 {
-                    //insertcriminoso
+                    if (TextNome.Text != "")
+                    { //insertcriminoso
 
-                    SqlCommand cmdInsertCriminoso = new SqlCommand();
-                    cmdInsertCriminoso.Connection = db;
-                    cmdInsertCriminoso.CommandText = "Insert into Criminoso (Nome, CartaoCidadao, Idade) values (@Nome, @Cartaocidadao, @Idade)";
+                        SqlCommand cmdInsertCriminoso = new SqlCommand();
+                        cmdInsertCriminoso.Connection = db;
+                        cmdInsertCriminoso.CommandText = "Insert into Criminoso (Nome, CartaoCidadao, Idade) values (@Nome, @Cartaocidadao, @Idade)";
 
-                    cmdInsertCriminoso.Parameters.Add("@Nome", SqlDbType.VarChar).Value = Nome;
-                    cmdInsertCriminoso.Parameters.Add("@CartaoCidadao", SqlDbType.Int).Value = TextCC.Text;
-                    cmdInsertCriminoso.Parameters.Add("@Idade", SqlDbType.Int).Value = Convert.ToInt32(idade);
-                    cmdInsertCriminoso.ExecuteNonQuery();
+                        cmdInsertCriminoso.Parameters.Add("@Nome", SqlDbType.VarChar).Value = Nome;
+                        cmdInsertCriminoso.Parameters.Add("@CartaoCidadao", SqlDbType.Int).Value = TextCC.Text;
+                        cmdInsertCriminoso.Parameters.Add("@Idade", SqlDbType.Int).Value = Convert.ToInt32(idade);
+                        cmdInsertCriminoso.ExecuteNonQuery();
 
-                    string query = "SELECT IdCriminoso FROM Criminoso WHERE CartaoCidadao=@CartaoCidadao";
+                        string query = "SELECT IdCriminoso FROM Criminoso WHERE CartaoCidadao=@CartaoCidadao";
 
-                    SqlCommand cmdSelect = new SqlCommand(query, db);
+                        SqlCommand cmdSelect = new SqlCommand(query, db);
 
-                    cmdSelect.Parameters.Add("@CartaoCidadao", SqlDbType.Int).Value = TextCC.Text;
+                        cmdSelect.Parameters.Add("@CartaoCidadao", SqlDbType.Int).Value = TextCC.Text;
 
-                    dr = cmdSelect.ExecuteReader();
+                        dr = cmdSelect.ExecuteReader();
 
-                    while (dr.Read())
-                    {
-                        CC = dr["IdCriminoso"].ToString();
+                        while (dr.Read())
+                        {
+                            CC = dr["IdCriminoso"].ToString();
+                        }
+                        dr.Close();
+
+
+                        //insertOcorrencias
+                        SqlCommand cmdInsertOcorrencias = new SqlCommand();
+                        cmdInsertOcorrencias.Connection = db;
+                        cmdInsertOcorrencias.CommandText = "Insert into Ocorrencias (Data, Detalhe, IdDistrito, idUtilizador, IdCrime, IdCriminoso, IdFreguesia, IdConcelho) values (@Data, @Detalhe, @IdDistrito, @IdUtilizador, @IdCrime, @IdCriminoso, @IdFreguesia, @IdConcelho)";
+
+                        cmdInsertOcorrencias.Parameters.Add("@Data", SqlDbType.Date).Value = Data;
+                        cmdInsertOcorrencias.Parameters.Add("@Detalhe", SqlDbType.VarChar).Value = Detalhe;
+                        cmdInsertOcorrencias.Parameters.Add("@IdDistrito", SqlDbType.Int).Value = Distrito;
+                        cmdInsertOcorrencias.Parameters.Add("@idUtilizador", SqlDbType.Int).Value = distintivo;
+                        cmdInsertOcorrencias.Parameters.Add("@Idcrime", SqlDbType.Int).Value = Crime;
+                        cmdInsertOcorrencias.Parameters.Add("@IdCriminoso", SqlDbType.Int).Value = CC;
+                        cmdInsertOcorrencias.Parameters.Add("@IdFreguesia", SqlDbType.Int).Value = freguesia;
+                        cmdInsertOcorrencias.Parameters.Add("@IdConcelho", SqlDbType.Int).Value = concelho;
+                        cmdInsertOcorrencias.ExecuteNonQuery();
+
+                        MessageBox.Show("Registo Criado");
+                        db.Close();
                     }
-                    dr.Close();
-
-
-                    //insertOcorrencias
-                    SqlCommand cmdInsertOcorrencias = new SqlCommand();
-                    cmdInsertOcorrencias.Connection = db;
-                    cmdInsertOcorrencias.CommandText = "Insert into Ocorrencias (Data, Detalhe, IdDistrito, idUtilizador, IdCrime, IdCriminoso, IdFreguesia, IdConcelho) values (@Data, @Detalhe, @IdDistrito, @IdUtilizador, @IdCrime, @IdCriminoso, @IdFreguesia, @IdConcelho)";
-
-                    cmdInsertOcorrencias.Parameters.Add("@Data", SqlDbType.Date).Value = Data;
-                    cmdInsertOcorrencias.Parameters.Add("@Detalhe", SqlDbType.VarChar).Value = Detalhe;
-                    cmdInsertOcorrencias.Parameters.Add("@IdDistrito", SqlDbType.Int).Value = Distrito;
-                    cmdInsertOcorrencias.Parameters.Add("@idUtilizador", SqlDbType.Int).Value = distintivo;
-                    cmdInsertOcorrencias.Parameters.Add("@Idcrime", SqlDbType.Int).Value = Crime;
-                    cmdInsertOcorrencias.Parameters.Add("@IdCriminoso", SqlDbType.Int).Value = CC;
-                    cmdInsertOcorrencias.Parameters.Add("@IdFreguesia", SqlDbType.Int).Value = freguesia;
-                    cmdInsertOcorrencias.Parameters.Add("@IdConcelho", SqlDbType.Int).Value = concelho;
-                    cmdInsertOcorrencias.ExecuteNonQuery();
-
-                    MessageBox.Show("Registo Criado");
-                    db.Close();
+                    else
+                    {
+                        MessageBox.Show("Adicione um nome ao criminoso", "Atencção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
