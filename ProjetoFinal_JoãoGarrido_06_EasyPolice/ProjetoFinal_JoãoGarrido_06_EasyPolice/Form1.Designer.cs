@@ -44,14 +44,15 @@
             this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton2,
@@ -101,14 +102,14 @@
             // registarToolStripMenuItem
             // 
             this.registarToolStripMenuItem.Name = "registarToolStripMenuItem";
-            this.registarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.registarToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.registarToolStripMenuItem.Text = "Registar";
             this.registarToolStripMenuItem.Click += new System.EventHandler(this.registarToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click_1);
             // 
@@ -132,14 +133,14 @@
             // consultarToolStripMenuItem1
             // 
             this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(203, 26);
             this.consultarToolStripMenuItem1.Text = "Consultar";
             this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
             // 
             // informaçõesExtraToolStripMenuItem
             // 
             this.informaçõesExtraToolStripMenuItem.Name = "informaçõesExtraToolStripMenuItem";
-            this.informaçõesExtraToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.informaçõesExtraToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.informaçõesExtraToolStripMenuItem.Text = "Informações extra";
             this.informaçõesExtraToolStripMenuItem.Click += new System.EventHandler(this.informaçõesExtraToolStripMenuItem_Click);
             // 
@@ -179,15 +180,6 @@
             this.toolStripButton8.Name = "toolStripButton8";
             this.toolStripButton8.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(68, 24);
-            this.toolStripButton9.Text = "Ajudas";
-            // 
             // toolStripButton10
             // 
             this.toolStripButton10.Name = "toolStripButton10";
@@ -203,6 +195,16 @@
             this.toolStripButton11.Size = new System.Drawing.Size(60, 24);
             this.toolStripButton11.Text = "Logout";
             this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
+            // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(126, 24);
+            this.toolStripButton9.Text = "Adicionar Crimes";
+            this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
             // 
             // EasyPolice_Admin
             // 
@@ -234,13 +236,13 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripButton7;
         private System.Windows.Forms.ToolStripMenuItem adicionarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripButton9;
         private System.Windows.Forms.ToolStripDropDownButton toolStripButton1;
         private System.Windows.Forms.ToolStripMenuItem registarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton toolStripButton5;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem informaçõesExtraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton9;
     }
 }
 

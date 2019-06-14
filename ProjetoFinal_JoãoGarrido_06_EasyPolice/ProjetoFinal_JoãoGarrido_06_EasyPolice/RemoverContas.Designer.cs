@@ -132,7 +132,7 @@
             this.MaximizeBox = false;
             this.Name = "RemoverContas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EasyPolice";
+            this.Text = "Ativação/Desativação";
             this.Load += new System.EventHandler(this.RemoverContas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

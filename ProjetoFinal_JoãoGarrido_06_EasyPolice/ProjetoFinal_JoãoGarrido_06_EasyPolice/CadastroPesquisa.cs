@@ -56,7 +56,10 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 }
 
                 dr.Dispose();
-                cmd.Dispose();      
+                cmd.Dispose();
+
+                txtcc.Text = "";
+                txtnome.Text = "";
             }
             catch (SqlException ex)
             {

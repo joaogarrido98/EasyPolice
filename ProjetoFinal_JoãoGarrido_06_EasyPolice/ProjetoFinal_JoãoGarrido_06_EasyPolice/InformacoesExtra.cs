@@ -19,7 +19,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //fazer o update do criminoso.
         {
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
@@ -33,9 +33,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             {
                 db.Open();
 
-                SqlDataReader dr;
+                SqlDataReader dr; 
 
-                string query = "SELECT IdCriminoso FROM Criminoso WHERE CartaoCidadao=@CartaoCidadao";
+                string query = "SELECT IdCriminoso FROM Criminoso WHERE CartaoCidadao=@CartaoCidadao"; 
 
                 SqlCommand cmdSelect = new SqlCommand(query, db);
 
@@ -43,7 +43,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
                 dr = cmdSelect.ExecuteReader();
 
-                while (dr.Read())
+                while (dr.Read()) //ler o idcriminoso a partir do Cartao de Cidadão para depois fazer update só nesse criminoso.
                 {
                     CC = dr["IdCriminoso"].ToString();
                 }
@@ -78,7 +78,22 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             }
             catch (Exception)
             {
-                MessageBox.Show("Criminoso não existe!");
+                if (CC != txtCC.Text)
+                {
+                    MessageBox.Show("Criminoso não existe!");
+                } 
+            }
+        }
+
+        private void txtaltura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != 8) //so deixar escrever numeros
+            {
+                e.Handled = true;
+            }
+            if ((sender as TextBox).Text.Count(Char.IsDigit) >= 3)  //so deixar escrever ate quatro caracteres.
+            {
+                e.Handled = !(e.KeyChar == 8);
             }
         }
     }

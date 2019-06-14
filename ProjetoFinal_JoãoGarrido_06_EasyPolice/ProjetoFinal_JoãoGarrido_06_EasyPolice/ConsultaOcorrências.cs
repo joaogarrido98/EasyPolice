@@ -73,6 +73,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             this.crimesTableAdapter.Fill(this.easyPolice_BdDataSet1.Crimes);
             // TODO: This line of code loads data into the 'easyPolice_BdDataSet1.Distrito' table. You can move, or remove it, as needed.
             this.distritoTableAdapter.Fill(this.easyPolice_BdDataSet1.Distrito);
+
             DoRefresh(); //chamar a funçao
         }
 
@@ -90,7 +91,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             try //registar o IdOcorrencia da ocorrencia na qual se carregou na row da datagridview
             {
                 int ocorrenciaID = Convert.ToInt32((dataGridView1.DataSource as DataTable).Rows[e.RowIndex]["IdOcorrencia"]);
-                OcorrênciaDetalhe od = new OcorrênciaDetalhe(); //chamar o form 
+                OcorrênciaDetalhe od = new OcorrênciaDetalhe();//chamar o form 
                 od.carregar(ocorrenciaID);
                 od.detalhe(ocorrenciaID);
                 od.Show();

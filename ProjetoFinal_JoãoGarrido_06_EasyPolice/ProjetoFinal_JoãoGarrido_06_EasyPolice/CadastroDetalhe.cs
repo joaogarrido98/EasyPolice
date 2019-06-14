@@ -20,7 +20,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             InitializeComponent();  
         }
 
-        public void carregamento(int criminosoID)
+        public void carregamento(int criminosoID) //para carregar o cadastro de quem selecionaram na datagridview
         {
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
@@ -65,7 +65,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             this.Close();
         }
 
-        public void detalhe(int criminosoID)
+        public void detalhe(int criminosoID) //carregar a datagridview do criminoso em questao
         {
 
             DataSet dc = new DataSet(); // dataset representa uma estrutura de base de dados em memória
@@ -89,7 +89,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
                 if (dr.HasRows)
                 {
-                    dc.Load(dr, LoadOption.PreserveChanges, dc.Tables["Ocorrencias"]); //carregar
+                    dc.Load(dr, LoadOption.PreserveChanges, dc.Tables["Ocorrencias"]); //carregar a datatable
 
                     dataGridView1.DataSource = dc.Tables["Ocorrencias"];
                 }

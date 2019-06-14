@@ -39,6 +39,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Transactions" />
@@ -59,12 +60,6 @@
     <Compile Include="AdicionarContas.Designer.cs">
       <DependentUpon>AdicionarContas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ajuda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ajuda.Designer.cs">
-      <DependentUpon>Ajuda.cs</DependentUpon>
-    </Compile>
     <Compile Include="CadastroDetalhe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +77,12 @@
     </Compile>
     <Compile Include="ConsultaOcorrências.Designer.cs">
       <DependentUpon>ConsultaOcorrências.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CriarCrimes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CriarCrimes.Designer.cs">
+      <DependentUpon>CriarCrimes.cs</DependentUpon>
     </Compile>
     <Compile Include="EasyPolice.cs">
       <SubType>Form</SubType>
@@ -174,9 +175,6 @@
     <EmbeddedResource Include="AdicionarContas.resx">
       <DependentUpon>AdicionarContas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ajuda.resx">
-      <DependentUpon>Ajuda.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CadastroDetalhe.resx">
       <DependentUpon>CadastroDetalhe.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaOcorrências.resx">
       <DependentUpon>ConsultaOcorrências.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CriarCrimes.resx">
+      <DependentUpon>CriarCrimes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EasyPolice.resx">
       <DependentUpon>EasyPolice.cs</DependentUpon>

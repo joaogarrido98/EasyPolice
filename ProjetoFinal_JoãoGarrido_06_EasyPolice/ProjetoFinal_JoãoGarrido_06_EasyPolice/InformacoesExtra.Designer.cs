@@ -39,6 +39,7 @@
             this.txtaltura = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             this.button1.Location = new System.Drawing.Point(417, 215);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(142, 50);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Adicionar informações";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -99,14 +100,15 @@
             this.txtcor.Location = new System.Drawing.Point(300, 184);
             this.txtcor.Name = "txtcor";
             this.txtcor.Size = new System.Drawing.Size(76, 22);
-            this.txtcor.TabIndex = 6;
+            this.txtcor.TabIndex = 4;
             // 
             // txtaltura
             // 
             this.txtaltura.Location = new System.Drawing.Point(300, 100);
             this.txtaltura.Name = "txtaltura";
             this.txtaltura.Size = new System.Drawing.Size(76, 22);
-            this.txtaltura.TabIndex = 7;
+            this.txtaltura.TabIndex = 2;
+            this.txtaltura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtaltura_KeyPress);
             // 
             // label3
             // 
@@ -125,11 +127,21 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(382, 103);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 17);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "cm";
+            // 
             // InformacoesExtra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 277);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtaltura);
@@ -140,8 +152,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblCC);
             this.Controls.Add(this.txtCC);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InformacoesExtra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informações Extra";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -161,5 +175,6 @@
         private System.Windows.Forms.TextBox txtaltura;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label4;
     }
 }

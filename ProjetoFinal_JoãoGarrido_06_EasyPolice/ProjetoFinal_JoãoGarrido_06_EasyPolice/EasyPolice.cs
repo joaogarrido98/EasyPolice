@@ -64,5 +64,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             mdiIE.MdiParent = this;
             mdiIE.Show();
         }
+
     }
 }
