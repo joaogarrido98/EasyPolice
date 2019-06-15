@@ -121,9 +121,11 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::ProjetoFinal_JoãoGarrido_06_EasyPolice.Properties.Resources.face;
             this.pictureBox1.Location = new System.Drawing.Point(37, 69);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(206, 183);
+            this.pictureBox1.Size = new System.Drawing.Size(188, 180);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 

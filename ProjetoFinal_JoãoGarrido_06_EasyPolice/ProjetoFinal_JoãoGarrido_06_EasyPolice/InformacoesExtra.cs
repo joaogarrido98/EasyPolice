@@ -19,8 +19,17 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             InitializeComponent();
         }
 
+        public void apagar()
+        {
+            txtaltura.Text = "";
+            txtCC.Text = "";
+            txtcor.Text = "";
+            txtsexo.Text = "";
+        }
+
         private void button1_Click(object sender, EventArgs e) //fazer o update do criminoso.
         {
+           
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
 
@@ -31,50 +40,54 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
             try
             {
-                db.Open();
-
-                SqlDataReader dr; 
-
-                string query = "SELECT IdCriminoso FROM Criminoso WHERE CartaoCidadao=@CartaoCidadao"; 
-
-                SqlCommand cmdSelect = new SqlCommand(query, db);
-
-                cmdSelect.Parameters.Add("@CartaoCidadao", SqlDbType.Int).Value = txtCC.Text;
-
-                dr = cmdSelect.ExecuteReader();
-
-                while (dr.Read()) //ler o idcriminoso a partir do Cartao de Cidadão para depois fazer update só nesse criminoso.
+                if (txtCC.Text == "")
                 {
-                    CC = dr["IdCriminoso"].ToString();
+                    MessageBox.Show("Introduza um cartão de cidadão");
+                    apagar();
                 }
-                dr.Close();
-
-                SqlCommand cmdInsertCriminoso = new SqlCommand();
-                cmdInsertCriminoso.Connection = db;
-
-                cmdInsertCriminoso.CommandText = "UPDATE Criminoso SET Altura = @Altura, Sexo = @Sexo, Cor = @Cor WHERE IdCriminoso = @IdCriminoso";
-
-                cmdInsertCriminoso.Parameters.Add("@IdCriminoso", SqlDbType.Int).Value = CC;
-                cmdInsertCriminoso.Parameters.Add("@Altura", SqlDbType.Int).Value = txtaltura.Text;
-                cmdInsertCriminoso.Parameters.Add("@Sexo", SqlDbType.VarChar).Value = txtsexo.Text;
-                cmdInsertCriminoso.Parameters.Add("@Cor", SqlDbType.VarChar).Value = txtcor.Text;
-                cmdInsertCriminoso.ExecuteNonQuery();
-
-                MessageBox.Show("Atualização feita com sucesso!");
-                db.Close();
-                cmdInsertCriminoso.Dispose();
-                GC.Collect();
-              
-                if (!dr.IsClosed)
+                else
                 {
+                    db.Open();
+
+                    SqlDataReader dr;
+
+                    string query = "SELECT IdCriminoso FROM Criminoso WHERE CartaoCidadao=@CartaoCidadao";
+
+                    SqlCommand cmdSelect = new SqlCommand(query, db);
+
+                    cmdSelect.Parameters.Add("@CartaoCidadao", SqlDbType.Int).Value = txtCC.Text;
+
+                    dr = cmdSelect.ExecuteReader();
+
+                    while (dr.Read()) //ler o idcriminoso a partir do Cartao de Cidadão para depois fazer update só nesse criminoso.
+                    {
+                        CC = dr["IdCriminoso"].ToString();
+                    }
                     dr.Close();
-                }
 
-                txtaltura.Text = "";
-                txtCC.Text = "";
-                txtcor.Text = "";
-                txtsexo.Text = "";
-            
+                    SqlCommand cmdInsertCriminoso = new SqlCommand();
+                    cmdInsertCriminoso.Connection = db;
+
+                    cmdInsertCriminoso.CommandText = "UPDATE Criminoso SET Altura = @Altura, Sexo = @Sexo, Cor = @Cor WHERE IdCriminoso = @IdCriminoso";
+
+                    cmdInsertCriminoso.Parameters.Add("@IdCriminoso", SqlDbType.Int).Value = CC;
+                    cmdInsertCriminoso.Parameters.Add("@Altura", SqlDbType.Int).Value = txtaltura.Text;
+                    cmdInsertCriminoso.Parameters.Add("@Sexo", SqlDbType.VarChar).Value = txtsexo.Text;
+                    cmdInsertCriminoso.Parameters.Add("@Cor", SqlDbType.VarChar).Value = txtcor.Text;
+                    cmdInsertCriminoso.ExecuteNonQuery();
+
+                    MessageBox.Show("Atualização feita com sucesso!");
+                    db.Close();
+                    cmdInsertCriminoso.Dispose();
+                    GC.Collect();
+
+                    if (!dr.IsClosed)
+                    {
+                        dr.Close();
+                    }
+
+                    apagar();
+                }
             }
             catch (Exception)
             {

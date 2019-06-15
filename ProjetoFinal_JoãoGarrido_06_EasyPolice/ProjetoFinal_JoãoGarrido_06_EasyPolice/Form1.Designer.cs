@@ -44,9 +44,9 @@
             this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,15 +133,15 @@
             // consultarToolStripMenuItem1
             // 
             this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(203, 26);
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(234, 26);
             this.consultarToolStripMenuItem1.Text = "Consultar";
             this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
             // 
             // informaçõesExtraToolStripMenuItem
             // 
             this.informaçõesExtraToolStripMenuItem.Name = "informaçõesExtraToolStripMenuItem";
-            this.informaçõesExtraToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
-            this.informaçõesExtraToolStripMenuItem.Text = "Informações extra";
+            this.informaçõesExtraToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.informaçõesExtraToolStripMenuItem.Text = "Adicionar Informações";
             this.informaçõesExtraToolStripMenuItem.Click += new System.EventHandler(this.informaçõesExtraToolStripMenuItem_Click);
             // 
             // toolStripButton6
@@ -180,6 +180,16 @@
             this.toolStripButton8.Name = "toolStripButton8";
             this.toolStripButton8.Size = new System.Drawing.Size(6, 27);
             // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(126, 24);
+            this.toolStripButton9.Text = "Adicionar Crimes";
+            this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
+            // 
             // toolStripButton10
             // 
             this.toolStripButton10.Name = "toolStripButton10";
@@ -195,16 +205,6 @@
             this.toolStripButton11.Size = new System.Drawing.Size(60, 24);
             this.toolStripButton11.Text = "Logout";
             this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
-            // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(126, 24);
-            this.toolStripButton9.Text = "Adicionar Crimes";
-            this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
             // 
             // EasyPolice_Admin
             // 

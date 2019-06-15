@@ -19,6 +19,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
         public OcorrênciaDetalhe()
         {
             InitializeComponent();
+            
         }
 
         public void carregar(int ocorrenciaId)
@@ -55,6 +56,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 db.Close();
                 cmd.Dispose();
                 GC.Collect();
+
             }
             catch (Exception errado)
             {
@@ -66,10 +68,12 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
         private void Button1_Click(object sender, EventArgs e)
         {
             
+     
         }
 
         public void detalhe(int ocorrenciaID)
         {
+            
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
 
@@ -86,6 +90,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
 
                 cmdDetalheUpdate.ExecuteNonQuery();
+              
             }
             catch (Exception erro)
             {
