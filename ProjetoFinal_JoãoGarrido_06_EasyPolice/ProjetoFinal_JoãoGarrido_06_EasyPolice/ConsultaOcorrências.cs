@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Threading;
 
+
 namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
     public partial class ConsultaOcorrências : Form
@@ -90,6 +91,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
             try //registar o IdOcorrencia da ocorrencia na qual se carregou na row da datagridview
             {
+                
                 int ocorrenciaID = Convert.ToInt32((dataGridView1.DataSource as DataTable).Rows[e.RowIndex]["IdOcorrencia"]);
                 OcorrênciaDetalhe od = new OcorrênciaDetalhe();//chamar o form 
                 od.carregar(ocorrenciaID);
@@ -107,7 +109,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             dataTable.Rows.Clear();
             //sistema de fazer pesquisa a partir das textbox
 
-            string criminoso = txtnome.Text;
+            
             string data = txtdata.Value.ToString();
             string crime = txtcrime.SelectedValue.ToString();
             string distrito = txtdistrito.SelectedValue.ToString();
@@ -123,9 +125,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 SqlCommand cmd = db.CreateCommand();
                 db.Open();
                 
-                cmd.CommandText = "SELECT Ocorrencias.IdOcorrencia, Ocorrencias.Data, Crimes.Tipo, Criminoso.Nome, Distrito.Nome AS Distrito, Utilizador.Distintivo FROM Ocorrencias INNER JOIN Crimes ON Ocorrencias.IdCrime = Crimes.IdCrime INNER JOIN Criminoso ON Ocorrencias.IdCriminoso = Criminoso.IdCriminoso INNER JOIN Distrito ON Ocorrencias.IdDistrito = Distrito.IdDistrito INNER JOIN Utilizador ON Ocorrencias.idUtilizador = Utilizador.IdUtilizador ";
+                cmd.CommandText = "SELECT dbo.Ocorrencias.IdOcorrencia, dbo.Ocorrencias.Data, dbo.Criminoso.Nome, dbo.Crimes.Tipo, dbo.Distrito.Nome AS Distrito, dbo.Utilizador.Distintivo FROM dbo.Ocorrencias INNER JOIN dbo.Criminoso ON dbo.Ocorrencias.IdCriminoso = dbo.Criminoso.IdCriminoso INNER JOIN  dbo.Crimes ON dbo.Ocorrencias.IdCrime = dbo.Crimes.IdCrime INNER JOIN dbo.Distrito ON dbo.Ocorrencias.IdDistrito = dbo.Distrito.IdDistrito INNER JOIN dbo.Utilizador ON dbo.Ocorrencias.idUtilizador = dbo.Utilizador.IdUtilizador WHERE Distrito.Nome = @Distrito OR Crimes.Tipo=@Crime OR Ocorrencias.Data = @Data";
 
-                cmd.Parameters.Add("@Nome", SqlDbType.VarChar).Value = criminoso;
+               
                 cmd.Parameters.Add("@Data", SqlDbType.Date).Value = data;
                 cmd.Parameters.Add("@Crime", SqlDbType.VarChar).Value = crime;
                 cmd.Parameters.Add("@Distrito", SqlDbType.VarChar).Value = distrito;

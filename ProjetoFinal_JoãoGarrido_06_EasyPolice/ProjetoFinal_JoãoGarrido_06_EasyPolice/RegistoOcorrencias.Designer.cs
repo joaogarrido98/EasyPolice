@@ -57,17 +57,17 @@
             this.utilizadorTableAdapter = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet2TableAdapters.UtilizadorTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.combofreguesia = new System.Windows.Forms.ComboBox();
+            this.freguesiaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.easyPolice_BdDataSet5 = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet5();
             this.label2 = new System.Windows.Forms.Label();
             this.comboconcelho = new System.Windows.Forms.ComboBox();
+            this.concelhoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.easyPolice_BdDataSet4 = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet4();
             this.easyPoliceBdDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.easyPolice_BdDataSet3 = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet3();
             this.freguesiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.freguesiaTableAdapter = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet3TableAdapters.FreguesiaTableAdapter();
-            this.easyPolice_BdDataSet5 = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet5();
-            this.freguesiaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.freguesiaTableAdapter1 = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet5TableAdapters.FreguesiaTableAdapter();
-            this.easyPolice_BdDataSet4 = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet4();
-            this.concelhoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.concelhoTableAdapter = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet4TableAdapters.ConcelhoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.crimesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet1)).BeginInit();
@@ -75,13 +75,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.distritoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilizadorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freguesiaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.concelhoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyPoliceBdDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.freguesiaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.freguesiaBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.concelhoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -299,6 +299,16 @@
             this.combofreguesia.TabIndex = 30;
             this.combofreguesia.ValueMember = "IdFreguesia";
             // 
+            // freguesiaBindingSource1
+            // 
+            this.freguesiaBindingSource1.DataMember = "Freguesia";
+            this.freguesiaBindingSource1.DataSource = this.easyPolice_BdDataSet5;
+            // 
+            // easyPolice_BdDataSet5
+            // 
+            this.easyPolice_BdDataSet5.DataSetName = "EasyPolice_BdDataSet5";
+            this.easyPolice_BdDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -322,6 +332,16 @@
             this.comboconcelho.TabIndex = 32;
             this.comboconcelho.ValueMember = "IdConcelho";
             // 
+            // concelhoBindingSource
+            // 
+            this.concelhoBindingSource.DataMember = "Concelho";
+            this.concelhoBindingSource.DataSource = this.easyPolice_BdDataSet4;
+            // 
+            // easyPolice_BdDataSet4
+            // 
+            this.easyPolice_BdDataSet4.DataSetName = "EasyPolice_BdDataSet4";
+            this.easyPolice_BdDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // easyPoliceBdDataSet1BindingSource
             // 
             this.easyPoliceBdDataSet1BindingSource.DataSource = this.easyPolice_BdDataSet1;
@@ -341,29 +361,9 @@
             // 
             this.freguesiaTableAdapter.ClearBeforeFill = true;
             // 
-            // easyPolice_BdDataSet5
-            // 
-            this.easyPolice_BdDataSet5.DataSetName = "EasyPolice_BdDataSet5";
-            this.easyPolice_BdDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // freguesiaBindingSource1
-            // 
-            this.freguesiaBindingSource1.DataMember = "Freguesia";
-            this.freguesiaBindingSource1.DataSource = this.easyPolice_BdDataSet5;
-            // 
             // freguesiaTableAdapter1
             // 
             this.freguesiaTableAdapter1.ClearBeforeFill = true;
-            // 
-            // easyPolice_BdDataSet4
-            // 
-            this.easyPolice_BdDataSet4.DataSetName = "EasyPolice_BdDataSet4";
-            this.easyPolice_BdDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // concelhoBindingSource
-            // 
-            this.concelhoBindingSource.DataMember = "Concelho";
-            this.concelhoBindingSource.DataSource = this.easyPolice_BdDataSet4;
             // 
             // concelhoTableAdapter
             // 
@@ -394,6 +394,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RegistoOcorrencias";
@@ -406,13 +407,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.distritoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.utilizadorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freguesiaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.concelhoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyPoliceBdDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.freguesiaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.freguesiaBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.concelhoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

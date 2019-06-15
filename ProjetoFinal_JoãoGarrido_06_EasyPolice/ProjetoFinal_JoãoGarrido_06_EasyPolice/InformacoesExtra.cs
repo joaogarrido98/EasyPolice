@@ -109,5 +109,10 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 e.Handled = !(e.KeyChar == 8);
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Foto adicionada");
+        }
     }
 }
