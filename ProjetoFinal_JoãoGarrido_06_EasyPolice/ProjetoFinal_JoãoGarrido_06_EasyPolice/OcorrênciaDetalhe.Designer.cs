@@ -35,7 +35,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtdetalhe = new System.Windows.Forms.TextBox();
             this.txtdata = new System.Windows.Forms.TextBox();
             this.txtfreguesia = new System.Windows.Forms.TextBox();
@@ -103,21 +102,13 @@
             this.label8.TabIndex = 8;
             this.label8.Text = "Concelho:";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(609, 136);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 49);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Adicionar Informação";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // txtdetalhe
             // 
+            this.txtdetalhe.BackColor = System.Drawing.SystemColors.Info;
             this.txtdetalhe.Location = new System.Drawing.Point(42, 194);
             this.txtdetalhe.Multiline = true;
             this.txtdetalhe.Name = "txtdetalhe";
+            this.txtdetalhe.ReadOnly = true;
             this.txtdetalhe.Size = new System.Drawing.Size(678, 179);
             this.txtdetalhe.TabIndex = 10;
             // 
@@ -228,7 +219,6 @@
             this.Controls.Add(this.txtfreguesia);
             this.Controls.Add(this.txtdata);
             this.Controls.Add(this.txtdetalhe);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -252,7 +242,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtdetalhe;
         private System.Windows.Forms.TextBox txtdata;
         private System.Windows.Forms.TextBox txtfreguesia;

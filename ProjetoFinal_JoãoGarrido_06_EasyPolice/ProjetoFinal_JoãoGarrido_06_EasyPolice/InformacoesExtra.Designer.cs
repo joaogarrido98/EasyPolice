@@ -38,9 +38,9 @@
             this.txtcor = new System.Windows.Forms.TextBox();
             this.txtaltura = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.img_Criminoso = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Criminoso)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCC
@@ -119,16 +119,16 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Altura:";
             // 
-            // pictureBox1
+            // img_Criminoso
             // 
-            this.pictureBox1.Image = global::ProjetoFinal_JoãoGarrido_06_EasyPolice.Properties.Resources.face;
-            this.pictureBox1.Location = new System.Drawing.Point(37, 69);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(188, 180);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.img_Criminoso.Image = global::ProjetoFinal_JoãoGarrido_06_EasyPolice.Properties.Resources.face;
+            this.img_Criminoso.Location = new System.Drawing.Point(37, 69);
+            this.img_Criminoso.Name = "img_Criminoso";
+            this.img_Criminoso.Size = new System.Drawing.Size(188, 180);
+            this.img_Criminoso.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.img_Criminoso.TabIndex = 9;
+            this.img_Criminoso.TabStop = false;
+            this.img_Criminoso.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label4
             // 
@@ -145,7 +145,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 277);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.img_Criminoso);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtaltura);
             this.Controls.Add(this.txtcor);
@@ -160,7 +160,7 @@
             this.Name = "InformacoesExtra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informações Extra";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Criminoso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,7 +177,7 @@
         private System.Windows.Forms.TextBox txtcor;
         private System.Windows.Forms.TextBox txtaltura;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox img_Criminoso;
         private System.Windows.Forms.Label label4;
     }
 }

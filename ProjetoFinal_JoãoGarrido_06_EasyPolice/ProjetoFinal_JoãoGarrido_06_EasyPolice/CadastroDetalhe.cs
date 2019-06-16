@@ -27,10 +27,12 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
             try
             {
+                string fotografia = ""; 
+
                 SqlCommand cmd = db.CreateCommand();
                 db.Open();
 
-                cmd.CommandText = ("SELECT IdCriminoso, Nome, Idade, CartaoCidadao, Sexo, Altura, Cor FROM Criminoso WHERE IdCriminoso = @IdCriminoso");            
+                cmd.CommandText = ("SELECT IdCriminoso, Nome, Idade, CartaoCidadao, Sexo, Altura, Cor, Fotografia FROM Criminoso WHERE IdCriminoso = @IdCriminoso");            
                 cmd.Parameters.Add("@IdCriminoso", SqlDbType.Int).Value = criminosoID;
 
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -45,17 +47,26 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                         txtalt.Text = dr["Altura"].ToString();
                         txtcor.Text = dr["Cor"].ToString();
                         txtsexo.Text = dr["Sexo"].ToString();
-                        
+                        fotografia = dr["Fotografia"].ToString();
                     }
                     dr.Close();
+
+                    if (fotografia != null)
+                    {
+                        Bitmap bmp = new Bitmap(fotografia);
+                        pictureBox1.Image = bmp;
+                    }
+
                 }
                 db.Close();
                 cmd.Dispose();
                 GC.Collect();
+
+               
             }
-            catch (Exception errado)
+            catch (Exception erro)
             {
-                MessageBox.Show(errado.ToString());
+                MessageBox.Show(erro.ToString());
             }
 
         }

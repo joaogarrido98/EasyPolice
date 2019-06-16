@@ -95,7 +95,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 int ocorrenciaID = Convert.ToInt32((dataGridView1.DataSource as DataTable).Rows[e.RowIndex]["IdOcorrencia"]);
                 OcorrênciaDetalhe od = new OcorrênciaDetalhe();//chamar o form 
                 od.carregar(ocorrenciaID);
-                od.detalhe(ocorrenciaID);
                 od.Show();
             }
             catch (Exception errado)

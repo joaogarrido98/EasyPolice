@@ -65,40 +65,5 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            
-     
         }
-
-        public void detalhe(int ocorrenciaID)
-        {
-            
-            string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
-            SqlConnection db = new SqlConnection(connectionString);
-
-            try
-            {
-
-                SqlCommand cmdDetalheUpdate = db.CreateCommand();
-                db.Open();
-
-                cmdDetalheUpdate.CommandText = ("UPDATE Ocorrencias SET Detalhe = @detalhe WHERE IdOcorrencia = @IdOcorrencia");
-
-                cmdDetalheUpdate.Parameters.Add("@IdOcorrencia", SqlDbType.Int).Value = ocorrenciaID;
-                cmdDetalheUpdate.Parameters.Add("@detalhe", SqlDbType.VarChar).Value = txtdetalhe.Text;
-
-
-                cmdDetalheUpdate.ExecuteNonQuery();
-              
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.ToString());
-            }
-               
-        }
-
-  
     }
-}
