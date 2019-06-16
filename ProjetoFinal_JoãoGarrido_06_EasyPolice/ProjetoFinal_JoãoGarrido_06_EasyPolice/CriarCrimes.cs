@@ -75,12 +75,14 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     MessageBox.Show("Crime Adicionado");
                     limpar();
                 }
+                cmdSelect.Dispose();
+                GC.Collect();
 
 
             }
-            catch (Exception)
+            catch (Exception erro)
             {
-
+                MessageBox.Show(erro.ToString());
             }
         }
 

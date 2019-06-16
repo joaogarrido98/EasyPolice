@@ -41,7 +41,7 @@
             this.button1.Location = new System.Drawing.Point(331, 83);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 40);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Adicionar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -77,7 +77,7 @@
             this.txtgravidade.Location = new System.Drawing.Point(182, 125);
             this.txtgravidade.Name = "txtgravidade";
             this.txtgravidade.Size = new System.Drawing.Size(71, 22);
-            this.txtgravidade.TabIndex = 3;
+            this.txtgravidade.TabIndex = 2;
             this.txtgravidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtgravidade_KeyPress);
             // 
             // CriarCrimes

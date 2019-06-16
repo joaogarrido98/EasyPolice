@@ -34,7 +34,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
 
-            int altura = Convert.ToInt32(txtaltura.Text);
+            int altura;
+            int.TryParse(txtaltura.Text, out altura);
             string sexo = txtsexo.Text;
             string cor = txtcor.Text;
             string CC = "";
@@ -43,9 +44,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
             try
             {
-                if (txtCC.Text == "")
+                if (txtCC.Text == "" || txtaltura.Text == "" || txtcor.Text == "" || txtsexo.Text == "" )
                 {
-                    MessageBox.Show("Introduza um cartão de cidadão");
+                    MessageBox.Show("Introduza os valores necessários por favor");
                     apagar();
                 }
                 else
@@ -98,7 +99,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 if (CC != txtCC.Text)
                 {
                     MessageBox.Show("Criminoso não existe!");
+                    apagar();
                 } 
+
             }
         }
 

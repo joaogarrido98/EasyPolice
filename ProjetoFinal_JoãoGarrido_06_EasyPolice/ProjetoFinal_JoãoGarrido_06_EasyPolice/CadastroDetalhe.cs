@@ -57,7 +57,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                         Bitmap bmp = new Bitmap(fotografia);
                         pictureBox1.Image = bmp;
                     }
-
                 }
                 db.Close();
                 cmd.Dispose();

@@ -165,7 +165,7 @@
             this.button1.Location = new System.Drawing.Point(556, 326);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 54);
-            this.button1.TabIndex = 9;
+            this.button1.TabIndex = 11;
             this.button1.Text = "Criar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.CriarRegisto);
@@ -186,7 +186,7 @@
             this.TextDetalhe.Multiline = true;
             this.TextDetalhe.Name = "TextDetalhe";
             this.TextDetalhe.Size = new System.Drawing.Size(462, 183);
-            this.TextDetalhe.TabIndex = 8;
+            this.TextDetalhe.TabIndex = 10;
             // 
             // label10
             // 
@@ -210,7 +210,7 @@
             this.textdata.Location = new System.Drawing.Point(457, 133);
             this.textdata.Name = "textdata";
             this.textdata.Size = new System.Drawing.Size(174, 22);
-            this.textdata.TabIndex = 6;
+            this.textdata.TabIndex = 9;
             // 
             // distritoTableAdapter
             // 
@@ -259,7 +259,7 @@
             this.comboBox1.Location = new System.Drawing.Point(520, 103);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(111, 24);
-            this.comboBox1.TabIndex = 7;
+            this.comboBox1.TabIndex = 8;
             this.comboBox1.ValueMember = "IdUtilizador";
             // 
             // utilizadorBindingSource
@@ -296,7 +296,7 @@
             this.combofreguesia.Location = new System.Drawing.Point(342, 129);
             this.combofreguesia.Name = "combofreguesia";
             this.combofreguesia.Size = new System.Drawing.Size(100, 24);
-            this.combofreguesia.TabIndex = 30;
+            this.combofreguesia.TabIndex = 6;
             this.combofreguesia.ValueMember = "IdFreguesia";
             // 
             // freguesiaBindingSource1
@@ -329,7 +329,7 @@
             this.comboconcelho.Location = new System.Drawing.Point(520, 69);
             this.comboconcelho.Name = "comboconcelho";
             this.comboconcelho.Size = new System.Drawing.Size(111, 24);
-            this.comboconcelho.TabIndex = 32;
+            this.comboconcelho.TabIndex = 7;
             this.comboconcelho.ValueMember = "IdConcelho";
             // 
             // concelhoBindingSource

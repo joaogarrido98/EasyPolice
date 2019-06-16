@@ -28,6 +28,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         public void consulta()
         {
+            dataTable.Rows.Clear();
+
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
 
