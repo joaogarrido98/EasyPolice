@@ -53,6 +53,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                         distintivo = dr["Distintivo"].ToString();
                     }
                     dr.Close();
+
                         if (usernameregisto != textusername.Text && distintivo != textdistintivo.Text)
                         {
                             SqlCommand cmdInsert = new SqlCommand();
@@ -92,9 +93,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 }
                 catch (Exception)
                 {
-                    if (textdistintivo.Text == "")
+                    if (textdistintivo.Text == "" || textusername.Text == "" || textpass.Text == "")
                     {
-                        MessageBox.Show("Por Favor adicione um distintivo", "Erro", MessageBoxButtons.OK,  MessageBoxIcon.Warning);
+                        MessageBox.Show("Por Favor adicione as credenciais", "Erro", MessageBoxButtons.OK,  MessageBoxIcon.Warning);
                     }
                 }
             }
@@ -158,9 +159,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 }
                 catch (Exception)
                 {
-                    if (textdistintivo.Text == "")
+                    if (textdistintivo.Text == "" || textusername.Text == "" || textpass.Text == "")
                     {
-                        MessageBox.Show("Por Favor adicione um distintivo", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Por Favor adicione as credenciais", "Erro", MessageBoxButtons.OK,  MessageBoxIcon.Warning);
                     }
                 }
             }

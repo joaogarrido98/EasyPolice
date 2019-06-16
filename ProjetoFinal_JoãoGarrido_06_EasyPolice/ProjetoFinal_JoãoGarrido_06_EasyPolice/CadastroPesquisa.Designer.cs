@@ -102,6 +102,7 @@
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridView1.Location = new System.Drawing.Point(129, 124);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(511, 272);
@@ -113,6 +114,7 @@
             this.IdCriminoso.DataPropertyName = "IdCriminoso";
             this.IdCriminoso.HeaderText = "IdCriminoso";
             this.IdCriminoso.Name = "IdCriminoso";
+            this.IdCriminoso.ReadOnly = true;
             this.IdCriminoso.Visible = false;
             // 
             // Nome
@@ -120,6 +122,7 @@
             this.Nome.DataPropertyName = "Nome";
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
             this.Nome.Width = 140;
             // 
             // CartaoCidadao
@@ -127,6 +130,7 @@
             this.CartaoCidadao.DataPropertyName = "CartaoCidadao";
             this.CartaoCidadao.HeaderText = "Cartão Cidadão";
             this.CartaoCidadao.Name = "CartaoCidadao";
+            this.CartaoCidadao.ReadOnly = true;
             this.CartaoCidadao.Width = 140;
             // 
             // Idade
@@ -135,6 +139,7 @@
             this.Idade.DataPropertyName = "Idade";
             this.Idade.HeaderText = "Idade";
             this.Idade.Name = "Idade";
+            this.Idade.ReadOnly = true;
             // 
             // button4
             // 

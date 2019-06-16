@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroDetalhe));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.IdOcorrencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Crime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +59,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdOcorrencia,
             this.Data,
             this.Crime,
             this.Distrito,
@@ -65,9 +67,18 @@
             this.dataGridView1.Location = new System.Drawing.Point(80, 214);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(599, 207);
             this.dataGridView1.TabIndex = 5;
+            // 
+            // IdOcorrencia
+            // 
+            this.IdOcorrencia.DataPropertyName = "IdOcorrencia";
+            this.IdOcorrencia.HeaderText = "IdOcorrencia";
+            this.IdOcorrencia.Name = "IdOcorrencia";
+            this.IdOcorrencia.ReadOnly = true;
+            this.IdOcorrencia.Visible = false;
             // 
             // Data
             // 
@@ -274,10 +285,6 @@
         private System.Windows.Forms.TextBox lblnome;
         private System.Windows.Forms.TextBox lblCC;
         private System.Windows.Forms.TextBox lblIdade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Crime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Distrito;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Policia;
         private System.Windows.Forms.Label lblsexo;
         private System.Windows.Forms.TextBox txtsexo;
         private System.Windows.Forms.TextBox txtcor;
@@ -285,5 +292,10 @@
         private System.Windows.Forms.Label lblcor;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdOcorrencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Crime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Distrito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Policia;
     }
 }

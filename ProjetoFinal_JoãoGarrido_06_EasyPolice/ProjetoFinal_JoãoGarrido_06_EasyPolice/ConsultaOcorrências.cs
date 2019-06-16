@@ -131,9 +131,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 SqlCommand cmd = db.CreateCommand();
                 db.Open();
                 
-                cmd.CommandText = "SELECT dbo.Ocorrencias.IdOcorrencia, dbo.Ocorrencias.Data, dbo.Criminoso.Nome, dbo.Crimes.Tipo, dbo.Distrito.Nome AS Distrito, dbo.Utilizador.Distintivo FROM dbo.Ocorrencias INNER JOIN dbo.Criminoso ON dbo.Ocorrencias.IdCriminoso = dbo.Criminoso.IdCriminoso INNER JOIN  dbo.Crimes ON dbo.Ocorrencias.IdCrime = dbo.Crimes.IdCrime INNER JOIN dbo.Distrito ON dbo.Ocorrencias.IdDistrito = dbo.Distrito.IdDistrito INNER JOIN dbo.Utilizador ON dbo.Ocorrencias.idUtilizador = dbo.Utilizador.IdUtilizador WHERE Distrito.Nome = @Distrito OR Crimes.Tipo=@Crime OR Ocorrencias.Data = @Data";
+                cmd.CommandText = "SELECT dbo.Ocorrencias.IdOcorrencia, dbo.Ocorrencias.Data, dbo.Criminoso.Nome, dbo.Crimes.Tipo, dbo.Distrito.Nome AS Distrito, dbo.Utilizador.Distintivo FROM dbo.Ocorrencias INNER JOIN dbo.Criminoso ON dbo.Ocorrencias.IdCriminoso = dbo.Criminoso.IdCriminoso INNER JOIN  dbo.Crimes ON dbo.Ocorrencias.IdCrime = dbo.Crimes.IdCrime INNER JOIN dbo.Distrito ON dbo.Ocorrencias.IdDistrito = dbo.Distrito.IdDistrito INNER JOIN dbo.Utilizador ON dbo.Ocorrencias.idUtilizador = dbo.Utilizador.IdUtilizador WHERE Ocorrencias.IdDistrito = @Distrito OR Ocorrencias.IdCrime=@Crime OR Ocorrencias.Data = @Data";
 
-               
                 cmd.Parameters.Add("@Data", SqlDbType.Date).Value = data;
                 cmd.Parameters.Add("@Crime", SqlDbType.VarChar).Value = crime;
                 cmd.Parameters.Add("@Distrito", SqlDbType.VarChar).Value = distrito;

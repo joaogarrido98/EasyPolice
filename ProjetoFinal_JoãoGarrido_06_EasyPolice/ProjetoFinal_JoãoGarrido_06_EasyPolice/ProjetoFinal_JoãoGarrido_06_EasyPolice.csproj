@@ -78,6 +78,12 @@
     <Compile Include="ConsultaOcorrências.Designer.cs">
       <DependentUpon>ConsultaOcorrências.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultarCrimes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarCrimes.Designer.cs">
+      <DependentUpon>ConsultarCrimes.cs</DependentUpon>
+    </Compile>
     <Compile Include="CriarCrimes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaOcorrências.resx">
       <DependentUpon>ConsultaOcorrências.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarCrimes.resx">
+      <DependentUpon>ConsultarCrimes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CriarCrimes.resx">
       <DependentUpon>CriarCrimes.cs</DependentUpon>

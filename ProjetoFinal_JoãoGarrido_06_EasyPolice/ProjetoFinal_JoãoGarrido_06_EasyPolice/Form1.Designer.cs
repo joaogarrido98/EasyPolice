@@ -44,7 +44,9 @@
             this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.adicionarCrimesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
@@ -183,12 +185,28 @@
             // toolStripButton9
             // 
             this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton9.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adicionarCrimesToolStripMenuItem,
+            this.consultarToolStripMenuItem2});
             this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
             this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(126, 24);
-            this.toolStripButton9.Text = "Adicionar Crimes";
-            this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
+            this.toolStripButton9.Size = new System.Drawing.Size(68, 24);
+            this.toolStripButton9.Text = "Crimes";
+            // 
+            // adicionarCrimesToolStripMenuItem
+            // 
+            this.adicionarCrimesToolStripMenuItem.Name = "adicionarCrimesToolStripMenuItem";
+            this.adicionarCrimesToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.adicionarCrimesToolStripMenuItem.Text = "Adicionar Crimes";
+            this.adicionarCrimesToolStripMenuItem.Click += new System.EventHandler(this.adicionarCrimesToolStripMenuItem_Click);
+            // 
+            // consultarToolStripMenuItem2
+            // 
+            this.consultarToolStripMenuItem2.Name = "consultarToolStripMenuItem2";
+            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(216, 26);
+            this.consultarToolStripMenuItem2.Text = "Consultar";
+            this.consultarToolStripMenuItem2.Click += new System.EventHandler(this.consultarToolStripMenuItem2_Click);
             // 
             // toolStripButton10
             // 
@@ -242,7 +260,9 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripButton5;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem informaçõesExtraToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton toolStripButton9;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripButton9;
+        private System.Windows.Forms.ToolStripMenuItem adicionarCrimesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem2;
     }
 }
 

@@ -79,11 +79,18 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             mdiIE.Show();
         }
 
-        private void toolStripButton9_Click(object sender, EventArgs e)
+        private void adicionarCrimesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CriarCrimes mdiCC = new CriarCrimes();
             mdiCC.MdiParent = this;
             mdiCC.Show();
+        }
+
+        private void consultarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            ConsultarCrimes mdiCri = new ConsultarCrimes();
+            mdiCri.MdiParent = this;
+            mdiCri.Show();
         }
     }
 }

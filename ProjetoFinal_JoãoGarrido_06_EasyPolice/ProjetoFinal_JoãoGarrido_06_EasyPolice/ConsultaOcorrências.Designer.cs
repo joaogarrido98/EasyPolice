@@ -36,12 +36,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IdOcorrencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Criminoso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Crime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Policia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.distritoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.distritoTableAdapter = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet1TableAdapters.DistritoTableAdapter();
@@ -50,6 +44,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtdistrito = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.IdOcorrencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Criminoso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Crime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Distrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Policia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.crimesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.easyPolice_BdDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -62,6 +62,7 @@
             this.txtcrime.DisplayMember = "Tipo";
             this.txtcrime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtcrime.FormattingEnabled = true;
+            this.txtcrime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtcrime.Location = new System.Drawing.Point(407, 60);
             this.txtcrime.Name = "txtcrime";
             this.txtcrime.Size = new System.Drawing.Size(100, 24);
@@ -105,58 +106,19 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdOcorrencia,
-            this.Criminoso,
             this.Data,
+            this.Criminoso,
             this.Crime,
             this.Distrito,
             this.Policia});
             this.dataGridView1.Location = new System.Drawing.Point(76, 125);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(611, 229);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clickcell);
-            // 
-            // IdOcorrencia
-            // 
-            this.IdOcorrencia.DataPropertyName = "IdOcorrencia";
-            this.IdOcorrencia.HeaderText = "IdOcorrencia";
-            this.IdOcorrencia.Name = "IdOcorrencia";
-            this.IdOcorrencia.Visible = false;
-            // 
-            // Criminoso
-            // 
-            this.Criminoso.DataPropertyName = "Nome";
-            this.Criminoso.HeaderText = "Criminoso";
-            this.Criminoso.Name = "Criminoso";
-            // 
-            // Data
-            // 
-            this.Data.DataPropertyName = "Data";
-            this.Data.HeaderText = "Data";
-            this.Data.Name = "Data";
-            // 
-            // Crime
-            // 
-            this.Crime.DataPropertyName = "Tipo";
-            this.Crime.HeaderText = "Crime";
-            this.Crime.Name = "Crime";
-            this.Crime.Width = 80;
-            // 
-            // Distrito
-            // 
-            this.Distrito.DataPropertyName = "Distrito";
-            this.Distrito.HeaderText = "Distrito";
-            this.Distrito.Name = "Distrito";
-            this.Distrito.Width = 80;
-            // 
-            // Policia
-            // 
-            this.Policia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Policia.DataPropertyName = "Distintivo";
-            this.Policia.HeaderText = "Policia";
-            this.Policia.Name = "Policia";
             // 
             // button2
             // 
@@ -219,6 +181,52 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "Distrito:";
             // 
+            // IdOcorrencia
+            // 
+            this.IdOcorrencia.DataPropertyName = "IdOcorrencia";
+            this.IdOcorrencia.HeaderText = "IdOcorrencia";
+            this.IdOcorrencia.Name = "IdOcorrencia";
+            this.IdOcorrencia.ReadOnly = true;
+            this.IdOcorrencia.Visible = false;
+            // 
+            // Data
+            // 
+            this.Data.DataPropertyName = "Data";
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
+            // 
+            // Criminoso
+            // 
+            this.Criminoso.DataPropertyName = "Nome";
+            this.Criminoso.HeaderText = "Criminoso";
+            this.Criminoso.Name = "Criminoso";
+            this.Criminoso.ReadOnly = true;
+            // 
+            // Crime
+            // 
+            this.Crime.DataPropertyName = "Tipo";
+            this.Crime.HeaderText = "Crime";
+            this.Crime.Name = "Crime";
+            this.Crime.ReadOnly = true;
+            this.Crime.Width = 80;
+            // 
+            // Distrito
+            // 
+            this.Distrito.DataPropertyName = "Distrito";
+            this.Distrito.HeaderText = "Distrito";
+            this.Distrito.Name = "Distrito";
+            this.Distrito.ReadOnly = true;
+            this.Distrito.Width = 80;
+            // 
+            // Policia
+            // 
+            this.Policia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Policia.DataPropertyName = "Distintivo";
+            this.Policia.HeaderText = "Policia";
+            this.Policia.Name = "Policia";
+            this.Policia.ReadOnly = true;
+            // 
             // ConsultaOcorrências
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -262,13 +270,13 @@
         private EasyPolice_BdDataSet1TableAdapters.CrimesTableAdapter crimesTableAdapter;
         private System.Windows.Forms.DateTimePicker txtdata;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox txtdistrito;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdOcorrencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Criminoso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Criminoso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Crime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Distrito;
         private System.Windows.Forms.DataGridViewTextBoxColumn Policia;
-        private System.Windows.Forms.ComboBox txtdistrito;
-        private System.Windows.Forms.Label label1;
     }
 }

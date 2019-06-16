@@ -56,7 +56,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
                 if(tipo.Equals(txttipo.Text, StringComparison.OrdinalIgnoreCase) || gravidade == "") //PARA IGNORAR SE É LETRA MAIUSCULA OU MINISCULA
                 {
-                    //MessageBox.Show("Introduza o Nome/Gravidade do Crime ");
+                    MessageBox.Show("Introduza o Nome/Gravidade do Crime ");
                     limpar();
                 }
                 else
