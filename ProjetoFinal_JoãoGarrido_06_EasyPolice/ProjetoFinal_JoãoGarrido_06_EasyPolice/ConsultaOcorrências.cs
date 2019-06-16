@@ -91,11 +91,18 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
             try //registar o IdOcorrencia da ocorrencia na qual se carregou na row da datagridview
             {
-                
+                /*int row = Convert.ToInt32((dataGridView1.DataSource as DataTable).Rows[e.RowIndex][]
+
+                if (Convert.ToInt32(dataGridView1.DataSource as DataTable).Rows[e.RowIndex][-1])
+                {
+
+                }*/
+
                 int ocorrenciaID = Convert.ToInt32((dataGridView1.DataSource as DataTable).Rows[e.RowIndex]["IdOcorrencia"]);
                 OcorrênciaDetalhe od = new OcorrênciaDetalhe();//chamar o form 
                 od.carregar(ocorrenciaID);
                 od.Show();
+
             }
             catch (Exception errado)
             {

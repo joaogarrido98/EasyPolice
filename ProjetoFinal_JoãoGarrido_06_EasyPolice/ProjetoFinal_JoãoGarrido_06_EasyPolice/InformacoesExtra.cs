@@ -114,7 +114,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             }
         }
 
-       
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -123,80 +123,96 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
 
             //imagem
-            string displayimg, filePath;
+            string filePath;
             string folderpath = @"..\Criminoso\";
             OpenFileDialog open = new OpenFileDialog();
             string CC = txtCC.Text;
 
-            db.Open();
-
-            SqlDataReader dr;
-
-            string query = "SELECT IdCriminoso FROM Criminoso WHERE CartaoCidadao=@CartaoCidadao";
-
-            SqlCommand cmdSelect = new SqlCommand(query, db);
-
-            cmdSelect.Parameters.Add("@CartaoCidadao", SqlDbType.Int).Value = txtCC.Text;
-
-            dr = cmdSelect.ExecuteReader();
-
-            while (dr.Read()) //ler o idcriminoso a partir do Cartao de Cidadão para depois fazer update só nesse criminoso.
+            if (txtCC.Text != "")
             {
-                CC = dr["IdCriminoso"].ToString();
-            }
-            dr.Close();
+                
+                db.Open();
 
-            try
-            {
+                SqlDataReader dr;
 
-                if (open.ShowDialog() == DialogResult.OK)
+                string query = "SELECT IdCriminoso FROM Criminoso WHERE CartaoCidadao=@CartaoCidadao";
+
+                SqlCommand cmdSelect = new SqlCommand(query, db);
+
+                cmdSelect.Parameters.Add("@CartaoCidadao", SqlDbType.Int).Value = txtCC.Text;
+
+                dr = cmdSelect.ExecuteReader();
+
+                while (dr.Read()) //ler o idcriminoso a partir do Cartao de Cidadão para depois fazer update só nesse criminoso.
                 {
-                    open.Filter = "Image Files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png | *.jpg, *.jpeg, *.jpe, *.jfif, *.png)";
-
-                    filePath = open.FileName;
-
-
-                    if (!Directory.Exists(folderpath))
-                    {
-                        Directory.CreateDirectory(folderpath);
-                    }
-
-
-                    SqlCommand cmdUpdateFoto = new SqlCommand();
-                    cmdUpdateFoto.Connection = db;
-
-                    cmdUpdateFoto.CommandText = "UPDATE Criminoso SET Fotografia = @Fotografia WHERE IdCriminoso = @IdCriminoso";
-                    cmdUpdateFoto.Parameters.Add("@IdCriminoso", SqlDbType.Int).Value = CC;
-                    cmdUpdateFoto.Parameters.Add("@Fotografia", SqlDbType.VarChar).Value = folderpath + Path.GetFileName(open.FileName);
-
-
-                    string fileName = Path.Combine(folderpath, Path.GetFileName(filePath));
-
-                    if (!File.Exists(fileName))
-                    {
-                        File.Copy(filePath, fileName, true);
-                    }
-
-                    cmdUpdateFoto.ExecuteNonQuery();
-
-                    MessageBox.Show("Atualização feita com sucesso!");
-                    db.Close();
-                    cmdUpdateFoto.Dispose();
-
-                    GC.Collect();
-
-                    if (!dr.IsClosed)
-                    {
-                        dr.Close();
-                    }
-
+                    CC = dr["IdCriminoso"].ToString();
                 }
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.ToString());
-            }
+                dr.Close();
+
+                if (CC == txtCC.Text)
+                {
+
+                    try
+                    {
+
+                        if (open.ShowDialog() == DialogResult.OK)
+                        {
+                            open.Filter = "Image Files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png | *.jpg, *.jpeg, *.jpe, *.jfif, *.png)";
+
+                            filePath = open.FileName;
+
+
+                            if (!Directory.Exists(folderpath))
+                            {
+                                Directory.CreateDirectory(folderpath);
+                            }
+
+
+                            SqlCommand cmdUpdateFoto = new SqlCommand();
+                            cmdUpdateFoto.Connection = db;
+
+                            cmdUpdateFoto.CommandText = "UPDATE Criminoso SET Fotografia = @Fotografia WHERE IdCriminoso = @IdCriminoso";
+                            cmdUpdateFoto.Parameters.Add("@IdCriminoso", SqlDbType.Int).Value = CC;
+                            cmdUpdateFoto.Parameters.Add("@Fotografia", SqlDbType.VarChar).Value = folderpath + Path.GetFileName(open.FileName);
+
+
+                            string fileName = Path.Combine(folderpath, Path.GetFileName(filePath));
+
+                            if (!File.Exists(fileName))
+                            {
+                                File.Copy(filePath, fileName, true);
+                            }
+
+                            cmdUpdateFoto.ExecuteNonQuery();
+
+                            MessageBox.Show("Atualização feita com sucesso!");
+                            db.Close();
+                            cmdUpdateFoto.Dispose();
+
+                            GC.Collect();
+
+                            if (!dr.IsClosed)
+                            {
+                                dr.Close();
+                            }
+
+                        }
+                    }
+                    catch (Exception erro)
+                    {
+                        MessageBox.Show(erro.ToString());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Criminoso não existe");
+                }
 
             }
+            else
+            {
+                MessageBox.Show("Introduza um Cartão de Cidadão");
+            }
+        }
         }
     }

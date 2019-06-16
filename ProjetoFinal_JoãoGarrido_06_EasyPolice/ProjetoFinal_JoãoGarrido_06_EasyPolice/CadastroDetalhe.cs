@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Threading;
+
 namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
     public partial class CadastroDetalhe : Form
@@ -126,11 +127,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     GC.Collect();
                 }
             }
-        }
-
-        private void CadastroDetalhe_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
