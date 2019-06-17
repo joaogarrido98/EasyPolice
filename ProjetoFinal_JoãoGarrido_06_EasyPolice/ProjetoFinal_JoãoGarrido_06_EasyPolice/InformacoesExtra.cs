@@ -33,9 +33,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
            
             string connectionString = ConfigurationManager.ConnectionStrings["EasyPolice_BD"].ConnectionString;
             SqlConnection db = new SqlConnection(connectionString);
-
-            int altura;
-            int.TryParse(txtaltura.Text, out altura);
+            
             string sexo = txtsexo.Text;
             string cor = txtcor.Text;
             string CC = "";
@@ -152,9 +150,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 }
                 dr.Close();
 
-                if (CC == txtCC.Text)
-                {
-
                     try
                     {
 
@@ -205,11 +200,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     {
                         MessageBox.Show(erro.ToString());
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Criminoso não existe");
-                }
+             
 
             }
             else
