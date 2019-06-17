@@ -38,6 +38,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                     string passregisto = textpass.Text;
                     string distintivo = "";
 
+                    //query para ler o nome e distintivo do utilizador para mais tarde aplicar no dr
                     string query = "SELECT Nome, Distintivo FROM Utilizador WHERE Nome=@Nome or Distintivo=@Distintivo";
 
                     SqlCommand cmdSelect = new SqlCommand(query, db);

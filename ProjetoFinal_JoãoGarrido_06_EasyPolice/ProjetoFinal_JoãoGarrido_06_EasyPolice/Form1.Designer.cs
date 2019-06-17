@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EasyPolice_Admin));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.registarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,9 +54,9 @@
             // toolStrip1
             // 
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton2,
             this.toolStripButton3,
             this.toolStripButton1,
             this.toolStripButton4,
@@ -73,16 +72,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(1182, 27);
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(101, 24);
-            this.toolStripButton2.Text = "Most Wanted";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 
@@ -197,14 +186,14 @@
             // adicionarCrimesToolStripMenuItem
             // 
             this.adicionarCrimesToolStripMenuItem.Name = "adicionarCrimesToolStripMenuItem";
-            this.adicionarCrimesToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.adicionarCrimesToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
             this.adicionarCrimesToolStripMenuItem.Text = "Adicionar Crimes";
             this.adicionarCrimesToolStripMenuItem.Click += new System.EventHandler(this.adicionarCrimesToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem2
             // 
             this.consultarToolStripMenuItem2.Name = "consultarToolStripMenuItem2";
-            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(216, 26);
+            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(197, 26);
             this.consultarToolStripMenuItem2.Text = "Consultar";
             this.consultarToolStripMenuItem2.Click += new System.EventHandler(this.consultarToolStripMenuItem2_Click);
             // 
@@ -244,7 +233,6 @@
 
         #endregion
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripSeparator toolStripButton3;
         private System.Windows.Forms.ToolStripSeparator toolStripButton4;
         private System.Windows.Forms.ToolStripSeparator toolStripButton6;

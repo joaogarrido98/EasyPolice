@@ -19,18 +19,12 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         //chamar os forms respetivos de cada botao. Em mdi
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            Mostwanted mdiMW = new Mostwanted();
-            mdiMW.MdiParent = this;
-            mdiMW.Show();
-        }
-
         private void adicionarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AdicionarContas mdiregisto = new AdicionarContas();
             mdiregisto.MdiParent = this;
             mdiregisto.Show();
+       
         }
 
         private void removerToolStripMenuItem_Click(object sender, EventArgs e)

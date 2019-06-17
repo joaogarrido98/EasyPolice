@@ -103,13 +103,13 @@
 	</schema>
 	<connector name="SqlServer" database="SqlServer" driver_class="com.microsoft.sqlserver.jdbc.SQLServerDriver" driver_jar="mssql-jdbc-7.0.0.jre10.jar" driver_desc="Native Driver - Windows Authentication, Current User" url="jdbc:sqlserver://localhost:1433;databaseName=EasyPolice_Bd;integratedSecurity=true;" host="localhost" port="1433" user="sa" />
 	<layout name="Default Layout" id="Layout_585cc6f" show_relation="columns" >
-		<entity schema="dbo" name="Freguesia" color="BED3F4" x="784" y="688" />
-		<entity schema="dbo" name="Distrito" color="BED3F4" x="768" y="320" />
 		<entity schema="dbo" name="Utilizador" color="FFFF4D" x="48" y="272" />
-		<entity schema="dbo" name="Concelho" color="BED3F4" x="784" y="512" />
-		<entity schema="dbo" name="Crimes" color="800000" x="336" y="736" />
 		<entity schema="dbo" name="Criminoso" color="B3E6B3" x="336" y="48" />
-		<entity schema="dbo" name="Ocorrencias" color="E699B3" x="432" y="336" />
+		<entity schema="dbo" name="Distrito" color="BED3F4" x="752" y="112" />
+		<entity schema="dbo" name="Concelho" color="BED3F4" x="768" y="272" />
+		<entity schema="dbo" name="Freguesia" color="BED3F4" x="784" y="416" />
+		<entity schema="dbo" name="Crimes" color="800000" x="272" y="448" />
+		<entity schema="dbo" name="Ocorrencias" color="E699B3" x="496" y="272" />
 	</layout>
 	<layout name="Sample Layout with Tools" id="Layout_162c486" show_column_type="y" show_relation="columns" >
 		<entity schema="dbo" name="Concelho" color="BED3F4" x="256" y="272" />

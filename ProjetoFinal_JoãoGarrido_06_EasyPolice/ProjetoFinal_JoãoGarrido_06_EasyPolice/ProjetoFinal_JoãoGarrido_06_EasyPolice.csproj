@@ -152,12 +152,6 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mostwanted.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Mostwanted.Designer.cs">
-      <DependentUpon>Mostwanted.cs</DependentUpon>
-    </Compile>
     <Compile Include="OcorrênciaDetalhe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,9 +201,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mostwanted.resx">
-      <DependentUpon>Mostwanted.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OcorrênciaDetalhe.resx">
       <DependentUpon>OcorrênciaDetalhe.cs</DependentUpon>

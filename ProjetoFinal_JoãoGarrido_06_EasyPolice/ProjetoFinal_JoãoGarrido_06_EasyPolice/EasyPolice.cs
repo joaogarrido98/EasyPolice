@@ -30,13 +30,6 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
             }
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            Mostwanted mdiMW = new Mostwanted();
-            mdiMW.MdiParent = this;
-            mdiMW.Show();
-        }
-
         private void registoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegistoOcorrencias mdiRO = new RegistoOcorrencias();
