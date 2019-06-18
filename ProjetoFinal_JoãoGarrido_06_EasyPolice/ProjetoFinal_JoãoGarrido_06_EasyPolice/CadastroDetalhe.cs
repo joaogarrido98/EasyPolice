@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using System.IO;
 using System.Threading;
 
 namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
@@ -28,8 +29,8 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
             try
             {
-                string fotografia = ""; 
-
+                string fotografia = "";
+               
                 SqlCommand cmd = db.CreateCommand();
                 db.Open();
 
@@ -51,12 +52,17 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                         fotografia =  $"{ConfigurationManager.AppSettings["FolderBaseImagem"]}\\{dr["Fotografia"].ToString()}";
                     }
                     dr.Close();
-
-                    if (fotografia != null)
+                   
+                    if (File.Exists(fotografia))
                     {
-                        Bitmap bmp = new Bitmap(fotografia);
-                        pictureBox1.Image = bmp;
-                    }
+                        if (fotografia != null)
+                        {
+                            Bitmap bmp = new Bitmap(fotografia);
+                            pictureBox1.Image = bmp;
+                        }
+
+                    }   
+                
                 }
                 db.Close();
                 cmd.Dispose();

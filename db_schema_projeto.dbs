@@ -56,7 +56,7 @@
 			<column name="IdCriminoso" type="int" jt="4" mandatory="y" />
 			<column name="Data" type="date" length="10" decimal="0" jt="91" mandatory="y" />
 			<column name="IdCrime" type="int" jt="4" mandatory="y" />
-			<column name="Detalhe" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
+			<column name="Detalhe" type="varchar" length="1000" decimal="0" jt="12" mandatory="y" />
 			<column name="IdDistrito" type="int" jt="4" mandatory="y" />
 			<column name="idUtilizador" type="int" jt="4" mandatory="y" />
 			<column name="IdConcelho" type="int" length="10" decimal="0" jt="4" mandatory="y" />
