@@ -125,7 +125,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
             //imagem
             string filePath;
-            string folderpath = @"\temp\imagens\";
+           
             OpenFileDialog open = new OpenFileDialog();
             string CC = txtCC.Text;
 
@@ -160,9 +160,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                             filePath = open.FileName;
 
 
-                            if (!Directory.Exists(folderpath))
+                            if (!Directory.Exists(ConfigurationManager.AppSettings["FolderBaseImagem"]))
                             {
-                                Directory.CreateDirectory(folderpath);
+                                Directory.CreateDirectory(ConfigurationManager.AppSettings["FolderBaseImagem"]);
                             }
 
 
@@ -171,10 +171,10 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
                             cmdUpdateFoto.CommandText = "UPDATE Criminoso SET Fotografia = @Fotografia WHERE IdCriminoso = @IdCriminoso";
                             cmdUpdateFoto.Parameters.Add("@IdCriminoso", SqlDbType.Int).Value = CC;
-                            cmdUpdateFoto.Parameters.Add("@Fotografia", SqlDbType.VarChar).Value = folderpath + Path.GetFileName(open.FileName);
+                            cmdUpdateFoto.Parameters.Add("@Fotografia", SqlDbType.VarChar).Value = Path.GetFileName(open.FileName);
 
 
-                            string fileName = Path.Combine(folderpath, Path.GetFileName(filePath));
+                            string fileName = Path.Combine(ConfigurationManager.AppSettings["FolderBaseImagem"], Path.GetFileName(filePath));
 
                             if (!File.Exists(fileName))
                             {
@@ -208,5 +208,10 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 MessageBox.Show("Introduza um Cartão de Cidadão");
             }
         }
+
+        private void InformacoesExtra_Load(object sender, EventArgs e)
+        {
+
         }
+    }
     }

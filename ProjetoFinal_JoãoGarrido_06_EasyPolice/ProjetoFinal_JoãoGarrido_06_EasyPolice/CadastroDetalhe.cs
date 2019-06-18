@@ -127,5 +127,10 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 }
             }
         }
+
+        private void CadastroDetalhe_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

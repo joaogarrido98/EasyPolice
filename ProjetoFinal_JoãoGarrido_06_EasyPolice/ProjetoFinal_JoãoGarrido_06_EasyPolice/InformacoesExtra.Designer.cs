@@ -160,6 +160,7 @@
             this.Name = "InformacoesExtra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informações Extra";
+            this.Load += new System.EventHandler(this.InformacoesExtra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.img_Criminoso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
