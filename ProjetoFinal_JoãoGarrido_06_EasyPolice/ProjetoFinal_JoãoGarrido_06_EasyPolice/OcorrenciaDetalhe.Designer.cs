@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
-    partial class OcorrênciaDetalhe
+    partial class OcorrenciaDetalhe
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OcorrênciaDetalhe));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OcorrenciaDetalhe));
             this.lblgravidade = new System.Windows.Forms.Label();
             this.lblcrime = new System.Windows.Forms.Label();
             this.lbldata = new System.Windows.Forms.Label();

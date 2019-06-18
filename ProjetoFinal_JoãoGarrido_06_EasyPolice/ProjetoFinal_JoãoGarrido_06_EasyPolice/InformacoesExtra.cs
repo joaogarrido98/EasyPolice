@@ -125,7 +125,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
             //imagem
             string filePath;
-            string folderpath = @"..\Criminoso\";
+            string folderpath = @"\temp\imagens\";
             OpenFileDialog open = new OpenFileDialog();
             string CC = txtCC.Text;
 
@@ -155,7 +155,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
                         if (open.ShowDialog() == DialogResult.OK)
                         {
-                            open.Filter = "Image Files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png | *.jpg, *.jpeg, *.jpe, *.jfif, *.png)";
+                            open.Filter = ("Image Files *.jpg, *.jpeg, *.jpe, *.jfif, *.png | *.jpg, *.jpeg, *.jpe, *.jfif, *.png");
 
                             filePath = open.FileName;
 

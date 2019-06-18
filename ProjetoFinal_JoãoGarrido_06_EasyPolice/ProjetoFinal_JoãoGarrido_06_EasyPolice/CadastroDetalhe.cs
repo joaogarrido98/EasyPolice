@@ -48,7 +48,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                         txtalt.Text = dr["Altura"].ToString();
                         txtcor.Text = dr["Cor"].ToString();
                         txtsexo.Text = dr["Sexo"].ToString();
-                        fotografia = dr["Fotografia"].ToString();
+                        fotografia =  $"{ConfigurationManager.AppSettings["FolderBaseImagem"]}\\{dr["Fotografia"].ToString()}";
                     }
                     dr.Close();
 

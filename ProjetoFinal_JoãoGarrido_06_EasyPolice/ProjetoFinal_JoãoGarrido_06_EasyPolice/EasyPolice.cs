@@ -39,7 +39,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultaOcorrências mdiCO = new ConsultaOcorrências();
+            ConsultaOcorrencias mdiCO = new ConsultaOcorrencias();
             mdiCO.MdiParent = this;
             mdiCO.Show();
         }

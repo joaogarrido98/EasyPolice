@@ -14,9 +14,9 @@ using System.Threading;
 
 namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
-    public partial class OcorrênciaDetalhe : Form
+    public partial class OcorrenciaDetalhe : Form
     {
-        public OcorrênciaDetalhe()
+        public OcorrenciaDetalhe()
         {
             InitializeComponent();
             

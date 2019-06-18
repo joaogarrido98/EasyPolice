@@ -1,6 +1,6 @@
 ﻿namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
-    partial class ConsultaOcorrências
+    partial class ConsultaOcorrencias
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaOcorrências));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaOcorrencias));
             this.txtcrime = new System.Windows.Forms.ComboBox();
             this.crimesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.easyPolice_BdDataSet1 = new ProjetoFinal_JoãoGarrido_06_EasyPolice.EasyPolice_BdDataSet1();

@@ -72,11 +72,11 @@
     <Compile Include="CadastroPesquisa.Designer.cs">
       <DependentUpon>CadastroPesquisa.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaOcorrências.cs">
+    <Compile Include="ConsultaOcorrencias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultaOcorrências.Designer.cs">
-      <DependentUpon>ConsultaOcorrências.cs</DependentUpon>
+    <Compile Include="ConsultaOcorrencias.Designer.cs">
+      <DependentUpon>ConsultaOcorrencias.cs</DependentUpon>
     </Compile>
     <Compile Include="ConsultarCrimes.cs">
       <SubType>Form</SubType>
@@ -152,11 +152,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="OcorrênciaDetalhe.cs">
+    <Compile Include="OcorrenciaDetalhe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OcorrênciaDetalhe.Designer.cs">
-      <DependentUpon>OcorrênciaDetalhe.cs</DependentUpon>
+    <Compile Include="OcorrenciaDetalhe.Designer.cs">
+      <DependentUpon>OcorrenciaDetalhe.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -181,8 +181,8 @@
     <EmbeddedResource Include="CadastroPesquisa.resx">
       <DependentUpon>CadastroPesquisa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultaOcorrências.resx">
-      <DependentUpon>ConsultaOcorrências.cs</DependentUpon>
+    <EmbeddedResource Include="ConsultaOcorrencias.resx">
+      <DependentUpon>ConsultaOcorrencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarCrimes.resx">
       <DependentUpon>ConsultarCrimes.cs</DependentUpon>
@@ -202,8 +202,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OcorrênciaDetalhe.resx">
-      <DependentUpon>OcorrênciaDetalhe.cs</DependentUpon>
+    <EmbeddedResource Include="OcorrenciaDetalhe.resx">
+      <DependentUpon>OcorrenciaDetalhe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

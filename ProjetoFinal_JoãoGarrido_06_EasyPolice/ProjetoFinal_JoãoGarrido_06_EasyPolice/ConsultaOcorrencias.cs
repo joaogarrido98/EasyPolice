@@ -14,7 +14,7 @@ using System.Threading;
 
 namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 {
-    public partial class ConsultaOcorrências : Form
+    public partial class ConsultaOcorrencias : Form
     {
         DataSet dt = new DataSet(); //dataset representa uma estrutura de base de dados em memória
         DataTable dataTable = new DataTable("Ocorrencias"); //assim necessitamos de uma tabela ao dataset
@@ -61,7 +61,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 }
             }
         }
-        public ConsultaOcorrências()
+        public ConsultaOcorrencias()
         {
             InitializeComponent();
             dt.Tables.Add(dataTable);
@@ -99,7 +99,7 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
                 }*/
 
                 int ocorrenciaID = Convert.ToInt32((dataGridView1.DataSource as DataTable).Rows[e.RowIndex]["IdOcorrencia"]);
-                OcorrênciaDetalhe od = new OcorrênciaDetalhe();//chamar o form 
+                OcorrenciaDetalhe od = new OcorrenciaDetalhe();//chamar o form 
                 od.carregar(ocorrenciaID);
                 od.Show();
 
