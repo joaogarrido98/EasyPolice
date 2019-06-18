@@ -192,9 +192,9 @@ namespace ProjetoFinal_JoãoGarrido_06_EasyPolice
 
         private void keypress(object sender, KeyPressEventArgs e)
         {
-            if ((sender as TextBox).Text.Count(Char.IsDigit) >= 10) //so deixar escrever ate dezcaracteres.
+            if ((sender as TextBox).Text.Count(Char.IsDigit) >= 8) //so deixar escrever ate dezcaracteres.
             {
-                e.Handled = true;
+                e.Handled = !(e.KeyChar == 8);
             }
         }
     }
